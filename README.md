@@ -14,18 +14,17 @@ An AI-powered content scout that aggregates information from RSS feeds and newsl
 
 ## Topics of Interest
 
-This curator is configured for stories at the intersection of:
-- AI + Journalism/Documentary/Filmmaking
-- Generative AI tools (Sora, Runway, Midjourney, etc.)
-- Digital provenance & C2PA/Content Credentials
-- Climate tech & adaptation
-- AI ethics & policy
+This curator is designed to be configured for any set of interests. Example topics might include:
+- Technology & Innovation (AI, Robotics, Software)
+- Science & Environment (Climate, Biology, Space)
+- Business & Finance (Economy, Markets, Startups)
+- Culture & Society (Media, Arts, Trends)
 
 ## Setup
 
 ### Prerequisites
 - Python 3.11+
-- Google Gemini API key
+- API key for your chosen LLM (e.g., Google Gemini)
 
 ### Installation
 
@@ -48,9 +47,11 @@ cp .env.example .env
 
 ### Configuration
 
-1. Export your RSS feeds from Inoreader as OPML and save to `config/feeds.opml`
-2. Customize your interests in `config/interests.yaml`
-3. Run the curator:
+1. **Sources**: Copy `config/sources.example.yaml` to `config/sources.yaml` and add your RSS feeds or newsletter paths.
+2. **Interests**: Copy `config/interests.example.yaml` to `config/interests.yaml` and customize your scoring topics.
+3. **Feeds (Optional)**: If you use Inoreader, export your feeds as OPML and save to `config/feeds.opml`.
+
+Run the curator:
 
 ```bash
 python -m src.main run

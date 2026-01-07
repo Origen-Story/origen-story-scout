@@ -10,11 +10,13 @@
 - [ ] Implement newsletter ingestion (email files/saved content)
 - [ ] Create unified content model for all source types
 
-## Phase 3: AI Processing
-- [ ] Build LLM abstraction layer (Gemini primary, Claude secondary)
+## Phase 3: AI Processing & Intelligence
+- [ ] Build LLM abstraction layer with **Model Router** (Gemini + Claude Opus)
+- [ ] Implement **C2PA Provenance Verification** module
 - [ ] Implement content summarization pipeline
-- [ ] Build relevance scoring based on user interests
+- [ ] Build relevance scoring with **Provenance Weighting**
 - [ ] Add "unique angle" detection (low coverage + high interest match)
+- [ ] Implement **Source Stewardship Tracking** (engagement metrics)
 
 ## Phase 4: Output & Delivery
 - [ ] Create output formatter for social media drafts

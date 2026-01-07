@@ -6,13 +6,13 @@ opml_file: "config/feeds.opml"
 
 # Or define feeds manually
 rss_feeds:
-  - name: "Nieman Lab"
-    url: "https://www.niemanlab.org/feed/"
-    category: "journalism"
+  - name: "Example News Site"
+    url: "https://example.com/rss"
+    category: "general"
   
-  - name: "MIT Tech Review - AI"
-    url: "https://www.technologyreview.com/topic/artificial-intelligence/feed"
-    category: "ai"
+  - name: "Tech News Daily"
+    url: "https://tech-example.com/feed"
+    category: "technology"
 
 # Newsletter ingestion
 newsletter_directory: "data/newsletters"

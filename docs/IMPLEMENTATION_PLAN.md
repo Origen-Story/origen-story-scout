@@ -16,7 +16,11 @@ An intelligent agent that aggregates content from multiple sources, analyzes rel
 > - MIT license for open source
 
 > [!NOTE]
-> **MVP Scope**: RSS feeds (via Inoreader OPML) + newsletter forwarding. Style matching, YouTube, podcasts, and interactive selection deferred to post-MVP.
+> **MVP Scope**: RSS feeds (via Inoreader OPML) + newsletter forwarding.
+> **Core Pillars**:
+> 1. **Provenance-First**: C2PA verification is a core metric for relevance scoring.
+> 2. **Multi-Model Intelligence**: Seamless switching between Gemini (general) and Claude Opus (complex logic).
+> 3. **Source Stewardship**: Tracking engagement to eventually support source compensation.
 
 ---
 
@@ -212,9 +216,15 @@ Newsletter content parser:
 3. Periodically export labeled emails as `.eml` files to `data/newsletters/`
 4. *(Post-MVP: Gmail API integration for automatic fetching)*
 
+#### [NEW] [src/processing/provenance.py](file:///c:/Users/matt/WebProjects/Origen%20Story%20Scout/origen-story-scout/src/processing/provenance.py)
+C2PA validation using `c2pa-python`:
+- Extracts manifest data from media attachments.
+- Validates signing certificates and integrity.
+- Outputs a "Provenance Rating" (Verified, Tampered, Unknown).
+
 ---
 
-### Component 4: LLM Abstraction Layer
+### Component 4: Multi-Model Intelligence
 
 #### [NEW] [src/llm/base.py](file:///C:/Users/mattf/.gemini/antigravity/scratch/content-curator/src/llm/base.py)
 Abstract LLM interface:
@@ -227,15 +237,15 @@ class LLMProvider(ABC):
     def summarize(self, content: str, max_length: int = 200) -> str: ...
 ```
 
-#### [NEW] [src/llm/gemini.py](file:///C:/Users/mattf/.gemini/antigravity/scratch/content-curator/src/llm/gemini.py)
-Google Gemini implementation using `google-generativeai`
-
-#### [NEW] [src/llm/claude.py](file:///C:/Users/mattf/.gemini/antigravity/scratch/content-curator/src/llm/claude.py)
-Anthropic Claude implementation (stub for future use)
+#### [NEW] [src/llm/router.py](file:///c:/Users/matt/WebProjects/Origen%20Story%20Scout/origen-story-scout/src/llm/router.py)
+Task-based model orchestrator:
+- Routes general tasks (summarization, basic categorization) to **Gemini**.
+- Routes high-complexity tasks (provenance interpretation, nuanced relevance scoring) to **Claude Opus**.
+- Handles fallback and cost-optimization logic.
 
 ---
 
-### Component 5: Content Processing
+### Component 5: Content Processing & Stewardship
 
 #### [NEW] [src/processing/summarizer.py](file:///C:/Users/mattf/.gemini/antigravity/scratch/content-curator/src/processing/summarizer.py)
 Content summarization pipeline:
@@ -244,12 +254,13 @@ Content summarization pipeline:
 - Extracts key takeaways
 - Identifies potential social media angles
 
-#### [NEW] [src/processing/scorer.py](file:///C:/Users/mattf/.gemini/antigravity/scratch/content-curator/src/processing/scorer.py)
+#### [NEW] [src/processing/scorer.py](file:///c:/Users/matt/WebProjects/Origen%20Story%20Scout/origen-story-scout/src/processing/scorer.py)
 Relevance scoring system:
-- Keyword matching against interests
-- LLM-based semantic relevance scoring
-- Coverage detection (is this topic trending?)
-- "Unique angle" scoring: high interest + low coverage = opportunity
+- Keyword matching against interests.
+- LLM-based semantic relevance scoring.
+- **Provenance weighting**: Boosts score for verified content.
+- Coverage detection (is this topic trending?).
+- "Unique angle" scoring: high interest + low coverage = opportunity.
 
 #### [NEW] [src/processing/deduplicator.py](file:///C:/Users/mattf/.gemini/antigravity/scratch/content-curator/src/processing/deduplicator.py)
 Deduplication using title similarity and content hashing
@@ -271,11 +282,11 @@ Markdown templates for consistent output formatting
 
 ### Component 7: Storage & CLI
 
-#### [NEW] [src/storage/archive.py](file:///C:/Users/mattf/.gemini/antigravity/scratch/content-curator/src/storage/archive.py)
-Simple JSON-based archive:
-- Save items you've used
-- Track what's been processed
-- Export to Markdown for Notion/Docs
+#### [NEW] [src/storage/archive.py](file:///c:/Users/matt/WebProjects/Origen%20Story%20Scout/origen-story-scout/src/storage/archive.py)
+Simple JSON-based archive with stewardship tracking:
+- Save items you've used.
+- Track metrics: `starred`, `shared`, `reading_time`.
+- Aggregates "Engagement Points" per source for future compensation.
 
 #### [NEW] [src/main.py](file:///C:/Users/mattf/.gemini/antigravity/scratch/content-curator/src/main.py)
 CLI interface using Click:
@@ -381,10 +392,18 @@ After implementation, we'll run these manual tests together:
 - [ ] Notion direct integration
 - [ ] Scheduled email digest delivery
 
-### Phase 5: Content Verification & Provenance
-- [ ] **Cross-source corroboration** (MVP-adjacent): Flag story coverage count across sources
-- [ ] Source reputation scoring (allowlist + credibility ratings)
-- [ ] C2PA verification for media items (`c2pa-python` library)
-- [ ] Integration with fact-check APIs (Google Fact Check, ClaimBuster)
-- [ ] Claim extraction and verification pipeline
+### Phase 5: Content Verification & Provenance (Moved to Core)
+- [x] Research `c2pa-python` integration.
+- [ ] Implement manifest extraction in `src/processing/provenance.py`.
+- [ ] Integrate provenance rating into the scoring algorithm.
+
+## Strategic Discussion: Building in Public vs Private IP
+
+When building a project that might eventually become a commercial entity:
+
+1. **The "Open Core" Model**: Keep the scout logic and ingestion engine public (great for your portfolio and community trust). Keep the "Stewardship Ledger" (compensation logic) or specific "Proprietary Scorers" in a private repository or as a closed-source plugin.
+2. **The "Pivot point"**: It is very common to start public to build momentum, then "fork" into a private repository once you implement the "secret sauce" (like the specific payout algorithms or a proprietary data network).
+3. **Establishing Authenticity**: Since provenance is a core pillar of your project, building the *verification* parts in public actually strengthens your brand as a "trustworthy" scout.
+
+**Recommendation**: Keep the project public for now. The compensation system can be designed as an interface; the *tracking* (public) vs the *actual money transfer* (private) is a natural separation line.
 

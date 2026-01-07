@@ -39,11 +39,15 @@ env/
 *~
 
 # Project specific
-output/
-data/newsletters/
+/output/
+/data/newsletters/
 config/feeds.opml
 config/sources.yaml
 config/interests.yaml
+
+# Gmail API credentials (sensitive)
+config/credentials.json
+config/gmail_token.pickle
 
 # Keep example configs
 !config/*.example.yaml

@@ -2,33 +2,24 @@
 # Copy to interests.yaml and customize
 
 topics:
-  # Core intersection: AI meets storytelling
-  - name: "AI + Journalism"
-    keywords: ["AI journalism", "automated reporting", "newsroom AI", "news verification"]
+  - name: "Technology & Innovation"
+    keywords: ["AI", "robotics", "gadgets", "software", "innovation", "tech trends"]
     weight: 1.0
     
-  - name: "AI + Documentary/Filmmaking"
-    keywords: ["AI filmmaking", "AI documentary", "synthetic media", "AI cinematography"]
+  - name: "Science & Environment"
+    keywords: ["climate change", "biology", "space exploration", "physics", "sustainability"]
     weight: 1.0
   
-  - name: "Generative AI Tools"
-    keywords: ["Sora", "Runway", "Midjourney", "DALL-E", "Stable Diffusion", "AI video", "AI image", "LLM"]
+  - name: "Business & Finance"
+    keywords: ["economy", "stock market", "startups", "venture capital", "cryptocurrency"]
     weight: 0.9
   
-  - name: "Digital Provenance (C2PA)"
-    keywords: ["C2PA", "content credentials", "content authenticity", "digital provenance", "deepfake detection"]
-    weight: 1.0
-  
-  - name: "Climate Tech & Adaptation"
-    keywords: ["climate adaptation", "climate tech", "carbon capture", "renewable energy", "climate AI"]
+  - name: "Culture & Society"
+    keywords: ["media", "arts", "sociology", "social trends", "entertainment"]
     weight: 0.8
-  
-  - name: "AI Ethics & Policy"
-    keywords: ["AI regulation", "AI ethics", "AI policy", "AI safety"]
-    weight: 0.7
 
 preferences:
-  time_window_days: 7
+  time_window_days: 10
   min_relevance_score: 0.3
   max_items_per_run: 20
   highlight_trending: true

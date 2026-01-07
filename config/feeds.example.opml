@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+  <head>
+    <title>Example RSS Feeds</title>
+  </head>
+  <body>
+    <outline text="Technology" title="Technology">
+      <outline type="rss" text="Tech Example 1" title="Tech Example 1" xmlUrl="https://example.com/tech1/rss" htmlUrl="https://example.com/tech1"/>
+      <outline type="rss" text="Tech Example 2" title="Tech Example 2" xmlUrl="https://example.com/tech2/rss" htmlUrl="https://example.com/tech2"/>
+    </outline>
+    <outline text="Science" title="Science">
+      <outline type="rss" text="Science Example 1" title="Science Example 1" xmlUrl="https://example.com/science1/rss" htmlUrl="https://example.com/science1"/>
+    </outline>
+  </body>
+</opml>

@@ -1,0 +1,25 @@
+youtube_feeds:
+- name: Gabe Michael
+  url: https://www.youtube.com/feeds/videos.xml?channel_id=UC_v04kWzTA7dtpEnVjg9N5g
+  category: general
+- name: NASA Climate Change
+  url: https://www.youtube.com/feeds/videos.xml?channel_id=UCP_hZt43bbGGf9ah6ATOvEg
+  category: Climate Future
+- name: Mickmumpitz
+  url: https://www.youtube.com/feeds/videos.xml?channel_id=UCKBURc62w9crMI1BhzHRnvw
+  category: AI Film & Creative
+- name: pixaroma
+  url: https://www.youtube.com/feeds/videos.xml?channel_id=UCmMbwA-s3GZDKVzGZ-kPwaQ
+  category: AI Film & Creative
+- name: NVIDIA Studio
+  url: https://www.youtube.com/feeds/videos.xml?channel_id=UCDeQdW6Lt6nhq3mLM4oLGWw
+  category: AI Film & Creative
+- name: Stephen Welch
+  url: https://www.youtube.com/feeds/videos.xml?channel_id=UConVfxXodg78Tzh5nNu85Ew
+  category: AI - General News
+- name: MIT Technology Review
+  url: https://www.youtube.com/feeds/videos.xml?channel_id=UCgy4Mf_tlZGqesYNqPNxjPw
+  category: AI - General News
+- name: Ars Technica Videos
+  url: https://www.youtube.com/feeds/videos.xml?channel_id=UCCDU1fsmgvWljcW2aodfJsA
+  category: AI - General News
