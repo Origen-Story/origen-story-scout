@@ -1,0 +1,19 @@
+# Example sources configuration
+# Copy to sources.yaml and customize
+
+# Import your feeds from Inoreader via OPML export
+opml_file: "config/feeds.opml"
+
+# Or define feeds manually
+rss_feeds:
+  - name: "Nieman Lab"
+    url: "https://www.niemanlab.org/feed/"
+    category: "journalism"
+  
+  - name: "MIT Tech Review - AI"
+    url: "https://www.technologyreview.com/topic/artificial-intelligence/feed"
+    category: "ai"
+
+# Newsletter ingestion
+newsletter_directory: "data/newsletters"
+newsletter_formats: [".eml", ".html", ".txt"]
