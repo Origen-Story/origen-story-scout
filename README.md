@@ -31,7 +31,7 @@ This curator is configured for stories at the intersection of:
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/origen-story-scout.git
+git clone https://github.com/Origen-Story/origen-story-scout.git
 cd origen-story-scout
 
 # Create virtual environment
