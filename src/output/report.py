@@ -32,7 +32,15 @@ STOPWORDS = {
     'ai', 'tech', 'data', 'code', 'world', 'company', 'companies', 'us',
     'uk', 'january', 'february', 'march', 'april', 'may', 'june', 'july',
     'august', 'september', 'october', 'november', 'december', 'monday',
-    'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'
+    'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday',
+    # Common article phrases
+    'honest', 'an honest', 'biased', 'review', 'breaking', 'exclusive',
+    'update', 'latest', 'welcome', 'hello', 'good', 'best', 'top',
+    'things', 'stuff', 'part', 'episode', 'issue', 'edition',
+    'image', 'generator', 'non', 'via', 'full', 'free', 'paid', 'premium',
+    'note', 'notes', 'affiliate', 'affiliated', 'not affiliated', 'please',
+    'thank', 'thanks', 'learn', 'discover', 'find', 'see', 'check', 'watch',
+    'video', 'article', 'post', 'blog', 'story', 'stories'
 }
 
 
@@ -89,9 +97,10 @@ def extract_trending_terms(items: List[ContentItem], min_mentions: int = 2, max_
     Extract specific terms/entities that appear across multiple stories.
     Focuses on proper nouns, product names, company names, and specific topics.
     Returns list of {term, count, sources} sorted by count descending.
+    Count = total number of articles mentioning the term (not unique sources).
     """
-    # Track terms and which sources mention them
-    term_sources = {}  # normalized term -> set of source names
+    # Track terms: article count and which sources mention them
+    term_data = {}  # normalized term -> {"articles": [], "sources": set()}
 
     for item in items:
         text = f"{item.title} {item.content or ''}"
@@ -108,9 +117,14 @@ def extract_trending_terms(items: List[ContentItem], min_mentions: int = 2, max_
         caps_pattern = r'\b([A-Z][a-z]+(?:\s+[A-Z][a-z]+)*)\b'
         for match in re.findall(caps_pattern, text):
             term = match.strip()
-            if len(term) > 2 and term.lower() not in STOPWORDS:
+            term_lower = term.lower()
+            # Skip if any word in the term is a stopword
+            term_words = term_lower.split()
+            if any(w in STOPWORDS for w in term_words):
+                continue
+            if len(term) > 2 and term_lower not in STOPWORDS:
                 # Skip if it's already captured by known entities
-                if term.lower() not in KNOWN_ENTITIES:
+                if term_lower not in KNOWN_ENTITIES:
                     found_terms.add(term)
 
         # 3. Find tech/product terms (all caps or camelCase)
@@ -129,18 +143,20 @@ def extract_trending_terms(items: List[ContentItem], min_mentions: int = 2, max_
         # Add terms to tracking
         for term in found_terms:
             normalized = term.strip()
-            if normalized not in term_sources:
-                term_sources[normalized] = set()
-            term_sources[normalized].add(item.source_name)
+            if normalized not in term_data:
+                term_data[normalized] = {"articles": [], "sources": set()}
+            term_data[normalized]["articles"].append(item.id)
+            term_data[normalized]["sources"].add(item.source_name)
 
-    # Filter to terms mentioned by multiple sources
+    # Filter to terms mentioned in multiple articles
     trending = []
-    for term, sources in term_sources.items():
-        if len(sources) >= min_mentions:
+    for term, data in term_data.items():
+        article_count = len(data["articles"])
+        if article_count >= min_mentions:
             trending.append({
                 "term": term,
-                "count": len(sources),
-                "sources": list(sources)[:5]
+                "count": article_count,  # Total articles, not unique sources
+                "sources": list(data["sources"])[:5]  # Keep sources for tooltip
             })
 
     # Sort by count descending, then alphabetically

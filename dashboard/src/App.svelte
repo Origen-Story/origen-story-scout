@@ -9,6 +9,8 @@
   let starredStories = [];
   let showStarredPanel = false;
   let activeFilter = null; // Active trending term filter
+  let trendingExpanded = true; // Collapsible state for trending bar
+  let crossSourceExpanded = true; // Collapsible state for cross-source section
 
   function refreshStarred() {
     starredStories = getStarredArray();
@@ -200,55 +202,67 @@
 
   <!-- Trending Terms Bar -->
   {#if !loading && !error && report.trending_terms && report.trending_terms.length > 0}
-    <div class="topic-stats-bar">
-      <span class="bar-label">Trending:</span>
-      {#each report.trending_terms as term}
-        <button
-          class="topic-chip"
-          class:active={activeFilter === term.term}
-          title="{term.count} sources: {term.sources.join(', ')}"
-          onclick={() => toggleFilter(term.term)}
-        >
-          <span class="topic-name">{term.term}</span>
-          <span class="topic-count">{term.count}</span>
-        </button>
-      {/each}
-      {#if activeFilter}
-        <button class="clear-filter-btn" onclick={() => activeFilter = null}>
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M18 6L6 18M6 6l12 12"/>
-          </svg>
-          Clear filter
-        </button>
+    <div class="topic-stats-bar" class:collapsed={!trendingExpanded}>
+      <button class="section-toggle" onclick={() => trendingExpanded = !trendingExpanded}>
+        <span class="bar-label">Trending</span>
+        <svg class="chevron" class:rotated={!trendingExpanded} width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 9l6 6 6-6"/>
+        </svg>
+      </button>
+      {#if trendingExpanded}
+        <div class="topic-chips">
+          {#each report.trending_terms as term}
+            <button
+              class="topic-chip"
+              class:active={activeFilter === term.term}
+              title="{term.count} articles from: {term.sources.join(', ')}"
+              onclick={() => toggleFilter(term.term)}
+            >
+              <span class="topic-name">{term.term}</span>
+              <span class="topic-count">{term.count}</span>
+            </button>
+          {/each}
+          {#if activeFilter}
+            <button class="clear-filter-btn" onclick={() => activeFilter = null}>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 6L6 18M6 6l12 12"/>
+              </svg>
+              Clear filter
+            </button>
+          {/if}
+        </div>
       {/if}
     </div>
   {/if}
 
   <!-- Cross-Source Coverage Section -->
   {#if !loading && !error && report.cross_source_stories && report.cross_source_stories.length > 0}
-    <div class="cross-source-section">
-      <div class="cross-source-header">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="fire-icon">
-          <path d="M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.32-2.67-7.25-8-11.8z"/>
-        </svg>
+    <div class="cross-source-section" class:collapsed={!crossSourceExpanded}>
+      <button class="cross-source-header" onclick={() => crossSourceExpanded = !crossSourceExpanded}>
+        <span class="fire-emoji">🔥</span>
         <h3>Cross-Source Coverage</h3>
         <span class="cross-source-subtitle">Same story, multiple sources</span>
-      </div>
-      <div class="cross-source-list">
-        {#each report.cross_source_stories as cluster}
-          {@const clusterStories = report.stories.filter(s => cluster.story_ids.includes(s.id))}
-          <div class="cross-source-item">
-            <div class="cluster-topic">{cluster.topic}</div>
-            <div class="cluster-sources">
-              {#each clusterStories as story, i}
-                <a href={story.url} target="_blank" class="source-link" title={story.title}>
-                  {story.source_name}
-                </a>{#if i < clusterStories.length - 1}<span class="source-separator">•</span>{/if}
-              {/each}
+        <svg class="chevron" class:rotated={!crossSourceExpanded} width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 9l6 6 6-6"/>
+        </svg>
+      </button>
+      {#if crossSourceExpanded}
+        <div class="cross-source-list">
+          {#each report.cross_source_stories as cluster}
+            {@const clusterStories = report.stories.filter(s => cluster.story_ids.includes(s.id))}
+            <div class="cross-source-item">
+              <div class="cluster-topic">{cluster.topic}</div>
+              <div class="cluster-sources">
+                {#each clusterStories as story, i}
+                  <a href={story.url} target="_blank" class="source-link" title={story.title}>
+                    {story.source_name}
+                  </a>{#if i < clusterStories.length - 1}<span class="source-separator">•</span>{/if}
+                {/each}
+              </div>
             </div>
-          </div>
-        {/each}
-      </div>
+          {/each}
+        </div>
+      {/if}
     </div>
   {/if}
 
@@ -320,11 +334,7 @@
             </a>
             <div class="card-actions">
               {#if story.trending}
-                <span class="trending-indicator" title="Trending: covered by multiple sources">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.32-2.67-7.25-8-11.8z"/>
-                  </svg>
-                </span>
+                <span class="trending-indicator" title="Trending: covered by multiple sources">🔥</span>
               {/if}
               <button
                 class="star-btn"
@@ -355,9 +365,7 @@
               <a href={story.url} target="_blank" class="headline-link">
                 <span class="headline-title">
                   {#if story.trending}
-                    <svg class="trending-icon-inline" width="12" height="12" viewBox="0 0 24 24" fill="var(--sage)">
-                      <path d="M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.32-2.67-7.25-8-11.8z"/>
-                    </svg>
+                    <span class="trending-icon-inline">🔥</span>
                   {/if}
                   {story.title}
                 </span>
