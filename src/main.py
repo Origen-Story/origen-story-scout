@@ -9,6 +9,7 @@ from .sources.base import ContentItem
 from .processing.provenance import ProvenanceVerifier
 from .processing.scorer import Scorer
 from .processing.summarizer import Summarizer
+from .processing.trending import detect_trending, apply_trending_boost
 from .output.report import ReportGenerator
 from .storage.archive import Archive
 from .config import settings
@@ -53,7 +54,7 @@ def load_mock_data() -> list:
         console.print("[red]Mock data file not found at data/mock_data.json[/red]")
         return []
 
-    with open(mock_path, 'r') as f:
+    with open(mock_path, 'r', encoding='utf-8') as f:
         data = json.load(f)
 
     items = []
@@ -81,10 +82,11 @@ def cli():
 
 @cli.command()
 @click.option('--limit', default=10, help='Limit the number of items to display')
-@click.option('--summarize', is_flag=True, help='Generate AI summaries')
+@click.option('--summarize', is_flag=True, help='Generate AI summaries (uses API tokens)')
 @click.option('--force', is_flag=True, help='Re-process already archived items')
 @click.option('--dev', is_flag=True, help='Use mock data instead of fetching RSS feeds')
-def run(limit, summarize, force, dev):
+@click.option('--use-llm', is_flag=True, help='Use LLM for semantic scoring (uses API tokens)')
+def run(limit, summarize, force, dev, use_llm):
     """Run the full curation pipeline"""
     console.print("[bold blue]Starting Origen Story Scout...[/bold blue]")
 
@@ -151,7 +153,10 @@ def run(limit, summarize, force, dev):
     pv.process_batch(potential_items)
     
     # 4. Detailed Scoring & Ranking
-    console.print("[yellow]Phase 4: Detailed Scoring & Ranking (may take a few minutes)...[/yellow]")
+    if use_llm:
+        console.print("[yellow]Phase 4: Detailed Scoring & Ranking (LLM mode - uses API tokens)...[/yellow]")
+    else:
+        console.print("[yellow]Phase 4: Keyword Scoring (free, no API)...[/yellow]")
 
     # Fast sorting by keyword baseline score first
     potential_items.sort(key=lambda x: scorer._get_keyword_baseline(x), reverse=True)
@@ -159,10 +164,28 @@ def run(limit, summarize, force, dev):
 
     for i, item in enumerate(top_candidates):
         console.print(f"  [{i+1}/{len(top_candidates)}] Scoring: {safe_title(item.title)}...")
-        item.relevance_score = scorer.score_item(item)
+        if use_llm:
+            item.relevance_score = scorer.score_item(item)
+        else:
+            # Keyword-only scoring (free)
+            item.relevance_score = scorer._get_keyword_baseline(item)
+
+    # 4b. Trending Detection
+    console.print("[yellow]Phase 4b: Detecting Trending Topics...[/yellow]")
+    trending_result = detect_trending(top_candidates, min_sources=2)
+
+    if trending_result['clusters']:
+        console.print(f"[green]Found {len(trending_result['clusters'])} trending stories:[/green]")
+        for cluster in trending_result['clusters'][:5]:  # Show top 5
+            console.print(f"  - {safe_title(cluster['representative_title'])} ({cluster['source_count']} sources)")
+
+        # Apply trending boost to scores
+        apply_trending_boost(top_candidates, trending_result['boost_map'])
+    else:
+        console.print("[dim]No cross-source trending stories detected.[/dim]")
 
     ranked_items = sorted(top_candidates, key=lambda x: x.relevance_score, reverse=True)
-    
+
     # 5. Summarization (Optional)
     # We summarize the top 9 for the main grid
     num_to_summarize = 9
@@ -181,8 +204,73 @@ def run(limit, summarize, force, dev):
 
     # 6. Save Report for UI (Top 30 for Grid + List)
     rg = ReportGenerator()
-    report_path = rg.generate_json_report(ranked_items[:30])
+    report_path = rg.generate_json_report(ranked_items[:30], trending_clusters=trending_result.get('clusters', []))
     console.print(f"\n[bold green]Report saved to {report_path}[/bold green]")
+
+@cli.command()
+@click.option('--limit', default=50, help='Max number of items to save')
+def refresh_dev(limit):
+    """Fetch live data and save to mock_data.json for dev mode"""
+    console.print("[bold blue]Refreshing dev data from live sources...[/bold blue]")
+
+    all_items = []
+
+    # Fetch RSS
+    console.print("[yellow]Fetching RSS feeds...[/yellow]")
+    rss = RSSSource()
+    rss_items = rss.fetch()
+    all_items.extend(rss_items)
+    console.print(f"[green]Fetched {len(rss_items)} items from RSS.[/green]")
+
+    # Fetch Gmail newsletters
+    if settings.sources.gmail.enabled:
+        console.print("[yellow]Fetching Gmail newsletters...[/yellow]")
+        newsletter_items = fetch_gmail_newsletters()
+        all_items.extend(newsletter_items)
+        console.print(f"[green]Fetched {len(newsletter_items)} newsletters.[/green]")
+
+    # Quick keyword scoring to get the most relevant items
+    scorer = Scorer()
+    for item in all_items:
+        item.relevance_score = scorer._get_keyword_baseline(item)
+
+    # Sort by relevance and take top items
+    all_items.sort(key=lambda x: x.relevance_score, reverse=True)
+    top_items = all_items[:limit]
+
+    # Convert to JSON-serializable format
+    stories = []
+    for item in top_items:
+        story = {
+            'id': item.id,
+            'title': item.title,
+            'content': item.content[:1000] if item.content else '',  # Truncate for size
+            'url': item.url,
+            'source_name': item.source_name,
+            'source_category': item.source_category,
+            'published_date': item.published_date.isoformat() if item.published_date else datetime.now().isoformat(),
+            'author': item.author,
+            'media_link': item.metadata.get('media_link') if item.metadata else None,
+            'provenance_rating': getattr(item, 'provenance_rating', 'Unknown')
+        }
+        stories.append(story)
+
+    # Save to mock_data.json
+    mock_path = Path("data/mock_data.json")
+    mock_path.parent.mkdir(exist_ok=True)
+
+    mock_data = {
+        'generated_at': datetime.now().isoformat(),
+        'source': 'live_refresh',
+        'stories': stories
+    }
+
+    with open(mock_path, 'w', encoding='utf-8') as f:
+        json.dump(mock_data, f, indent=2, ensure_ascii=False)
+
+    console.print(f"\n[bold green]Saved {len(stories)} items to {mock_path}[/bold green]")
+    console.print("[dim]Run 'python -m src.main run --dev' to use this data[/dim]")
+
 
 if __name__ == '__main__':
     cli()

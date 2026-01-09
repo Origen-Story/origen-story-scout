@@ -1,10 +1,48 @@
 <script>
   import { onMount } from "svelte";
   import "./app.css";
+  import { isStarred, toggleStar, getStarredArray, clearAllStarred } from "./lib/starred.js";
 
   let report = { stories: [], generated_at: null };
   let loading = true;
   let error = null;
+  let starredStories = [];
+  let showStarredPanel = false;
+  let activeFilter = null; // Active trending term filter
+
+  function refreshStarred() {
+    starredStories = getStarredArray();
+  }
+
+  function handleToggleStar(story) {
+    toggleStar(story);
+    refreshStarred();
+    // Force reactivity for the main list
+    report = { ...report };
+  }
+
+  function handleClearStarred() {
+    if (confirm("Remove all starred stories?")) {
+      clearAllStarred();
+      refreshStarred();
+      report = { ...report };
+    }
+  }
+
+  function toggleFilter(term) {
+    activeFilter = activeFilter === term ? null : term;
+  }
+
+  function storyMatchesTerm(story, term) {
+    const searchText = `${story.title} ${story.content || ''}`.toLowerCase();
+    const termLower = term.toLowerCase();
+    return searchText.includes(termLower);
+  }
+
+  // Reactive filtered stories based on active filter
+  $: filteredStories = activeFilter
+    ? report.stories.filter(s => storyMatchesTerm(s, activeFilter))
+    : report.stories;
 
   async function loadReport() {
     try {
@@ -27,7 +65,10 @@
     });
   }
 
-  onMount(loadReport);
+  onMount(() => {
+    loadReport();
+    refreshStarred();
+  });
 </script>
 
 <div class="premium-container">
@@ -103,17 +144,113 @@
         </div>
       </div>
     </div>
-    <div style="text-align: right">
-      <p
-        style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-secondary)"
+    <div class="header-right">
+      <button
+        class="starred-toggle"
+        class:has-starred={starredStories.length > 0}
+        onclick={() => showStarredPanel = !showStarredPanel}
+        title="View starred stories"
       >
-        Last updated
-      </p>
-      <p style="font-weight: 600">
-        {report.generated_at ? formatDate(report.generated_at) : "---"}
-      </p>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill={starredStories.length > 0 ? "currentColor" : "none"} stroke="currentColor" stroke-width="2">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+        </svg>
+        {#if starredStories.length > 0}
+          <span class="starred-count">{starredStories.length}</span>
+        {/if}
+      </button>
+      <div class="header-date">
+        <p class="date-label">Last updated</p>
+        <p class="date-value">
+          {report.generated_at ? formatDate(report.generated_at) : "---"}
+        </p>
+      </div>
     </div>
   </header>
+
+  <!-- Starred Stories Panel -->
+  {#if showStarredPanel}
+    <div class="starred-panel">
+      <div class="starred-header">
+        <h2>Starred Stories</h2>
+        {#if starredStories.length > 0}
+          <button class="clear-btn" onclick={handleClearStarred}>Clear All</button>
+        {/if}
+      </div>
+      {#if starredStories.length === 0}
+        <p class="starred-empty">No starred stories yet. Click the star icon on any story to save it for later.</p>
+      {:else}
+        <div class="starred-list">
+          {#each starredStories as story}
+            <div class="starred-item">
+              <div class="starred-item-content">
+                <a href={story.url} target="_blank" class="starred-title">{story.title}</a>
+                <span class="starred-source">{story.source_name}</span>
+              </div>
+              <button class="unstar-btn" onclick={() => handleToggleStar(story)} title="Remove from starred">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 6L6 18M6 6l12 12"/>
+                </svg>
+              </button>
+            </div>
+          {/each}
+        </div>
+      {/if}
+    </div>
+  {/if}
+
+  <!-- Trending Terms Bar -->
+  {#if !loading && !error && report.trending_terms && report.trending_terms.length > 0}
+    <div class="topic-stats-bar">
+      <span class="bar-label">Trending:</span>
+      {#each report.trending_terms as term}
+        <button
+          class="topic-chip"
+          class:active={activeFilter === term.term}
+          title="{term.count} sources: {term.sources.join(', ')}"
+          onclick={() => toggleFilter(term.term)}
+        >
+          <span class="topic-name">{term.term}</span>
+          <span class="topic-count">{term.count}</span>
+        </button>
+      {/each}
+      {#if activeFilter}
+        <button class="clear-filter-btn" onclick={() => activeFilter = null}>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 6L6 18M6 6l12 12"/>
+          </svg>
+          Clear filter
+        </button>
+      {/if}
+    </div>
+  {/if}
+
+  <!-- Cross-Source Coverage Section -->
+  {#if !loading && !error && report.cross_source_stories && report.cross_source_stories.length > 0}
+    <div class="cross-source-section">
+      <div class="cross-source-header">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="fire-icon">
+          <path d="M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.32-2.67-7.25-8-11.8z"/>
+        </svg>
+        <h3>Cross-Source Coverage</h3>
+        <span class="cross-source-subtitle">Same story, multiple sources</span>
+      </div>
+      <div class="cross-source-list">
+        {#each report.cross_source_stories as cluster}
+          {@const clusterStories = report.stories.filter(s => cluster.story_ids.includes(s.id))}
+          <div class="cross-source-item">
+            <div class="cluster-topic">{cluster.topic}</div>
+            <div class="cluster-sources">
+              {#each clusterStories as story, i}
+                <a href={story.url} target="_blank" class="source-link" title={story.title}>
+                  {story.source_name}
+                </a>{#if i < clusterStories.length - 1}<span class="source-separator">•</span>{/if}
+              {/each}
+            </div>
+          </div>
+        {/each}
+      </div>
+    </div>
+  {/if}
 
   {#if loading}
     <div class="empty-state">
@@ -129,16 +266,23 @@
       <h2>Quiet morning...</h2>
       <p>No new relevant stories found in your feeds yet.</p>
     </div>
+  {:else if filteredStories.length === 0}
+    <div class="empty-state">
+      <h2>No matches for "{activeFilter}"</h2>
+      <p>Try selecting a different term or <button class="inline-btn" onclick={() => activeFilter = null}>clear the filter</button>.</p>
+    </div>
   {:else}
-    <!-- Top 9 Summarized Grid -->
+    <!-- Top 9 Story Grid -->
     <div class="story-grid">
-      {#each report.stories.filter((s) => s.summary).slice(0, 9) as story}
+      {#each filteredStories.slice(0, 9) as story}
         <article class="story-card">
-          <div
-            class="provenance-section"
-            title="Provenance: {story.provenance_rating}"
-          >
-            <div class="status-pin">?</div>
+          <div class="card-badges">
+            <div
+              class="provenance-badge"
+              title="Provenance: {story.provenance_rating}"
+            >
+              <div class="status-pin">?</div>
+            </div>
           </div>
 
           <div class="source-row">
@@ -174,31 +318,69 @@
                 <path d="M7 17L17 7M17 7H7M17 7V17" />
               </svg>
             </a>
-            <span class="card-score" class:high={story.relevance_score >= 0.7}>
-              {Math.round(story.relevance_score * 100)}%
-            </span>
+            <div class="card-actions">
+              {#if story.trending}
+                <span class="trending-indicator" title="Trending: covered by multiple sources">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.32-2.67-7.25-8-11.8z"/>
+                  </svg>
+                </span>
+              {/if}
+              <button
+                class="star-btn"
+                class:starred={isStarred(story.id)}
+                onclick={() => handleToggleStar(story)}
+                title={isStarred(story.id) ? "Remove from starred" : "Star this story"}
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill={isStarred(story.id) ? "currentColor" : "none"} stroke="currentColor" stroke-width="2">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              </button>
+              <span class="card-score" class:high={story.relevance_score >= 0.7}>
+                {Math.round(story.relevance_score * 100)}%
+              </span>
+            </div>
           </div>
         </article>
       {/each}
     </div>
 
     <!-- Secondary Headlines List -->
-    {#if report.stories.length > 9}
+    {#if filteredStories.length > 9}
       <section class="secondary-section">
-        <h2 class="section-title">Additional Intelligence</h2>
+        <h2 class="section-title">{activeFilter ? `More "${activeFilter}" Stories` : 'Additional Stories'}</h2>
         <div class="headline-list">
-          {#each report.stories.slice(9) as story}
-            <a href={story.url} target="_blank" class="headline-item">
-              <span class="headline-title">{story.title}</span>
+          {#each filteredStories.slice(9) as story}
+            <div class="headline-item">
+              <a href={story.url} target="_blank" class="headline-link">
+                <span class="headline-title">
+                  {#if story.trending}
+                    <svg class="trending-icon-inline" width="12" height="12" viewBox="0 0 24 24" fill="var(--sage)">
+                      <path d="M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.32-2.67-7.25-8-11.8z"/>
+                    </svg>
+                  {/if}
+                  {story.title}
+                </span>
+              </a>
               <div class="headline-meta">
                 <span class="source-tag">{story.source_name}</span>
+                <button
+                  class="star-btn-small"
+                  class:starred={isStarred(story.id)}
+                  onclick={(e) => { e.preventDefault(); e.stopPropagation(); handleToggleStar(story); }}
+                  title={isStarred(story.id) ? "Remove from starred" : "Star this story"}
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill={isStarred(story.id) ? "currentColor" : "none"} stroke="currentColor" stroke-width="2">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                </button>
                 <span
                   class="item-score"
                   class:high={story.relevance_score >= 0.7}
                   >{Math.round(story.relevance_score * 100)}%</span
                 >
               </div>
-            </a>
+            </div>
           {/each}
         </div>
       </section>
