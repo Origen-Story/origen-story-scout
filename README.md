@@ -1,9 +1,12 @@
 # Origen Story Scout
 
+> **Work in Progress** — This project is under active development
+
 An AI-powered content scout that aggregates information from RSS feeds and newsletters, analyzes relevance based on your interests, and surfaces the most important stories via a sleek dashboard.
 
 ## Features
 
+### Current
 - **Multi-source ingestion**: RSS feeds (via OPML import), Gmail newsletters
 - **AI-powered summarization**: Using Google Gemini for content summaries
 - **Personalized relevance scoring**: Based on configurable topic interests with keyword matching
@@ -11,6 +14,21 @@ An AI-powered content scout that aggregates information from RSS feeds and newsl
 - **Trending entity extraction**: Surfaces frequently mentioned companies, products, and people
 - **Interactive dashboard**: Svelte-based UI with filtering, starring, and collapsible sections
 - **Star/save functionality**: Save stories for later with localStorage persistence
+
+### Planned
+- **C2PA Provenance Verification**: Detect and display Content Credentials to verify content authenticity and origin
+- **Creator Compensation Tracking**: Surface attribution and compensation information for original creators
+- **Enhanced provenance indicators**: Visual trust signals based on verified content credentials
+- **Additional content sources**: YouTube, Podcasts, Fediverse and other sources that incorporate C2PA and provenance information.
+
+## Vision
+
+Origen Story Scout is part of a broader mission to promote authentic, properly attributed content in the age of AI. By integrating C2PA (Coalition for Content Provenance and Authenticity) standards, we aim to:
+
+- Help users identify verified, trustworthy sources
+- Surface creator attribution and compensation information
+- Combat misinformation by highlighting provenance-verified content
+- Support the creative economy by making attribution visible
 
 ## Dashboard Preview
 
