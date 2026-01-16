@@ -450,14 +450,10 @@
         <div class="source-breakdown">
           {#if report.source_breakdown}
             {#each Object.entries(report.source_breakdown) as [type, count]}
-              <span class="source-badge" class:newsletter={type === 'Newsletter'} class:rss={type === 'RSS'}>
-                {type === 'Newsletter' ? '📧' : '📡'} {type}: {count}
-              </span>
+              <span class="source-badge">{type}: {count}</span>
             {/each}
           {/if}
-          <span class="source-badge total">
-            Total: {report.total_relevant || report.stories?.length || 0}
-          </span>
+          <span class="source-badge">Total: {report.total_relevant || report.stories?.length || 0}</span>
         </div>
       </div>
       {#if trendingExpanded && report.trending_terms && report.trending_terms.length > 0}

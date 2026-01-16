@@ -1144,29 +1144,100 @@ button.topic-chip.active .topic-name {
 }
 
 .source-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  padding: 0.25rem 0.6rem;
-  background: rgba(0, 0, 0, 0.3);
-  border: 1px solid var(--glass-border);
-  border-radius: 12px;
   font-size: 0.75rem;
-  color: var(--text-secondary);
-}
-
-.source-badge.newsletter {
-  border-color: rgba(255, 193, 7, 0.3);
-  color: #ffc107;
-}
-
-.source-badge.rss {
-  border-color: rgba(138, 186, 149, 0.3);
   color: var(--sage);
 }
 
-.source-badge.total {
-  border-color: var(--glass-border);
-  color: var(--text-primary);
-  font-weight: 600;
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .premium-container {
+    padding: 1rem;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .header-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .header-date {
+    text-align: left;
+  }
+
+  .story-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .topic-stats-bar .bar-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .source-breakdown {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .stats-list-header,
+  .stats-row {
+    grid-template-columns: 30px 1fr 60px 80px;
+    font-size: 0.75rem;
+  }
+
+  .col-allocation {
+    display: none;
+  }
+
+  .stats-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 1.5rem;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .brand-name {
+    font-size: 0.6rem;
+  }
+
+  .header-right {
+    gap: 0.75rem;
+  }
+
+  .starred-toggle,
+  .stats-toggle {
+    padding: 0.4rem 0.6rem;
+  }
+
+  .topic-chip {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.7rem;
+  }
+
+  .headline-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .headline-meta {
+    width: 100%;
+    justify-content: space-between;
+  }
 }
