@@ -908,3 +908,221 @@ button.topic-chip.active .topic-name {
   background: rgba(138, 186, 149, 0.25);
   color: var(--text-primary);
 }
+
+/* Stats toggle button */
+.stats-toggle {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  padding: 0.5rem 0.75rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: var(--transition);
+}
+
+.stats-toggle:hover {
+  border-color: var(--sage);
+  color: var(--sage);
+}
+
+.stats-toggle.has-stats {
+  color: var(--sage);
+  border-color: rgba(138, 186, 149, 0.3);
+}
+
+.stats-count {
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: rgba(138, 186, 149, 0.2);
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+}
+
+/* Stats Panel */
+.stats-panel {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.stats-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--glass-border);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.stats-header h2 {
+  font-size: 1.25rem;
+  color: var(--sage);
+}
+
+.stats-header-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.budget-input {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.budget-input input {
+  width: 80px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--glass-border);
+  border-radius: 4px;
+  padding: 0.35rem 0.5rem;
+  color: var(--text-primary);
+  font-size: 0.85rem;
+}
+
+.budget-input input:focus {
+  outline: none;
+  border-color: var(--sage);
+}
+
+/* Stats Summary */
+.stats-summary {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius);
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 60px;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--sage);
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
+.stats-empty {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+/* Stats List */
+.stats-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.stats-list-header {
+  display: grid;
+  grid-template-columns: 40px 1fr 80px 120px 90px;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: 40px 1fr 80px 120px 90px;
+  gap: 0.5rem;
+  padding: 0.6rem 0.75rem;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.stats-row:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.col-rank {
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.col-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--text-primary);
+}
+
+.col-stats {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  cursor: help;
+}
+
+.col-share {
+  position: relative;
+  height: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.share-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(138, 186, 149, 0.3);
+  border-radius: 2px;
+}
+
+.share-text {
+  position: relative;
+  z-index: 1;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  padding-left: 0.25rem;
+}
+
+.col-allocation {
+  font-weight: 600;
+  color: var(--sage);
+  text-align: right;
+}
+
+.stats-footer {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--glass-border);
+}
+
+.stats-note {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-align: center;
+}

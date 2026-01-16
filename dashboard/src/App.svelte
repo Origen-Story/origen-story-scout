@@ -14,24 +14,43 @@
     getAllTagCounts,
     exportNewsletterContent
   } from "./lib/starred.js";
+  import {
+    recordStar,
+    recordUnstar,
+    recordClick,
+    recordNewsletterUse,
+    getRankedPublications,
+    calculateBudgetAllocation,
+    getTotalStats,
+    clearAllStats
+  } from "./lib/stats.js";
 
   let report = { stories: [], generated_at: null };
   let loading = true;
   let error = null;
   let starredStories = [];
   let showStarredPanel = false;
+  let showStatsPanel = false; // Stats panel visibility
   let activeFilter = null; // Active trending term filter
   let trendingExpanded = true; // Collapsible state for trending bar
   let crossSourceExpanded = true; // Collapsible state for cross-source section
   let starredTagFilter = null; // Filter for starred panel (null = all)
   let tagCounts = { read_later: 0, share_social: 0, newsletter: 0 };
   let exportMessage = null; // Feedback message for newsletter export
+  let monthlyBudget = 50; // Default monthly budget for compensation
+  let rankedPublications = []; // Ranked publications for stats panel
+  let totalStats = { totalStars: 0, totalClicks: 0, totalShares: 0, totalNewsletterUses: 0, totalSources: 0 };
 
   function refreshStarred() {
     starredStories = starredTagFilter
       ? getStoriesByTag(starredTagFilter)
       : getStarredArray();
     tagCounts = getAllTagCounts();
+  }
+
+  function refreshStats() {
+    rankedPublications = calculateBudgetAllocation(monthlyBudget);
+    totalStats = getTotalStats();
   }
 
   function handleTagToggle(storyId, tag) {
@@ -57,8 +76,16 @@
   }
 
   function handleToggleStar(story) {
+    const wasStarred = isStarred(story.id);
     toggleStar(story);
+    // Track stats
+    if (wasStarred) {
+      recordUnstar(story.source_name);
+    } else {
+      recordStar(story.source_name);
+    }
     refreshStarred();
+    refreshStats();
     // Force reactivity for the main list
     report = { ...report };
   }
@@ -107,9 +134,22 @@
     });
   }
 
+  function handleStoryClick(story) {
+    recordClick(story.source_name);
+    refreshStats();
+  }
+
+  function handleClearStats() {
+    if (confirm("Clear all publication statistics? This cannot be undone.")) {
+      clearAllStats();
+      refreshStats();
+    }
+  }
+
   onMount(() => {
     loadReport();
     refreshStarred();
+    refreshStats();
   });
 </script>
 
@@ -188,9 +228,22 @@
     </div>
     <div class="header-right">
       <button
+        class="stats-toggle"
+        class:has-stats={totalStats.totalSources > 0}
+        onclick={() => { showStatsPanel = !showStatsPanel; showStarredPanel = false; }}
+        title="View publication stats"
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 20V10M12 20V4M6 20v-6"/>
+        </svg>
+        {#if totalStats.totalSources > 0}
+          <span class="stats-count">{totalStats.totalSources}</span>
+        {/if}
+      </button>
+      <button
         class="starred-toggle"
         class:has-starred={starredStories.length > 0}
-        onclick={() => showStarredPanel = !showStarredPanel}
+        onclick={() => { showStarredPanel = !showStarredPanel; showStatsPanel = false; }}
         title="View starred stories"
       >
         <svg width="18" height="18" viewBox="0 0 24 24" fill={starredStories.length > 0 ? "currentColor" : "none"} stroke="currentColor" stroke-width="2">
@@ -302,6 +355,82 @@
               </button>
             </div>
           {/each}
+        </div>
+      {/if}
+    </div>
+  {/if}
+
+  <!-- Stats Panel -->
+  {#if showStatsPanel}
+    <div class="stats-panel">
+      <div class="stats-header">
+        <h2>Publication Stats</h2>
+        <div class="stats-header-actions">
+          <div class="budget-input">
+            <label for="budget">Monthly Budget: $</label>
+            <input
+              type="number"
+              id="budget"
+              bind:value={monthlyBudget}
+              min="0"
+              step="10"
+              onchange={refreshStats}
+            />
+          </div>
+          {#if totalStats.totalSources > 0}
+            <button class="clear-btn" onclick={handleClearStats}>Clear Stats</button>
+          {/if}
+        </div>
+      </div>
+
+      <!-- Summary Stats -->
+      <div class="stats-summary">
+        <div class="stat-item">
+          <span class="stat-value">{totalStats.totalStars}</span>
+          <span class="stat-label">Stars</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value">{totalStats.totalClicks}</span>
+          <span class="stat-label">Clicks</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value">{totalStats.totalNewsletterUses}</span>
+          <span class="stat-label">Newsletter</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value">{totalStats.totalSources}</span>
+          <span class="stat-label">Sources</span>
+        </div>
+      </div>
+
+      {#if rankedPublications.length === 0}
+        <p class="stats-empty">No usage data yet. Star stories and click through to articles to track publication usage.</p>
+      {:else}
+        <div class="stats-list">
+          <div class="stats-list-header">
+            <span class="col-rank">#</span>
+            <span class="col-name">Publication</span>
+            <span class="col-stats">Usage</span>
+            <span class="col-share">Share</span>
+            <span class="col-allocation">Allocation</span>
+          </div>
+          {#each rankedPublications as pub, i}
+            <div class="stats-row">
+              <span class="col-rank">{i + 1}</span>
+              <span class="col-name">{pub.name}</span>
+              <span class="col-stats" title="Stars: {pub.stats.stars}, Clicks: {pub.stats.clicks}, Newsletter: {pub.stats.newsletter_uses}">
+                {pub.score} pts
+              </span>
+              <span class="col-share">
+                <span class="share-bar" style="width: {Math.min(pub.percentage, 100)}%"></span>
+                <span class="share-text">{pub.percentage.toFixed(1)}%</span>
+              </span>
+              <span class="col-allocation">${pub.allocation.toFixed(2)}</span>
+            </div>
+          {/each}
+        </div>
+        <div class="stats-footer">
+          <p class="stats-note">Weights: Stars (3x) + Clicks (1x) + Newsletter (10x)</p>
         </div>
       {/if}
     </div>
@@ -426,7 +555,7 @@
           {/if}
 
           <div class="card-footer">
-            <a href={story.url} target="_blank" class="story-link">
+            <a href={story.url} target="_blank" class="story-link" onclick={() => handleStoryClick(story)}>
               <span>Read Original</span>
               <svg
                 width="14"
@@ -469,7 +598,7 @@
         <div class="headline-list">
           {#each filteredStories.slice(9) as story}
             <div class="headline-item">
-              <a href={story.url} target="_blank" class="headline-link">
+              <a href={story.url} target="_blank" class="headline-link" onclick={() => handleStoryClick(story)}>
                 <span class="headline-title">
                   {#if story.trending}
                     <span class="trending-icon-inline">🔥</span>
