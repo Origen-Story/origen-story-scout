@@ -41,6 +41,7 @@ env/
 # Project specific
 /output/
 /data/newsletters/
+/data/summaries_cache.json
 config/feeds.opml
 config/sources.yaml
 config/interests.yaml
