@@ -1,7 +1,19 @@
 <script>
   import { onMount } from "svelte";
   import "./app.css";
-  import { isStarred, toggleStar, getStarredArray, clearAllStarred } from "./lib/starred.js";
+  import {
+    isStarred,
+    toggleStar,
+    getStarredArray,
+    clearAllStarred,
+    TAGS,
+    TAG_LABELS,
+    getStoriesByTag,
+    toggleTag,
+    hasTag,
+    getAllTagCounts,
+    exportNewsletterContent
+  } from "./lib/starred.js";
 
   let report = { stories: [], generated_at: null };
   let loading = true;
@@ -11,9 +23,37 @@
   let activeFilter = null; // Active trending term filter
   let trendingExpanded = true; // Collapsible state for trending bar
   let crossSourceExpanded = true; // Collapsible state for cross-source section
+  let starredTagFilter = null; // Filter for starred panel (null = all)
+  let tagCounts = { read_later: 0, share_social: 0, newsletter: 0 };
+  let exportMessage = null; // Feedback message for newsletter export
 
   function refreshStarred() {
-    starredStories = getStarredArray();
+    starredStories = starredTagFilter
+      ? getStoriesByTag(starredTagFilter)
+      : getStarredArray();
+    tagCounts = getAllTagCounts();
+  }
+
+  function handleTagToggle(storyId, tag) {
+    toggleTag(storyId, tag);
+    refreshStarred();
+    report = { ...report };
+  }
+
+  function setStarredFilter(tag) {
+    starredTagFilter = starredTagFilter === tag ? null : tag;
+    refreshStarred();
+  }
+
+  function handleExportNewsletter() {
+    const content = exportNewsletterContent();
+    navigator.clipboard.writeText(content).then(() => {
+      exportMessage = "Copied to clipboard!";
+      setTimeout(() => exportMessage = null, 2000);
+    }).catch(() => {
+      exportMessage = "Copy failed";
+      setTimeout(() => exportMessage = null, 2000);
+    });
   }
 
   function handleToggleStar(story) {
@@ -174,12 +214,58 @@
     <div class="starred-panel">
       <div class="starred-header">
         <h2>Starred Stories</h2>
-        {#if starredStories.length > 0}
-          <button class="clear-btn" onclick={handleClearStarred}>Clear All</button>
-        {/if}
+        <div class="starred-header-actions">
+          {#if tagCounts.newsletter > 0}
+            <button class="export-btn" onclick={handleExportNewsletter} title="Copy newsletter items to clipboard">
+              {exportMessage || `Export Newsletter (${tagCounts.newsletter})`}
+            </button>
+          {/if}
+          {#if starredStories.length > 0}
+            <button class="clear-btn" onclick={handleClearStarred}>Clear All</button>
+          {/if}
+        </div>
       </div>
+
+      <!-- Tag Filter Tabs -->
+      <div class="tag-filter-tabs">
+        <button
+          class="tag-tab"
+          class:active={starredTagFilter === null}
+          onclick={() => setStarredFilter(null)}
+        >
+          All ({getStarredArray().length})
+        </button>
+        <button
+          class="tag-tab"
+          class:active={starredTagFilter === TAGS.READ_LATER}
+          onclick={() => setStarredFilter(TAGS.READ_LATER)}
+        >
+          📖 Read Later ({tagCounts.read_later})
+        </button>
+        <button
+          class="tag-tab"
+          class:active={starredTagFilter === TAGS.SHARE_SOCIAL}
+          onclick={() => setStarredFilter(TAGS.SHARE_SOCIAL)}
+        >
+          📣 Social ({tagCounts.share_social})
+        </button>
+        <button
+          class="tag-tab"
+          class:active={starredTagFilter === TAGS.NEWSLETTER}
+          onclick={() => setStarredFilter(TAGS.NEWSLETTER)}
+        >
+          📰 Newsletter ({tagCounts.newsletter})
+        </button>
+      </div>
+
       {#if starredStories.length === 0}
-        <p class="starred-empty">No starred stories yet. Click the star icon on any story to save it for later.</p>
+        <p class="starred-empty">
+          {#if starredTagFilter}
+            No stories tagged as "{TAG_LABELS[starredTagFilter]}".
+          {:else}
+            No starred stories yet. Click the star icon on any story to save it for later.
+          {/if}
+        </p>
       {:else}
         <div class="starred-list">
           {#each starredStories as story}
@@ -187,6 +273,27 @@
               <div class="starred-item-content">
                 <a href={story.url} target="_blank" class="starred-title">{story.title}</a>
                 <span class="starred-source">{story.source_name}</span>
+                <!-- Tag Chips -->
+                <div class="tag-chips">
+                  <button
+                    class="tag-chip-btn"
+                    class:active={hasTag(story.id, TAGS.READ_LATER)}
+                    onclick={() => handleTagToggle(story.id, TAGS.READ_LATER)}
+                    title="Read Later"
+                  >📖</button>
+                  <button
+                    class="tag-chip-btn"
+                    class:active={hasTag(story.id, TAGS.SHARE_SOCIAL)}
+                    onclick={() => handleTagToggle(story.id, TAGS.SHARE_SOCIAL)}
+                    title="Share on Social"
+                  >📣</button>
+                  <button
+                    class="tag-chip-btn"
+                    class:active={hasTag(story.id, TAGS.NEWSLETTER)}
+                    onclick={() => handleTagToggle(story.id, TAGS.NEWSLETTER)}
+                    title="Newsletter"
+                  >📰</button>
+                </div>
               </div>
               <button class="unstar-btn" onclick={() => handleToggleStar(story)} title="Remove from starred">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">

@@ -822,3 +822,89 @@ button.topic-chip.active .topic-name {
   color: var(--text-secondary);
   opacity: 0.5;
 }
+
+/* Tag Filter Tabs */
+.tag-filter-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--glass-border);
+  flex-wrap: wrap;
+}
+
+.tag-tab {
+  background: transparent;
+  border: 1px solid var(--glass-border);
+  color: var(--text-secondary);
+  padding: 0.4rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.tag-tab:hover {
+  border-color: var(--sage);
+  color: var(--text-primary);
+}
+
+.tag-tab.active {
+  background: rgba(138, 186, 149, 0.2);
+  border-color: var(--sage);
+  color: var(--sage);
+  font-weight: 600;
+}
+
+/* Tag Chips on starred items */
+.tag-chips {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.tag-chip-btn {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--glass-border);
+  border-radius: 4px;
+  padding: 0.2rem 0.4rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: var(--transition);
+  opacity: 0.5;
+}
+
+.tag-chip-btn:hover {
+  opacity: 0.8;
+  border-color: var(--sage);
+}
+
+.tag-chip-btn.active {
+  opacity: 1;
+  background: rgba(138, 186, 149, 0.15);
+  border-color: var(--sage);
+}
+
+/* Starred header actions */
+.starred-header-actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+/* Export button */
+.export-btn {
+  background: rgba(138, 186, 149, 0.15);
+  border: 1px solid var(--sage);
+  color: var(--sage);
+  padding: 0.35rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.export-btn:hover {
+  background: rgba(138, 186, 149, 0.25);
+  color: var(--text-primary);
+}
