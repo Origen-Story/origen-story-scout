@@ -436,16 +436,31 @@
     </div>
   {/if}
 
-  <!-- Trending Terms Bar -->
-  {#if !loading && !error && report.trending_terms && report.trending_terms.length > 0}
+  <!-- Source Breakdown + Trending Terms Bar -->
+  {#if !loading && !error}
     <div class="topic-stats-bar" class:collapsed={!trendingExpanded}>
-      <button class="section-toggle" onclick={() => trendingExpanded = !trendingExpanded}>
-        <span class="bar-label">Trending</span>
-        <svg class="chevron" class:rotated={!trendingExpanded} width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M6 9l6 6 6-6"/>
-        </svg>
-      </button>
-      {#if trendingExpanded}
+      <div class="bar-header">
+        <button class="section-toggle" onclick={() => trendingExpanded = !trendingExpanded}>
+          <span class="bar-label">Sources & Trending</span>
+          <svg class="chevron" class:rotated={!trendingExpanded} width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </button>
+        <!-- Source breakdown badges always visible -->
+        <div class="source-breakdown">
+          {#if report.source_breakdown}
+            {#each Object.entries(report.source_breakdown) as [type, count]}
+              <span class="source-badge" class:newsletter={type === 'Newsletter'} class:rss={type === 'RSS'}>
+                {type === 'Newsletter' ? '📧' : '📡'} {type}: {count}
+              </span>
+            {/each}
+          {/if}
+          <span class="source-badge total">
+            Total: {report.total_relevant || report.stories?.length || 0}
+          </span>
+        </div>
+      </div>
+      {#if trendingExpanded && report.trending_terms && report.trending_terms.length > 0}
         <div class="topic-chips">
           {#each report.trending_terms as term}
             <button

@@ -188,12 +188,29 @@ class ReportGenerator:
                     "story_ids": [item.id for item in cluster['items']]
                 })
 
+        # Count by source type (Newsletter vs RSS categories)
+        source_type_counts = {}
+        for item in items:
+            # Normalize: "Newsletter" stays as is, everything else is grouped under its category
+            source_type = item.source_category if item.source_category else "Unknown"
+            # Simplify for display: Newsletter vs RSS
+            display_type = "Newsletter" if source_type == "Newsletter" else "RSS"
+            source_type_counts[display_type] = source_type_counts.get(display_type, 0) + 1
+
+        # Also track detailed categories for future use
+        category_counts = {}
+        for item in items:
+            cat = item.source_category if item.source_category else "Unknown"
+            category_counts[cat] = category_counts.get(cat, 0) + 1
+
         report = {
             "generated_at": datetime.now().isoformat(),
             "total_relevant": len(items),
             "trending_count": trending_count,
             "trending_terms": trending_terms,
             "cross_source_stories": cross_source_stories,
+            "source_breakdown": source_type_counts,
+            "category_breakdown": category_counts,
             "stories": [
                 {
                     "id": item.id,
