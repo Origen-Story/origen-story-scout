@@ -355,6 +355,12 @@ header {
   /* Avoid pin */
 }
 
+.story-date {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
 .empty-state {
   text-align: center;
   padding: 4rem;

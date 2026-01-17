@@ -134,6 +134,14 @@
     });
   }
 
+  function formatDateShort(dateStr) {
+    if (!dateStr) return "";
+    return new Date(dateStr).toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+    });
+  }
+
   function handleStoryClick(story) {
     recordClick(story.source_name);
     refreshStats();
@@ -548,6 +556,9 @@
 
           <div class="source-row">
             <p class="source-tag">{story.source_name}</p>
+            {#if story.published_date}
+              <span class="story-date">{formatDateShort(story.published_date)}</span>
+            {/if}
           </div>
 
           <h2 class="story-title">{story.title}</h2>
@@ -619,6 +630,9 @@
               </a>
               <div class="headline-meta">
                 <span class="source-tag">{story.source_name}</span>
+                {#if story.published_date}
+                  <span class="story-date">{formatDateShort(story.published_date)}</span>
+                {/if}
                 <button
                   class="star-btn-small"
                   class:starred={isStarred(story.id)}
