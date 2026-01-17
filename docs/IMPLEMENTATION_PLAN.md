@@ -397,6 +397,25 @@ After implementation, we'll run these manual tests together:
 - [ ] Implement manifest extraction in `src/processing/provenance.py`.
 - [ ] Integrate provenance rating into the scoring algorithm.
 
+### Phase 6: Mobile & Remote Access
+- [ ] Deploy Svelte dashboard to Vercel (static hosting)
+- [ ] Add simple password gate or Vercel Authentication for private access
+- [ ] Option A (view-only): Set up GitHub Action to run Scout on schedule, commit report to repo
+- [ ] Option B (full functionality): Deploy Python API to Railway/Render/Fly.io (~$5-7/month)
+  - Configure Gmail OAuth for cloud environment
+  - Set up environment variables for API keys
+  - Enable Scout button to work remotely
+
+**Architecture Notes:**
+- Dashboard is static Svelte, deploys easily to Vercel (free tier)
+- Scout pipeline requires Python runtime - Vercel serverless can't handle long processes
+- For remote Scout button: need persistent server (Railway, Render, Fly.io)
+- Alternative: Run Scout locally or on schedule, just view reports from phone
+
+**Estimated Effort:**
+- Dashboard-only on Vercel with password: ~1-2 hours
+- Full functionality with Railway/Render: ~3-4 hours (includes Gmail OAuth setup)
+
 ## Strategic Discussion: Building in Public vs Private IP
 
 When building a project that might eventually become a commercial entity:
