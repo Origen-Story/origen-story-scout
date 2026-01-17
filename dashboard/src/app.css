@@ -181,39 +181,12 @@ header {
   color: var(--text-primary);
 }
 
-.summary-block {
+.summary-text {
   font-size: 0.85rem;
   color: var(--text-secondary);
-  margin: 1rem 0;
+  margin: 0.5rem 0 1rem;
+  line-height: 1.5;
   flex-grow: 1;
-}
-
-.summary-label {
-  display: block;
-  font-weight: 700;
-  color: var(--sage);
-  margin-bottom: 0.25rem;
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.summary-list {
-  list-style: none;
-}
-
-.summary-item {
-  position: relative;
-  padding-left: 1rem;
-  margin-bottom: 0.35rem;
-  line-height: 1.4;
-}
-
-.summary-item::before {
-  content: "—";
-  position: absolute;
-  left: 0;
-  color: var(--sage);
 }
 
 .story-link {
@@ -389,55 +362,6 @@ header {
 
 .date-value {
   font-weight: 600;
-}
-
-/* Scout button */
-.scout-btn {
-  background: rgba(138, 186, 149, 0.15);
-  border: 1px solid var(--sage);
-  border-radius: var(--radius);
-  padding: 0.5rem 1rem;
-  color: var(--sage);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: var(--transition);
-  font-size: 0.85rem;
-  font-weight: 600;
-}
-
-.scout-btn:hover:not(:disabled) {
-  background: rgba(138, 186, 149, 0.25);
-  color: var(--text-primary);
-}
-
-.scout-btn:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
-}
-
-.scout-btn.scouting {
-  background: rgba(138, 186, 149, 0.1);
-  border-color: var(--glass-border);
-  color: var(--text-secondary);
-}
-
-.scout-icon {
-  flex-shrink: 0;
-}
-
-.scout-icon.spinning {
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-.scout-label {
-  white-space: nowrap;
 }
 
 /* Starred toggle button */

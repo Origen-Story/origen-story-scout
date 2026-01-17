@@ -40,8 +40,6 @@
   let monthlyBudget = 50; // Default monthly budget for compensation
   let rankedPublications = []; // Ranked publications for stats panel
   let totalStats = { totalStars: 0, totalClicks: 0, totalShares: 0, totalNewsletterUses: 0, totalSources: 0 };
-  let scouting = false; // Scout pipeline running state
-  let scoutStatus = ""; // Status message for scouting
 
   function refreshStarred() {
     starredStories = starredTagFilter
@@ -156,59 +154,6 @@
     }
   }
 
-  async function handleScout() {
-    if (scouting) return;
-
-    scouting = true;
-    scoutStatus = "Starting scout...";
-
-    try {
-      const resp = await fetch("/api/scout", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ summarize: true })
-      });
-
-      if (!resp.ok) {
-        const data = await resp.json();
-        throw new Error(data.error || "Scout failed to start");
-      }
-
-      scoutStatus = "Scouting in progress...";
-
-      // Poll for completion
-      const pollStatus = async () => {
-        try {
-          const statusResp = await fetch("/api/scout/status");
-          const status = await statusResp.json();
-
-          if (status.running) {
-            const lastLine = status.output[status.output.length - 1] || "Processing...";
-            scoutStatus = lastLine.substring(0, 50);
-            setTimeout(pollStatus, 2000);
-          } else {
-            scoutStatus = "Refreshing...";
-            await loadReport();
-            scoutStatus = "";
-            scouting = false;
-          }
-        } catch (e) {
-          // API might not be available, just wait
-          setTimeout(pollStatus, 2000);
-        }
-      };
-
-      setTimeout(pollStatus, 3000);
-
-    } catch (e) {
-      scoutStatus = `Error: ${e.message}`;
-      setTimeout(() => {
-        scoutStatus = "";
-        scouting = false;
-      }, 3000);
-    }
-  }
-
   onMount(() => {
     loadReport();
     refreshStarred();
@@ -290,18 +235,6 @@
       </div>
     </div>
     <div class="header-right">
-      <button
-        class="scout-btn"
-        class:scouting={scouting}
-        onclick={handleScout}
-        disabled={scouting}
-        title={scouting ? scoutStatus : "Fetch latest stories with summaries"}
-      >
-        <svg class="scout-icon" class:spinning={scouting} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M21 12a9 9 0 11-6.219-8.56"/>
-        </svg>
-        <span class="scout-label">{scouting ? "Scouting..." : "Scout"}</span>
-      </button>
       <button
         class="stats-toggle"
         class:has-stats={totalStats.totalSources > 0}
@@ -632,16 +565,7 @@
           {/if}
 
           {#if story.summary && story.summary !== "Summary unavailable." && story.summary.trim()}
-            <div class="summary-block">
-              <span class="summary-label">Summary:</span>
-              <ul class="summary-list">
-                {#each story.summary
-                  .split("\n")
-                  .filter((l) => l.trim() && l.trim().length > 10 && !l.includes("2-3 concise bullet points") && !l.includes("summary of the article")) as line}
-                  <li class="summary-item">{line.replace(/^[*-]\s*/, "")}</li>
-                {/each}
-              </ul>
-            </div>
+            <p class="summary-text">{story.summary}</p>
           {/if}
 
           <div class="card-footer">

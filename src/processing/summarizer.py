@@ -57,8 +57,9 @@ class Summarizer:
             return cached
 
         system_prompt = (
-            "You are a professional content curator. Summarize the following article content into 2-3 concise bullet points. "
-            "Focus on the 'why it matters' and key facts. Keep it professional and objective."
+            "You are a professional content curator. Write a single concise summary of the article in 1-2 sentences (max 500 characters). "
+            "Focus on what the article is about and why it matters. "
+            "Do NOT include any preamble like 'Here's a summary' or 'This article discusses'. Just state the facts directly."
         )
         # Truncate content to avoid hitting TPM limit on free tier
         truncated_content = item.content[:2000] if item.content else "No content available."
