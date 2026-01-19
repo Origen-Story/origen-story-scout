@@ -170,9 +170,12 @@ class ReportGenerator:
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
 
-    def generate_json_report(self, items: List[ContentItem], filename: str = "latest_report.json", trending_clusters: list = None):
-        # Extract trending terms (granular entities mentioned across sources)
-        trending_terms = extract_trending_terms(items, min_mentions=2, max_terms=10)
+    def generate_json_report(self, items: List[ContentItem], filename: str = "latest_report.json", trending_clusters: list = None, all_items: List[ContentItem] = None):
+        # Use all_items for statistics if provided, otherwise use items
+        stats_items = all_items if all_items else items
+
+        # Extract trending terms from all items (for better coverage)
+        trending_terms = extract_trending_terms(stats_items, min_mentions=2, max_terms=10)
 
         # Count trending stories (cross-source coverage)
         trending_count = sum(1 for item in items if item.metadata and item.metadata.get('trending'))
@@ -188,48 +191,60 @@ class ReportGenerator:
                     "story_ids": [item.id for item in cluster['items']]
                 })
 
-        # Count by source type (Newsletter vs RSS categories)
+        # Count by source type (Newsletter, YouTube, RSS) from ALL items
         source_type_counts = {}
-        for item in items:
-            # Normalize: "Newsletter" stays as is, everything else is grouped under its category
-            source_type = item.source_category if item.source_category else "Unknown"
-            # Simplify for display: Newsletter vs RSS
-            display_type = "Newsletter" if source_type == "Newsletter" else "RSS"
+        for item in stats_items:
+            category = item.source_category if item.source_category else "Unknown"
+            # Determine display type based on category
+            if category == "Newsletter":
+                display_type = "Newsletter"
+            elif category == "AI YouTube":
+                display_type = "YouTube"
+            elif category == "GitHub Releases":
+                display_type = "GitHub"
+            elif "Podcast" in category:
+                display_type = "Podcast"
+            else:
+                display_type = "RSS"
             source_type_counts[display_type] = source_type_counts.get(display_type, 0) + 1
 
-        # Also track detailed categories for future use
+        # Track detailed categories from ALL items
         category_counts = {}
-        for item in items:
+        for item in stats_items:
             cat = item.source_category if item.source_category else "Unknown"
             category_counts[cat] = category_counts.get(cat, 0) + 1
 
+        def serialize_item(item):
+            return {
+                "id": item.id,
+                "title": item.title,
+                "content": item.content,
+                "url": item.url,
+                "source_name": item.source_name,
+                "source_category": item.source_category,
+                "published_date": item.published_date.isoformat(),
+                "author": item.author,
+                "relevance_score": item.relevance_score,
+                "provenance_rating": item.provenance_rating,
+                "summary": item.summary,
+                "media_link": item.metadata.get('media_link') if item.metadata else None,
+                "trending": item.metadata.get('trending', False) if item.metadata else False,
+                "trending_boost": item.metadata.get('trending_boost') if item.metadata else None
+            }
+
         report = {
             "generated_at": datetime.now().isoformat(),
-            "total_relevant": len(items),
+            "total_relevant": len(stats_items),
+            "top_stories_count": len(items),
             "trending_count": trending_count,
             "trending_terms": trending_terms,
             "cross_source_stories": cross_source_stories,
             "source_breakdown": source_type_counts,
             "category_breakdown": category_counts,
-            "stories": [
-                {
-                    "id": item.id,
-                    "title": item.title,
-                    "content": item.content,
-                    "url": item.url,
-                    "source_name": item.source_name,
-                    "source_category": item.source_category,
-                    "published_date": item.published_date.isoformat(),
-                    "author": item.author,
-                    "relevance_score": item.relevance_score,
-                    "provenance_rating": item.provenance_rating,
-                    "summary": item.summary,
-                    "media_link": item.metadata.get('media_link') if item.metadata else None,
-                    "trending": item.metadata.get('trending', False) if item.metadata else False,
-                    "trending_boost": item.metadata.get('trending_boost') if item.metadata else None
-                }
-                for item in items
-            ]
+            # Top 30 stories for main grid/list view
+            "stories": [serialize_item(item) for item in items],
+            # All scored stories for "All Stories" view
+            "all_stories": [serialize_item(item) for item in stats_items] if all_items else None
         }
         
         output_path = self.output_dir / filename

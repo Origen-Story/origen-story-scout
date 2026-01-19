@@ -27,12 +27,23 @@ class RSSSource(ContentSource):
                 continue
             
             for entry in feed.entries:
+                # Skip entries without a link (required field)
+                entry_link = entry.get('link') or entry.get('id')
+                if not entry_link:
+                    continue
+
                 # Handle different date formats in RSS/Atom
                 published = None
-                if hasattr(entry, 'published_parsed'):
-                    published = datetime.fromtimestamp(time.mktime(entry.published_parsed))
-                elif hasattr(entry, 'updated_parsed'):
-                    published = datetime.fromtimestamp(time.mktime(entry.updated_parsed))
+                if hasattr(entry, 'published_parsed') and entry.published_parsed:
+                    try:
+                        published = datetime.fromtimestamp(time.mktime(entry.published_parsed))
+                    except (TypeError, ValueError):
+                        published = datetime.now()
+                elif hasattr(entry, 'updated_parsed') and entry.updated_parsed:
+                    try:
+                        published = datetime.fromtimestamp(time.mktime(entry.updated_parsed))
+                    except (TypeError, ValueError):
+                        published = datetime.now()
                 else:
                     published = datetime.now()
 
@@ -48,16 +59,16 @@ class RSSSource(ContentSource):
                         if 'image' in link.get('type', '') or link.get('rel') == 'enclosure':
                             media_link = link.get('href')
                             break
-                
+
                 if not media_link and 'media_content' in entry:
                     # Some feeds use media:content
                     media_link = entry.media_content[0].get('url')
 
                 item = ContentItem(
-                    id=entry.get('id', entry.link),
+                    id=entry.get('id', entry_link),
                     title=entry.get('title', 'No Title'),
                     content=entry.get('summary', entry.get('description', '')),
-                    url=entry.link,
+                    url=entry_link,
                     source_name=feed_config.name,
                     source_category=feed_config.category,
                     published_date=published,

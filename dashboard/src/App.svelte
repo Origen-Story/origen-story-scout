@@ -25,7 +25,7 @@
     clearAllStats
   } from "./lib/stats.js";
 
-  let report = { stories: [], generated_at: null };
+  let report = { stories: [], all_stories: [], generated_at: null };
   let loading = true;
   let error = null;
   let starredStories = [];
@@ -40,6 +40,20 @@
   let monthlyBudget = 50; // Default monthly budget for compensation
   let rankedPublications = []; // Ranked publications for stats panel
   let totalStats = { totalStars: 0, totalClicks: 0, totalShares: 0, totalNewsletterUses: 0, totalSources: 0 };
+
+  // Category tabs state
+  let activeCategory = 'top'; // 'top', 'all', or a specific category name
+  let sortBy = 'score'; // 'score', 'date', 'source'
+  let sortDirection = 'desc'; // 'asc' or 'desc'
+
+  // Define category mappings for simplified tabs
+  const CATEGORY_GROUPS = {
+    'AI Film': ['AI Film & Video', 'AI YouTube'],
+    'Climate': ['Climate & Clean Energy', 'Climate Podcasts'],
+    'C2PA': ['Content Authenticity'],
+    'Tools': ['GitHub Releases'],
+    'AI News': ['AI Labs & Research', 'AI News & Commentary', 'AI Research', 'AI Podcasts']
+  };
 
   function refreshStarred() {
     starredStories = starredTagFilter
@@ -108,10 +122,89 @@
     return searchText.includes(termLower);
   }
 
-  // Reactive filtered stories based on active filter
-  $: filteredStories = activeFilter
-    ? report.stories.filter(s => storyMatchesTerm(s, activeFilter))
-    : report.stories;
+  // Helper to check if a story belongs to a category group
+  function storyMatchesCategory(story, categoryName) {
+    const categories = CATEGORY_GROUPS[categoryName];
+    if (!categories) return false;
+    return categories.includes(story.source_category);
+  }
+
+  // Get the base stories list based on active category
+  function getBaseStories() {
+    if (activeCategory === 'top') {
+      return report.stories || [];
+    }
+    if (activeCategory === 'all') {
+      return report.all_stories || report.stories || [];
+    }
+    // Filter by specific category
+    const allStories = report.all_stories || report.stories || [];
+    return allStories.filter(s => storyMatchesCategory(s, activeCategory));
+  }
+
+  // Sort stories based on current sort settings
+  function sortStories(stories) {
+    const sorted = [...stories];
+    sorted.sort((a, b) => {
+      let comparison = 0;
+      if (sortBy === 'score') {
+        comparison = (b.relevance_score || 0) - (a.relevance_score || 0);
+      } else if (sortBy === 'date') {
+        comparison = new Date(b.published_date) - new Date(a.published_date);
+      } else if (sortBy === 'source') {
+        comparison = (a.source_name || '').localeCompare(b.source_name || '');
+      }
+      return sortDirection === 'asc' ? -comparison : comparison;
+    });
+    return sorted;
+  }
+
+  // Count stories per category (for tab badges)
+  $: categoryCounts = (() => {
+    const allStories = report.all_stories || report.stories || [];
+    const counts = { top: report.stories?.length || 0, all: allStories.length };
+    for (const categoryName of Object.keys(CATEGORY_GROUPS)) {
+      counts[categoryName] = allStories.filter(s => storyMatchesCategory(s, categoryName)).length;
+    }
+    return counts;
+  })();
+
+  // Calculate source type breakdown for current view
+  $: currentSourceBreakdown = (() => {
+    const stories = getBaseStories();
+    const breakdown = {};
+    for (const story of stories) {
+      const category = story.source_category || 'Unknown';
+      let type = 'RSS';
+      if (category === 'Newsletter') type = 'Newsletter';
+      else if (category === 'AI YouTube') type = 'YouTube';
+      else if (category === 'GitHub Releases') type = 'GitHub';
+      else if (category.includes('Podcast')) type = 'Podcast';
+      breakdown[type] = (breakdown[type] || 0) + 1;
+    }
+    return breakdown;
+  })();
+
+  // Get trending terms for current category
+  $: currentTrendingTerms = (() => {
+    if (activeCategory === 'top') {
+      return report.trending_terms || [];
+    }
+    // For category views, extract terms from that subset
+    const stories = getBaseStories();
+    if (stories.length < 5) return report.trending_terms || [];
+    // Simplified: still use main trending terms but highlight which appear in this category
+    return report.trending_terms || [];
+  })();
+
+  // Reactive filtered and sorted stories based on active filter and category
+  $: filteredStories = (() => {
+    let stories = getBaseStories();
+    if (activeFilter) {
+      stories = stories.filter(s => storyMatchesTerm(s, activeFilter));
+    }
+    return sortStories(stories);
+  })();
 
   async function loadReport() {
     try {
@@ -444,8 +537,42 @@
     </div>
   {/if}
 
-  <!-- Source Breakdown + Trending Terms Bar -->
+  <!-- Category Tabs + Filter Bar -->
   {#if !loading && !error}
+    <!-- Category Tabs -->
+    <div class="category-tabs">
+      <button
+        class="category-tab"
+        class:active={activeCategory === 'top'}
+        onclick={() => { activeCategory = 'top'; activeFilter = null; }}
+      >
+        Top Stories
+        <span class="tab-count">{categoryCounts.top}</span>
+      </button>
+      <button
+        class="category-tab"
+        class:active={activeCategory === 'all'}
+        onclick={() => { activeCategory = 'all'; activeFilter = null; }}
+      >
+        All Stories
+        <span class="tab-count">{categoryCounts.all}</span>
+      </button>
+      <span class="tab-divider"></span>
+      {#each Object.keys(CATEGORY_GROUPS) as categoryName}
+        {#if categoryCounts[categoryName] > 0}
+          <button
+            class="category-tab"
+            class:active={activeCategory === categoryName}
+            onclick={() => { activeCategory = categoryName; activeFilter = null; }}
+          >
+            {categoryName}
+            <span class="tab-count">{categoryCounts[categoryName]}</span>
+          </button>
+        {/if}
+      {/each}
+    </div>
+
+    <!-- Source Breakdown + Trending Terms Bar -->
     <div class="topic-stats-bar" class:collapsed={!trendingExpanded}>
       <div class="bar-header">
         <button class="section-toggle" onclick={() => trendingExpanded = !trendingExpanded}>
@@ -454,19 +581,17 @@
             <path d="M6 9l6 6 6-6"/>
           </svg>
         </button>
-        <!-- Source breakdown badges always visible -->
+        <!-- Source breakdown badges - updates with current view -->
         <div class="source-breakdown">
-          {#if report.source_breakdown}
-            {#each Object.entries(report.source_breakdown) as [type, count]}
-              <span class="source-badge">{type}: {count}</span>
-            {/each}
-          {/if}
-          <span class="source-badge">Total: {report.total_relevant || report.stories?.length || 0}</span>
+          {#each Object.entries(currentSourceBreakdown) as [type, count]}
+            <span class="source-badge">{type}: {count}</span>
+          {/each}
+          <span class="source-badge total">Total: {filteredStories.length}</span>
         </div>
       </div>
-      {#if trendingExpanded && report.trending_terms && report.trending_terms.length > 0}
+      {#if trendingExpanded && currentTrendingTerms && currentTrendingTerms.length > 0}
         <div class="topic-chips">
-          {#each report.trending_terms as term}
+          {#each currentTrendingTerms as term}
             <button
               class="topic-chip"
               class:active={activeFilter === term.term}
@@ -488,6 +613,34 @@
         </div>
       {/if}
     </div>
+
+    <!-- Sort Controls (for All Stories and category views) -->
+    {#if activeCategory !== 'top'}
+      <div class="sort-controls">
+        <span class="sort-label">Sort by:</span>
+        <button
+          class="sort-btn"
+          class:active={sortBy === 'score'}
+          onclick={() => { sortBy = 'score'; sortDirection = sortBy === 'score' && sortDirection === 'desc' ? 'asc' : 'desc'; }}
+        >
+          Score {sortBy === 'score' ? (sortDirection === 'desc' ? '↓' : '↑') : ''}
+        </button>
+        <button
+          class="sort-btn"
+          class:active={sortBy === 'date'}
+          onclick={() => { sortBy = 'date'; sortDirection = sortBy === 'date' && sortDirection === 'desc' ? 'asc' : 'desc'; }}
+        >
+          Date {sortBy === 'date' ? (sortDirection === 'desc' ? '↓' : '↑') : ''}
+        </button>
+        <button
+          class="sort-btn"
+          class:active={sortBy === 'source'}
+          onclick={() => { sortBy = 'source'; sortDirection = sortBy === 'source' && sortDirection === 'asc' ? 'desc' : 'asc'; }}
+        >
+          Source {sortBy === 'source' ? (sortDirection === 'asc' ? '↓' : '↑') : ''}
+        </button>
+      </div>
+    {/if}
   {/if}
 
   <!-- Cross-Source Coverage Section -->
@@ -537,80 +690,140 @@
     </div>
   {:else if filteredStories.length === 0}
     <div class="empty-state">
-      <h2>No matches for "{activeFilter}"</h2>
-      <p>Try selecting a different term or <button class="inline-btn" onclick={() => activeFilter = null}>clear the filter</button>.</p>
+      {#if activeFilter}
+        <h2>No matches for "{activeFilter}"</h2>
+        <p>Try selecting a different term or <button class="inline-btn" onclick={() => activeFilter = null}>clear the filter</button>.</p>
+      {:else if activeCategory !== 'top'}
+        <h2>No stories in {activeCategory}</h2>
+        <p>Try a different category or check back later.</p>
+      {:else}
+        <h2>No stories found</h2>
+        <p>Run the scout to fetch new content.</p>
+      {/if}
     </div>
   {:else}
-    <!-- Top 9 Story Grid -->
-    <div class="story-grid">
-      {#each filteredStories.slice(0, 9) as story}
-        <article class="story-card">
-          <div class="card-badges">
-            <div
-              class="provenance-badge"
-              title="Provenance: {story.provenance_rating}"
-            >
-              <div class="status-pin">?</div>
+    <!-- Top Stories View: Grid + Secondary List -->
+    {#if activeCategory === 'top'}
+      <div class="story-grid">
+        {#each filteredStories.slice(0, 9) as story}
+          <article class="story-card">
+            <div class="card-badges">
+              <div
+                class="provenance-badge"
+                title="Provenance: {story.provenance_rating}"
+              >
+                <div class="status-pin">?</div>
+              </div>
             </div>
-          </div>
 
-          <div class="source-row">
-            <p class="source-tag">{story.source_name}</p>
-          </div>
+            <div class="source-row">
+              <p class="source-tag">{story.source_name}</p>
+            </div>
 
-          <h2 class="story-title">{story.title}</h2>
+            <h2 class="story-title">{story.title}</h2>
 
-          {#if story.published_date}
-            <span class="story-date">{formatDateShort(story.published_date)}</span>
-          {/if}
+            {#if story.published_date}
+              <span class="story-date">{formatDateShort(story.published_date)}</span>
+            {/if}
 
-          {#if story.summary && story.summary !== "Summary unavailable." && story.summary.trim()}
-            <p class="summary-text">{story.summary}</p>
-          {/if}
+            {#if story.summary && story.summary !== "Summary unavailable." && story.summary.trim()}
+              <p class="summary-text">{story.summary}</p>
+            {/if}
 
-          <div class="card-footer">
-            <a href={story.url} target="_blank" class="story-link" onclick={() => handleStoryClick(story)}>
-              <span>Read Original</span>
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path d="M7 17L17 7M17 7H7M17 7V17" />
-              </svg>
-            </a>
-            <div class="card-actions">
-              {#if story.trending}
-                <span class="trending-indicator" title="Trending: covered by multiple sources">🔥</span>
-              {/if}
-              <button
-                class="star-btn"
-                class:starred={isStarred(story.id)}
-                onclick={() => handleToggleStar(story)}
-                title={isStarred(story.id) ? "Remove from starred" : "Star this story"}
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill={isStarred(story.id) ? "currentColor" : "none"} stroke="currentColor" stroke-width="2">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            <div class="card-footer">
+              <a href={story.url} target="_blank" class="story-link" onclick={() => handleStoryClick(story)}>
+                <span>Read Original</span>
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M7 17L17 7M17 7H7M17 7V17" />
                 </svg>
-              </button>
-              <span class="card-score" class:high={story.relevance_score >= 0.7}>
-                {Math.round(story.relevance_score * 100)}%
-              </span>
+              </a>
+              <div class="card-actions">
+                {#if story.trending}
+                  <span class="trending-indicator" title="Trending: covered by multiple sources">🔥</span>
+                {/if}
+                <button
+                  class="star-btn"
+                  class:starred={isStarred(story.id)}
+                  onclick={() => handleToggleStar(story)}
+                  title={isStarred(story.id) ? "Remove from starred" : "Star this story"}
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill={isStarred(story.id) ? "currentColor" : "none"} stroke="currentColor" stroke-width="2">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                </button>
+                <span class="card-score" class:high={story.relevance_score >= 0.7}>
+                  {Math.round(story.relevance_score * 100)}%
+                </span>
+              </div>
             </div>
-          </div>
-        </article>
-      {/each}
-    </div>
+          </article>
+        {/each}
+      </div>
 
-    <!-- Secondary Headlines List -->
-    {#if filteredStories.length > 9}
-      <section class="secondary-section">
-        <h2 class="section-title">{activeFilter ? `More "${activeFilter}" Stories` : 'Additional Stories'}</h2>
+      <!-- Secondary Headlines List (Top Stories view) -->
+      {#if filteredStories.length > 9}
+        <section class="secondary-section">
+          <h2 class="section-title">{activeFilter ? `More "${activeFilter}" Stories` : 'Additional Stories'}</h2>
+          <div class="headline-list">
+            {#each filteredStories.slice(9) as story}
+              <div class="headline-item">
+                <a href={story.url} target="_blank" class="headline-link" onclick={() => handleStoryClick(story)}>
+                  <span class="headline-title">
+                    {#if story.trending}
+                      <span class="trending-icon-inline">🔥</span>
+                    {/if}
+                    {story.title}
+                  </span>
+                </a>
+                <div class="headline-meta">
+                  <span class="source-tag">{story.source_name}</span>
+                  {#if story.published_date}
+                    <span class="story-date">{formatDateShort(story.published_date)}</span>
+                  {/if}
+                  <button
+                    class="star-btn-small"
+                    class:starred={isStarred(story.id)}
+                    onclick={(e) => { e.preventDefault(); e.stopPropagation(); handleToggleStar(story); }}
+                    title={isStarred(story.id) ? "Remove from starred" : "Star this story"}
+                  >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill={isStarred(story.id) ? "currentColor" : "none"} stroke="currentColor" stroke-width="2">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                  </button>
+                  <span
+                    class="item-score"
+                    class:high={story.relevance_score >= 0.7}
+                    >{Math.round(story.relevance_score * 100)}%</span
+                  >
+                </div>
+              </div>
+            {/each}
+          </div>
+        </section>
+      {/if}
+
+    {:else}
+      <!-- All Stories / Category View: Full List -->
+      <section class="all-stories-section">
+        <h2 class="section-title">
+          {#if activeCategory === 'all'}
+            All Stories
+          {:else}
+            {activeCategory} Stories
+          {/if}
+          {#if activeFilter}
+            <span class="filter-indicator">filtered by "{activeFilter}"</span>
+          {/if}
+        </h2>
         <div class="headline-list">
-          {#each filteredStories.slice(9) as story}
+          {#each filteredStories as story}
             <div class="headline-item">
               <a href={story.url} target="_blank" class="headline-link" onclick={() => handleStoryClick(story)}>
                 <span class="headline-title">

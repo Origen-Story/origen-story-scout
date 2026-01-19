@@ -202,9 +202,13 @@ def run(limit, summarize, force, dev, use_llm):
     for item in items:
         archive.mark_processed(item)
 
-    # 6. Save Report for UI (Top 30 for Grid + List)
+    # 6. Save Report for UI (Top 30 for Grid + All for browse)
     rg = ReportGenerator()
-    report_path = rg.generate_json_report(ranked_items[:30], trending_clusters=trending_result.get('clusters', []))
+    report_path = rg.generate_json_report(
+        ranked_items[:30],
+        trending_clusters=trending_result.get('clusters', []),
+        all_items=potential_items  # Pass all scored items for "All Stories" view
+    )
     console.print(f"\n[bold green]Report saved to {report_path}[/bold green]")
 
 @cli.command()
