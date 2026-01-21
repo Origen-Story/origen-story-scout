@@ -6,7 +6,7 @@ from rich.console import Console
 from rich.table import Table
 from .sources.rss import RSSSource
 from .sources.base import ContentItem
-from .processing.provenance import ProvenanceVerifier
+# from .processing.provenance import ProvenanceVerifier  # Disabled - too slow without real C2PA sources
 from .processing.scorer import Scorer
 from .processing.summarizer import Summarizer
 from .processing.trending import detect_trending, apply_trending_boost
@@ -172,17 +172,13 @@ def run(limit, summarize, force, dev, use_llm, report_only):
             archive.mark_processed(item)
         return
 
-    # 3. Provenance Verification (only for items with media links)
-    # Skip C2PA verification for now - we're not ingesting visual media yet
-    items_with_media = [i for i in potential_items if i.metadata and i.metadata.get('media_link')]
-    if items_with_media:
-        console.print(f"[yellow]Phase 3: Verifying Provenance (C2PA) for {len(items_with_media)} items with media...[/yellow]")
-        pv = ProvenanceVerifier()
-        pv.process_batch(items_with_media)
-    else:
-        console.print("[dim]Phase 3: Skipping C2PA verification (no media links in current items)[/dim]")
-        for item in potential_items:
-            item.provenance_rating = "Unknown"
+    # 3. Provenance Verification - DISABLED
+    # C2PA verification is too slow (downloads each media file) and most RSS media
+    # are just thumbnails without C2PA signatures. Re-enable when we have actual
+    # C2PA-signed content sources.
+    console.print("[dim]Phase 3: C2PA verification disabled (no signed content sources yet)[/dim]")
+    for item in potential_items:
+        item.provenance_rating = "Unknown"
     
     # 4. Detailed Scoring & Ranking
     if use_llm:
