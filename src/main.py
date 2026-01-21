@@ -147,10 +147,17 @@ def run(limit, summarize, force, dev, use_llm):
             archive.mark_processed(item)
         return
 
-    # 3. Provenance Verification (only for potential items)
-    console.print("[yellow]Phase 3: Verifying Provenance (C2PA)...[/yellow]")
-    pv = ProvenanceVerifier()
-    pv.process_batch(potential_items)
+    # 3. Provenance Verification (only for items with media links)
+    # Skip C2PA verification for now - we're not ingesting visual media yet
+    items_with_media = [i for i in potential_items if i.metadata and i.metadata.get('media_link')]
+    if items_with_media:
+        console.print(f"[yellow]Phase 3: Verifying Provenance (C2PA) for {len(items_with_media)} items with media...[/yellow]")
+        pv = ProvenanceVerifier()
+        pv.process_batch(items_with_media)
+    else:
+        console.print("[dim]Phase 3: Skipping C2PA verification (no media links in current items)[/dim]")
+        for item in potential_items:
+            item.provenance_rating = "Unknown"
     
     # 4. Detailed Scoring & Ranking
     if use_llm:
