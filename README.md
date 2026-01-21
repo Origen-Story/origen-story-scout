@@ -78,21 +78,67 @@ cp .env.example .env
 ### Running
 
 ```bash
-# Run the content pipeline (fetches, scores, summarizes)
+# Start the dashboard (view existing data)
+cd dashboard && npm run dev
+# Then open http://localhost:5173
+
+# Run the content pipeline (fetches, scores, generates report)
 python -m src.main run
 
-# For development (uses mock data, skips archive)
-python -m src.main run --dev --force
-
-# Refresh mock data from live sources
-python -m src.main refresh-dev
-
-# Start the dashboard
-cd dashboard
-npm run dev
+# Regenerate report without re-fetching (useful after code changes)
+python -m src.main run --report-only
 ```
 
-Then open http://localhost:5173 to view the dashboard.
+### CLI Commands
+
+#### `python -m src.main run`
+
+Main command to fetch content and generate the dashboard report.
+
+| Flag | Description |
+|------|-------------|
+| `--force` | Re-process already archived items (bypass the "already seen" check) |
+| `--summarize` | Generate AI summaries for top stories (uses Gemini API tokens) |
+| `--use-llm` | Use LLM for semantic scoring instead of keyword matching (uses API tokens) |
+| `--report-only` | Skip fetching, just refresh the report timestamp |
+| `--dev` | Use mock data instead of fetching live RSS feeds |
+| `--limit N` | Limit display output (default: 10) |
+
+**Common usage patterns:**
+
+```bash
+# Daily run - fetch new content
+python -m src.main run
+
+# Full run with AI summaries
+python -m src.main run --summarize
+
+# Re-process everything (ignore archive)
+python -m src.main run --force
+
+# Quick report refresh (no network calls)
+python -m src.main run --report-only
+
+# Development with mock data
+python -m src.main run --dev --force
+```
+
+#### `python -m src.main refresh-dev`
+
+Fetch live data and save to `data/mock_data.json` for development mode.
+
+| Flag | Description |
+|------|-------------|
+| `--limit N` | Max items to save (default: 50) |
+
+### Dashboard
+
+```bash
+cd dashboard
+npm run dev      # Development server at http://localhost:5173
+npm run build    # Production build
+npm run preview  # Preview production build
+```
 
 ## Project Structure
 

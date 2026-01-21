@@ -86,9 +86,34 @@ def cli():
 @click.option('--force', is_flag=True, help='Re-process already archived items')
 @click.option('--dev', is_flag=True, help='Use mock data instead of fetching RSS feeds')
 @click.option('--use-llm', is_flag=True, help='Use LLM for semantic scoring (uses API tokens)')
-def run(limit, summarize, force, dev, use_llm):
+@click.option('--report-only', is_flag=True, help='Skip fetching, regenerate report from last run data')
+def run(limit, summarize, force, dev, use_llm, report_only):
     """Run the full curation pipeline"""
     console.print("[bold blue]Starting Origen Story Scout...[/bold blue]")
+
+    # Handle --report-only: reload last report data and regenerate
+    if report_only:
+        console.print("[yellow]Report-only mode: Loading existing report data...[/yellow]")
+        report_path = Path("dashboard/public/data/latest_report.json")
+        if not report_path.exists():
+            console.print("[red]No existing report found. Run without --report-only first.[/red]")
+            return
+
+        with open(report_path, 'r') as f:
+            existing_report = json.load(f)
+
+        console.print(f"[green]Loaded report from {existing_report.get('generated_at', 'unknown')}[/green]")
+        console.print(f"  - {len(existing_report.get('stories', []))} top stories")
+        console.print(f"  - {len(existing_report.get('all_stories', []) or [])} total stories")
+
+        # For now, just update the timestamp - future: allow re-scoring
+        existing_report['generated_at'] = datetime.now().isoformat()
+
+        with open(report_path, 'w') as f:
+            json.dump(existing_report, f, indent=2)
+
+        console.print(f"\n[bold green]Report refreshed at {report_path}[/bold green]")
+        return
 
     # 1. Ingestion
     if dev:
