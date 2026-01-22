@@ -150,7 +150,7 @@
       if (sortBy === 'score') {
         comparison = (b.relevance_score || 0) - (a.relevance_score || 0);
       } else if (sortBy === 'date') {
-        comparison = new Date(b.published_date) - new Date(a.published_date);
+        comparison = new Date(b.published_date).getTime() - new Date(a.published_date).getTime();
       } else if (sortBy === 'source') {
         comparison = (a.source_name || '').localeCompare(b.source_name || '');
       }

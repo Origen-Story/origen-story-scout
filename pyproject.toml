@@ -16,6 +16,7 @@ dependencies = [
     "pydantic>=2.5.2",
     "google-auth-oauthlib>=1.2.0",
     "google-api-python-client>=2.111.0",
+    "youtube-transcript-api>=0.6.1",
 ]
 
 [build-system]

@@ -15,6 +15,7 @@ class ContentItem:
     summary: Optional[str] = None
     relevance_score: float = 0.0
     provenance_rating: str = "Unknown"  # Verified, Tampered, Unknown
+    needs_review: bool = False  # Flag for items needing manual review (e.g., sparse podcast notes)
     metadata: Dict[str, Any] = field(default_factory=dict)
 
 class ContentSource:

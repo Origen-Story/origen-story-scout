@@ -229,7 +229,13 @@ class ReportGenerator:
                 "summary": item.summary,
                 "media_link": item.metadata.get('media_link') if item.metadata else None,
                 "trending": item.metadata.get('trending', False) if item.metadata else False,
-                "trending_boost": item.metadata.get('trending_boost') if item.metadata else None
+                "trending_boost": item.metadata.get('trending_boost') if item.metadata else None,
+                # New fields for enhanced content
+                "needs_review": getattr(item, 'needs_review', False),
+                "has_transcript": item.metadata.get('has_transcript', False) if item.metadata else False,
+                "is_youtube": item.metadata.get('is_youtube', False) if item.metadata else False,
+                "is_podcast": item.metadata.get('is_podcast', False) if item.metadata else False,
+                "content_word_count": item.metadata.get('content_word_count') if item.metadata else None,
             }
 
         report = {

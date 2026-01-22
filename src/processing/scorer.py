@@ -1,3 +1,4 @@
+import re
 import time
 from typing import List, Dict, Tuple
 from ..llm.router import LLMRouter, TaskType
@@ -10,12 +11,34 @@ class Scorer:
         self.router = LLMRouter()
         self.interests = settings.interests.topics
 
+    def _keyword_matches(self, keyword: str, text: str) -> bool:
+        """
+        Check if keyword matches in text using word boundary matching.
+        Prevents false positives like 'AI' matching 'painting'.
+
+        Rules:
+        - Short keywords (1-2 chars): require word boundaries on both sides
+        - Longer keywords: require word boundary at start, allow compound words at end
+        - Hyphenated terms like 'text-to-video' match as-is
+        """
+        kw_lower = keyword.lower()
+
+        # For very short keywords (like "AI", "EV"), require strict word boundaries
+        if len(kw_lower) <= 2:
+            pattern = r'\b' + re.escape(kw_lower) + r'\b'
+        else:
+            # For longer keywords, word boundary at start, flexible at end
+            # This allows "Runway" to match "Runway's" or "Runway-style"
+            pattern = r'\b' + re.escape(kw_lower)
+
+        return bool(re.search(pattern, text, re.IGNORECASE))
+
     def is_potentially_relevant(self, item: ContentItem) -> bool:
-        """Fast keyword-based screening"""
+        """Fast keyword-based screening using word boundary matching"""
         text = (item.title + " " + item.content).lower()
         for topic in self.interests:
             for kw in topic.keywords:
-                if kw.lower() in text:
+                if self._keyword_matches(kw, text):
                     return True
         return False
 
@@ -23,6 +46,7 @@ class Scorer:
         """
         Calculate keyword score by counting ALL keyword matches.
         Returns (total_score, topic_hits) where topic_hits shows matches per topic.
+        Uses word boundary matching to prevent false positives.
         """
         text = (item.title + " " + item.content).lower()
         total_score = 0.0
@@ -31,8 +55,8 @@ class Scorer:
         for topic in self.interests:
             hits = 0
             for kw in topic.keywords:
-                # Count each keyword match (can match multiple times per topic)
-                if kw.lower() in text:
+                # Use word boundary matching to prevent false positives
+                if self._keyword_matches(kw, text):
                     hits += 1
                     total_score += topic.weight
 

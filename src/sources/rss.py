@@ -4,16 +4,24 @@ from typing import List
 import time
 from .base import ContentItem, ContentSource
 from ..config import settings
+from .youtube import fetch_transcript_from_url, YOUTUBE_TRANSCRIPT_AVAILABLE
 
 class RSSSource(ContentSource):
     def __init__(self, feeds=None):
         self.feeds = feeds or settings.sources.rss_feeds
+        self._transcript_warning_shown = False
 
     def fetch(self) -> List[ContentItem]:
         all_items = []
         import socket
         # Set a global timeout for socket operations used by feedparser
         socket.setdefaulttimeout(20.0)
+
+        # Show one-time warning if transcript extraction is unavailable
+        if not YOUTUBE_TRANSCRIPT_AVAILABLE and not self._transcript_warning_shown:
+            print("Note: youtube-transcript-api not installed. YouTube transcripts will not be fetched.")
+            print("      Install with: pip install youtube-transcript-api")
+            self._transcript_warning_shown = True
 
         for feed_config in self.feeds:
             try:
@@ -64,16 +72,48 @@ class RSSSource(ContentSource):
                     # Some feeds use media:content
                     media_link = entry.media_content[0].get('url')
 
+                # Get base content from RSS
+                base_content = entry.get('summary', entry.get('description', ''))
+
+                # For YouTube videos, try to fetch transcript for richer content
+                is_youtube = feed_config.category == 'AI YouTube' or 'youtube.com' in entry_link
+                transcript = None
+                if is_youtube:
+                    transcript = fetch_transcript_from_url(entry_link)
+
+                # Use transcript if available, otherwise fall back to RSS description
+                if transcript:
+                    # Combine RSS description with transcript for full context
+                    content = f"{base_content}\n\n[Transcript]\n{transcript}"
+                else:
+                    content = base_content
+
+                # Check if this is a podcast with sparse show notes
+                is_podcast = 'podcast' in feed_config.category.lower()
+                content_word_count = len(content.split())
+                needs_review = False
+
+                if is_podcast and content_word_count < 100:
+                    # Flag podcasts with less than 100 words of show notes
+                    needs_review = True
+
                 item = ContentItem(
                     id=entry.get('id', entry_link),
                     title=entry.get('title', 'No Title'),
-                    content=entry.get('summary', entry.get('description', '')),
+                    content=content,
                     url=entry_link,
                     source_name=feed_config.name,
                     source_category=feed_config.category,
                     published_date=published,
                     author=entry.get('author'),
-                    metadata={'media_link': media_link}
+                    needs_review=needs_review,
+                    metadata={
+                        'media_link': media_link,
+                        'has_transcript': transcript is not None,
+                        'is_youtube': is_youtube,
+                        'is_podcast': is_podcast,
+                        'content_word_count': content_word_count,
+                    }
                 )
                 all_items.append(item)
                 
