@@ -44,28 +44,31 @@ class Scorer:
     def _get_keyword_baseline(self, item: ContentItem) -> float:
         """
         Calculate a normalized keyword-based score (0.0 to 1.0).
-        More keyword hits = higher score.
+        Rewards both depth (many keywords in one topic) and breadth (multiple topics).
         """
         score, topic_hits = self._calculate_keyword_score(item)
         num_topics_hit = len(topic_hits)
         total_keywords_hit = sum(topic_hits.values())
 
-        # Scoring formula:
-        # - Base: topics hit / total topics (0-1 range, how broad the match is)
-        # - Boost: extra weight for multiple keyword hits within topics
-
         if num_topics_hit == 0:
             return 0.0
 
-        # Breadth: what fraction of topics does this hit?
-        breadth = num_topics_hit / len(self.interests)
+        # Get the best single-topic hit count
+        max_hits_in_topic = max(topic_hits.values())
 
-        # Depth: average keywords per matched topic (capped at 3 for normalization)
-        avg_hits_per_topic = min(3.0, total_keywords_hit / num_topics_hit)
-        depth_bonus = (avg_hits_per_topic - 1) * 0.1  # 0-0.2 bonus for multiple hits
+        # Depth score: how many keywords matched in the best topic (0.3 to 0.7 range)
+        # 1 keyword = 0.3, 2 = 0.4, 3 = 0.5, 4 = 0.6, 5+ = 0.7
+        depth_score = min(0.7, 0.2 + (max_hits_in_topic * 0.1))
 
-        # Combined score: breadth (0-1) + depth bonus (0-0.2), normalized to 0-1
-        baseline = min(1.0, (breadth * 0.8) + depth_bonus + 0.1)
+        # Breadth bonus: extra credit for matching multiple topics (0 to 0.3)
+        # 1 topic = 0, 2 topics = 0.1, 3+ topics = 0.2-0.3
+        breadth_bonus = min(0.3, (num_topics_hit - 1) * 0.1)
+
+        # Total keyword bonus: small bonus for lots of total keyword matches
+        total_bonus = min(0.1, total_keywords_hit * 0.01)
+
+        # Combined score
+        baseline = min(1.0, depth_score + breadth_bonus + total_bonus)
 
         return round(baseline, 3)
 

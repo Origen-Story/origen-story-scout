@@ -169,11 +169,12 @@
     return counts;
   })();
 
-  // Calculate source type breakdown for current view
+  // Calculate source type breakdown for current filtered view
+  // Uses filteredStories so it updates when activeFilter changes too
   $: currentSourceBreakdown = (() => {
-    const stories = getBaseStories();
+    const _ = [filteredStories]; // Establish dependency on already-filtered stories
     const breakdown = {};
-    for (const story of stories) {
+    for (const story of filteredStories) {
       const category = story.source_category || 'Unknown';
       let type = 'RSS';
       if (category === 'Newsletter') type = 'Newsletter';
@@ -186,7 +187,9 @@
   })();
 
   // Get trending terms for current category
+  // Note: explicitly depend on report and activeCategory for reactivity
   $: currentTrendingTerms = (() => {
+    const _ = [report, activeCategory]; // Establish dependencies
     if (activeCategory === 'top') {
       return report.trending_terms || [];
     }
@@ -198,7 +201,10 @@
   })();
 
   // Reactive filtered and sorted stories based on active filter and category
+  // Note: explicitly depend on report, activeCategory, activeFilter, sortBy, sortDirection for reactivity
   $: filteredStories = (() => {
+    // Access reactive vars to establish dependencies
+    const _ = [report, activeCategory, activeFilter, sortBy, sortDirection];
     let stories = getBaseStories();
     if (activeFilter) {
       stories = stories.filter(s => storyMatchesTerm(s, activeFilter));
@@ -537,87 +543,77 @@
     </div>
   {/if}
 
-  <!-- Category Tabs + Filter Bar -->
+  <!-- Navigation Dashboard -->
   {#if !loading && !error}
-    <!-- Category Tabs -->
-    <div class="category-tabs">
-      <button
-        class="category-tab"
-        class:active={activeCategory === 'top'}
-        onclick={() => { activeCategory = 'top'; activeFilter = null; }}
-      >
-        Top Stories
-        <span class="tab-count">{categoryCounts.top}</span>
-      </button>
-      <button
-        class="category-tab"
-        class:active={activeCategory === 'all'}
-        onclick={() => { activeCategory = 'all'; activeFilter = null; }}
-      >
-        All Stories
-        <span class="tab-count">{categoryCounts.all}</span>
-      </button>
-      <span class="tab-divider"></span>
-      {#each Object.keys(CATEGORY_GROUPS) as categoryName}
-        {#if categoryCounts[categoryName] > 0}
-          <button
-            class="category-tab"
-            class:active={activeCategory === categoryName}
-            onclick={() => { activeCategory = categoryName; activeFilter = null; }}
-          >
-            {categoryName}
-            <span class="tab-count">{categoryCounts[categoryName]}</span>
-          </button>
-        {/if}
-      {/each}
-    </div>
-
-    <!-- Source Breakdown + Trending Terms Bar -->
-    <div class="topic-stats-bar" class:collapsed={!trendingExpanded}>
-      <div class="bar-header">
-        <button class="section-toggle" onclick={() => trendingExpanded = !trendingExpanded}>
-          <span class="bar-label">Sources & Trending</span>
-          <svg class="chevron" class:rotated={!trendingExpanded} width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M6 9l6 6 6-6"/>
-          </svg>
+    <!-- Primary Nav Bar: Category Tabs + Source Stats -->
+    <nav class="nav-bar nav-primary">
+      <div class="nav-tabs">
+        <span class="interests-label">Interests:</span>
+        <button
+          class="nav-tab"
+          class:active={activeCategory === 'top'}
+          onclick={() => { activeCategory = 'top'; activeFilter = null; }}
+        >
+          Top
+          <span class="tab-count">{categoryCounts.top}</span>
         </button>
-        <!-- Source breakdown badges - updates with current view -->
-        <div class="source-breakdown">
-          {#each Object.entries(currentSourceBreakdown) as [type, count]}
-            <span class="source-badge">{type}: {count}</span>
-          {/each}
-          <span class="source-badge total">Total: {filteredStories.length}</span>
-        </div>
-      </div>
-      {#if trendingExpanded && currentTrendingTerms && currentTrendingTerms.length > 0}
-        <div class="topic-chips">
-          {#each currentTrendingTerms as term}
+        <button
+          class="nav-tab"
+          class:active={activeCategory === 'all'}
+          onclick={() => { activeCategory = 'all'; activeFilter = null; }}
+        >
+          All
+          <span class="tab-count">{categoryCounts.all}</span>
+        </button>
+        {#each Object.keys(CATEGORY_GROUPS) as categoryName}
+          {#if categoryCounts[categoryName] > 0}
             <button
-              class="topic-chip"
+              class="nav-tab"
+              class:active={activeCategory === categoryName}
+              onclick={() => { activeCategory = categoryName; activeFilter = null; }}
+            >
+              {categoryName}
+              <span class="tab-count">{categoryCounts[categoryName]}</span>
+            </button>
+          {/if}
+        {/each}
+      </div>
+      <div class="nav-stats">
+        {#each Object.entries(currentSourceBreakdown) as [type, count]}
+          <span class="stat-badge">{type}: {count}</span>
+        {/each}
+        <span class="stat-badge stat-total">{filteredStories.length} total</span>
+      </div>
+    </nav>
+
+    <!-- Secondary Nav Bar: Sort + Trending -->
+    <nav class="nav-bar nav-secondary">
+
+      {#if currentTrendingTerms && currentTrendingTerms.length > 0}
+        <div class="nav-trending">
+          <span class="trending-label">Trending:</span>
+          {#each currentTrendingTerms.slice(0, 8) as term}
+            <button
+              class="trend-chip"
               class:active={activeFilter === term.term}
               title="{term.count} articles from: {term.sources.join(', ')}"
               onclick={() => toggleFilter(term.term)}
             >
-              <span class="topic-name">{term.term}</span>
-              <span class="topic-count">{term.count}</span>
+              {term.term}
+              <span class="trend-count">{term.count}</span>
             </button>
           {/each}
           {#if activeFilter}
-            <button class="clear-filter-btn" onclick={() => activeFilter = null}>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <button class="clear-filter-btn" onclick={() => activeFilter = null} title="Clear filter">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                 <path d="M18 6L6 18M6 6l12 12"/>
               </svg>
-              Clear filter
             </button>
           {/if}
         </div>
       {/if}
-    </div>
-
-    <!-- Sort Controls (for All Stories and category views) -->
-    {#if activeCategory !== 'top'}
-      <div class="sort-controls">
-        <span class="sort-label">Sort by:</span>
+            <div class="nav-sort">
+        <span class="sort-label">Sort:</span>
         <button
           class="sort-btn"
           class:active={sortBy === 'score'}
@@ -640,7 +636,7 @@
           Source {sortBy === 'source' ? (sortDirection === 'asc' ? '↓' : '↑') : ''}
         </button>
       </div>
-    {/if}
+    </nav>
   {/if}
 
   <!-- Cross-Source Coverage Section -->

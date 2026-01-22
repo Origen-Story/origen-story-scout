@@ -186,17 +186,20 @@ def run(limit, summarize, force, dev, use_llm, report_only):
     else:
         console.print("[yellow]Phase 4: Keyword Scoring (free, no API)...[/yellow]")
 
-    # Fast sorting by keyword baseline score first
-    potential_items.sort(key=lambda x: scorer._get_keyword_baseline(x), reverse=True)
+    # Score ALL items with fast keyword scoring first
+    console.print(f"  Scoring {len(potential_items)} items with keyword matching...")
+    for item in potential_items:
+        item.relevance_score = scorer._get_keyword_baseline(item)
+
+    # Sort by score to identify top candidates
+    potential_items.sort(key=lambda x: x.relevance_score, reverse=True)
     top_candidates = potential_items[:30]
 
-    for i, item in enumerate(top_candidates):
-        console.print(f"  [{i+1}/{len(top_candidates)}] Scoring: {safe_title(item.title)}...")
-        if use_llm:
+    # Optional: Use LLM for semantic scoring on top 30 only (expensive)
+    if use_llm:
+        for i, item in enumerate(top_candidates):
+            console.print(f"  [{i+1}/{len(top_candidates)}] LLM Scoring: {safe_title(item.title)}...")
             item.relevance_score = scorer.score_item(item)
-        else:
-            # Keyword-only scoring (free)
-            item.relevance_score = scorer._get_keyword_baseline(item)
 
     # 4b. Trending Detection
     console.print("[yellow]Phase 4b: Detecting Trending Topics...[/yellow]")

@@ -43,7 +43,7 @@ h3 {
 }
 
 header {
-  margin-bottom: 4rem;
+  margin-bottom: .25rem;
   border-bottom: 1px solid var(--glass-border);
   padding-bottom: 1rem;
   display: flex;
@@ -674,26 +674,6 @@ button.topic-chip.active .topic-name {
   font-weight: 600;
 }
 
-.clear-filter-btn {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.35rem 0.75rem;
-  background: transparent;
-  border: 1px solid var(--glass-border);
-  border-radius: 20px;
-  font-size: 0.75rem;
-  color: var(--text-secondary);
-  cursor: pointer;
-  transition: var(--transition);
-  margin-left: auto;
-}
-
-.clear-filter-btn:hover {
-  border-color: #ff6b6b;
-  color: #ff6b6b;
-}
-
 .inline-btn {
   background: transparent;
   border: none;
@@ -1134,78 +1114,105 @@ button.topic-chip.active .topic-name {
   color: var(--text-primary);
 }
 
-/* Category Tabs */
-.category-tabs {
+/* Navigation Bars */
+.nav-bar {
   display: flex;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
+  align-items: center;
+  justify-content: space-between;
   padding: 0.5rem 0;
-  overflow-x: auto;
-  scrollbar-width: thin;
+  gap: 1rem;
   flex-wrap: wrap;
 }
 
-.category-tab {
+.nav-primary {
+  border-bottom: 1px solid var(--glass-border);
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.nav-secondary {
+  padding-top: 0.25rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Nav Tabs (Primary Bar) */
+.nav-tabs {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  background: transparent;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.nav-tab {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.75rem;
+  background: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--glass-border);
-  border-radius: 20px;
+  border-radius: 4px;
   color: var(--text-secondary);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   cursor: pointer;
   transition: var(--transition);
   white-space: nowrap;
 }
 
-.category-tab:hover {
+.nav-tab:hover {
+  background: rgba(255, 255, 255, 0.06);
   border-color: var(--sage);
   color: var(--text-primary);
 }
 
-.category-tab.active {
-  background: rgba(138, 186, 149, 0.2);
+.nav-tab.active {
+  background: rgba(138, 186, 149, 0.15);
   border-color: var(--sage);
   color: var(--sage);
   font-weight: 600;
 }
 
-.tab-count {
-  font-size: 0.7rem;
+.nav-tab .tab-count {
+  font-size: 0.65rem;
   font-weight: 700;
   background: rgba(0, 0, 0, 0.3);
-  padding: 0.15rem 0.4rem;
-  border-radius: 10px;
-  min-width: 1.5rem;
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+  min-width: 1.2rem;
   text-align: center;
 }
 
-.category-tab.active .tab-count {
+.nav-tab.active .tab-count {
   background: rgba(138, 186, 149, 0.3);
   color: var(--sage);
 }
 
-.tab-divider {
-  width: 1px;
-  height: 24px;
-  background: var(--glass-border);
-  margin: 0 0.25rem;
-  align-self: center;
-}
-
-/* Sort Controls */
-.sort-controls {
+/* Nav Stats (Primary Bar) */
+.nav-stats {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-  padding: 0.5rem 0;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.stat-badge {
+  color: var(--text-secondary);
+}
+
+.stat-badge.stat-total {
+  font-weight: 600;
+  color: var(--sage);
+}
+
+/* Nav Sort (Secondary Bar) */
+.nav-sort {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
 }
 
 .sort-label {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -1213,12 +1220,12 @@ button.topic-chip.active .topic-name {
 }
 
 .sort-btn {
-  padding: 0.35rem 0.75rem;
+  padding: 0.25rem 0.5rem;
   background: transparent;
   border: 1px solid var(--glass-border);
-  border-radius: 4px;
+  border-radius: 3px;
   color: var(--text-secondary);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   cursor: pointer;
   transition: var(--transition);
 }
@@ -1229,9 +1236,84 @@ button.topic-chip.active .topic-name {
 }
 
 .sort-btn.active {
+  background: rgba(138, 186, 149, 0.12);
+  border-color: var(--sage);
+  color: var(--sage);
+}
+
+/* Nav Trending (Secondary Bar) */
+.nav-trending {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.trending-label {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-right: 0.25rem;
+}
+
+.interests-label {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-right: 0.25rem;
+}
+
+.trend-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.2rem 0.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--glass-border);
+  border-radius: 3px;
+  color: var(--text-secondary);
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.trend-chip:hover {
+  border-color: var(--sage);
+  color: var(--text-primary);
+}
+
+.trend-chip.active {
   background: rgba(138, 186, 149, 0.15);
   border-color: var(--sage);
   color: var(--sage);
+}
+
+.trend-count {
+  font-size: 0.6rem;
+  font-weight: 700;
+  opacity: 0.7;
+}
+
+.clear-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  background: rgba(255, 100, 100, 0.1);
+  border: 1px solid rgba(255, 100, 100, 0.3);
+  border-radius: 3px;
+  color: #ff6b6b;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.clear-filter-btn:hover {
+  background: rgba(255, 100, 100, 0.2);
+  border-color: #ff6b6b;
 }
 
 /* All Stories Section */
@@ -1262,7 +1344,7 @@ button.topic-chip.active .topic-name {
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: .25rem;
   }
 
   .header-right {
@@ -1345,25 +1427,37 @@ button.topic-chip.active .topic-name {
     justify-content: space-between;
   }
 
-  .category-tabs {
-    gap: 0.35rem;
+  /* Nav bars on small screens */
+  .nav-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
   }
 
-  .category-tab {
-    padding: 0.4rem 0.75rem;
-    font-size: 0.75rem;
+  .nav-tabs {
+    width: 100%;
   }
 
-  .tab-divider {
-    display: none;
+  .nav-tab {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.7rem;
   }
 
-  .sort-controls {
+  .nav-stats {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .nav-sort {
     flex-wrap: wrap;
   }
 
-  .sort-btn {
-    padding: 0.3rem 0.5rem;
-    font-size: 0.75rem;
+  .nav-trending {
+    width: 100%;
+  }
+
+  .trend-chip {
+    font-size: 0.65rem;
   }
 }
