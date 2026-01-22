@@ -62,28 +62,15 @@ def fetch_transcript(video_id: str, max_chars: int = 5000) -> Optional[str]:
         return None
 
     try:
-        # Try to get English transcript first, fall back to any available
-        transcript_list = YouTubeTranscriptApi.list_transcripts(video_id)
+        # Create API instance (v1.x API uses instance methods, not class methods)
+        api = YouTubeTranscriptApi()
 
-        # Prefer manually created English transcript
-        try:
-            transcript = transcript_list.find_manually_created_transcript(['en'])
-        except NoTranscriptFound:
-            # Fall back to auto-generated English
-            try:
-                transcript = transcript_list.find_generated_transcript(['en'])
-            except NoTranscriptFound:
-                # Fall back to any available transcript
-                try:
-                    transcript = transcript_list.find_transcript(['en', 'en-US', 'en-GB'])
-                except NoTranscriptFound:
-                    return None
-
-        # Fetch the actual transcript data
-        transcript_data = transcript.fetch()
+        # Use the simple fetch method which handles language fallback
+        # This tries to get English transcript, auto-generated if needed
+        transcript_data = api.fetch(video_id, languages=['en', 'en-US', 'en-GB'])
 
         # Combine all text segments
-        full_text = ' '.join(segment['text'] for segment in transcript_data)
+        full_text = ' '.join(segment.text for segment in transcript_data)
 
         # Clean up common transcript artifacts
         full_text = full_text.replace('\n', ' ')
@@ -106,6 +93,9 @@ def fetch_transcript(video_id: str, max_chars: int = 5000) -> Optional[str]:
         return None
     except VideoUnavailable:
         # Video doesn't exist or is private
+        return None
+    except NoTranscriptFound:
+        # No transcript in requested languages
         return None
     except Exception as e:
         # Log but don't crash on unexpected errors
