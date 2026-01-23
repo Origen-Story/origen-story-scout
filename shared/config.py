@@ -49,6 +49,9 @@ class Config:
         self.sources = self._load_sources()
         self.gemini_api_key = os.getenv("GEMINI_API_KEY")
         self.anthropic_api_key = os.getenv("ANTHROPIC_API_KEY")
+        self.openai_api_key = os.getenv("OPENAI_API_KEY")
+        self.openai_model = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
+        self.llm_provider = os.getenv("LLM_PROVIDER", "auto").strip().lower()
 
     def _load_interests(self) -> InterestConfig:
         path = self.config_dir / "interests.yaml"
