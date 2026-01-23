@@ -3,12 +3,87 @@
 ## Project Overview
 AI-powered content curation tool that aggregates news from RSS feeds and Gmail newsletters, scores relevance based on user interests, and displays top stories in a Svelte dashboard.
 
+## IMPORTANT: Module Boundary Rules
+
+**When working on a module (e.g., scoring), do not modify files in other modules (e.g., frontend) without explicit user permission.**
+
+This project uses a modular architecture to support future agentic workflows. Each module has a specific responsibility:
+
+| Module | Responsibility | Can Modify |
+|--------|----------------|------------|
+| `backend/ingestion` | Fetch content from sources | Only ingestion files |
+| `backend/scoring` | Score and rank content | Only scoring files |
+| `backend/summarizer` | LLM summarization | Only summarizer files |
+| `shared` | Common data types, config | Only with explicit permission |
+| `frontend` | Web interface | Only frontend files |
+
+**Cross-module changes require explicit user approval.**
+
+---
+
+## Architecture Overview
+
+```
+origen-story-scout/
+├── backend/                    # Python backend modules
+│   ├── __init__.py
+│   ├── main.py                 # CLI entry point
+│   ├── ingestion/              # Content source fetchers
+│   │   ├── __init__.py
+│   │   ├── rss.py              # RSS/Atom feed fetching
+│   │   ├── gmail.py            # Gmail newsletter fetching
+│   │   └── youtube.py          # YouTube transcript extraction
+│   ├── scoring/                # Relevance and quality assessment
+│   │   ├── __init__.py
+│   │   ├── scorer.py           # Keyword-based relevance scoring
+│   │   ├── trending.py         # Cross-source trending detection
+│   │   └── provenance.py       # C2PA content authenticity
+│   └── summarizer/             # LLM-based summarization
+│       ├── __init__.py
+│       ├── summarizer.py       # Summary orchestration
+│       ├── base.py             # Base LLM interface
+│       ├── gemini.py           # Google Gemini integration
+│       ├── claude.py           # Anthropic Claude integration
+│       └── router.py           # LLM routing logic
+├── shared/                     # Shared data types and utilities
+│   ├── __init__.py
+│   ├── config.py               # Application configuration
+│   ├── base.py                 # ContentItem dataclass
+│   ├── report.py               # Report generation
+│   └── storage/                # Persistence utilities
+│       ├── __init__.py
+│       └── archive.py          # Processed item tracking
+├── frontend/                   # Svelte web interface
+│   ├── src/
+│   │   ├── App.svelte          # Main component
+│   │   ├── app.css             # Styles
+│   │   ├── main.js             # Entry point
+│   │   └── lib/                # Utility modules
+│   │       ├── starred.js      # Star/tag functionality
+│   │       └── stats.js        # Usage statistics
+│   ├── public/
+│   │   └── data/
+│   │       └── latest_report.json  # Generated report
+│   ├── package.json
+│   └── vite.config.js
+├── config/                     # Configuration files
+│   ├── interests.yaml          # Topics and keywords
+│   ├── sources.yaml            # RSS feeds and Gmail settings
+│   └── credentials.json        # Gmail OAuth credentials
+├── data/                       # Runtime data
+│   ├── archive.json            # Processed items tracking
+│   └── mock_data.json          # Dev mode data
+└── src/                        # DEPRECATED - being migrated
+```
+
+---
+
 ## Core Principles
 
 ### Cost Efficiency
 - This is an ongoing app; minimize operational costs
 - Prefer free/local solutions over paid APIs when quality is comparable
-- API tokens should only be used when they provide clear value over logic-based alternatives
+- API tokens should only be used when they provide clear value
 - Budget time upfront for smarter solutions that save costs long-term
 
 ### Sustainability
@@ -18,81 +93,149 @@ AI-powered content curation tool that aggregates news from RSS feeds and Gmail n
 - Batch operations when feasible
 - Use fast local filtering before expensive API calls
 
-## Architecture Decisions
+### Modularity
+- Each module has a single responsibility
+- Modules communicate through shared data types in `shared/`
+- No direct imports between sibling modules (ingestion shouldn't import scoring)
+- All inter-module communication goes through `shared/`
 
-### Scoring Strategy (Two-Tier)
-1. **Keyword scoring (free, local)** - Primary scoring method
-   - Counts keyword matches from interests.yaml
-   - Calculates breadth (topics hit) and depth (keywords per topic)
-   - No API calls, instant results
+---
 
-2. **LLM semantic scoring (optional)** - Enhancement only
-   - Only use when keyword scoring is insufficient
-   - Should provide measurable improvement to justify cost
+## Module Details
 
-### Data Sources
-- RSS feeds: 34 configured sources across 3 categories
-- Gmail newsletters: Fetched via Gmail API from "Newsletters" label
-- 10-day time window for all content
-- Archive auto-prunes items older than 10 days
+### backend/ingestion
+**Purpose:** Fetch content from external sources
 
-### Tech Stack
-- **Backend**: Python 3.11+
-- **Frontend**: Svelte 5 + Vite
-- **LLM**: Gemini Flash (free tier), Claude as fallback
-- **Storage**: JSON files (archive.json, latest_report.json)
+**Files:**
+- `rss.py` - RSS/Atom feed parsing with feedparser
+- `gmail.py` - Gmail API integration for newsletters
+- `youtube.py` - YouTube transcript extraction
 
-## File Structure
-```
-src/
-  main.py          - CLI entry point
-  config.py        - Configuration loading
-  sources/         - Data ingestion (RSS, Gmail)
-  processing/      - Scoring, summarization, provenance
-  output/          - Report generation
-  storage/         - Archive management
-dashboard/         - Svelte frontend
-config/            - YAML configuration files
-data/              - Runtime data (archive, mock data)
-```
+**Inputs:** Configuration from `shared/config.py`
+**Outputs:** List of `ContentItem` objects
+
+### backend/scoring
+**Purpose:** Score content relevance and detect trends
+
+**Files:**
+- `scorer.py` - Keyword matching with word boundaries
+- `trending.py` - Cross-source story clustering
+- `provenance.py` - C2PA verification (currently disabled)
+
+**Inputs:** List of `ContentItem` objects
+**Outputs:** Scored items with `relevance_score` populated
+
+### backend/summarizer
+**Purpose:** Generate AI summaries using LLMs
+
+**Files:**
+- `summarizer.py` - Summary orchestration with caching
+- `router.py` - LLM provider selection
+- `gemini.py` / `claude.py` - Provider implementations
+
+**Inputs:** High-scoring `ContentItem` objects
+**Outputs:** Items with `summary` field populated
+
+### shared
+**Purpose:** Common types and utilities
+
+**Files:**
+- `config.py` - Settings loaded from YAML files
+- `base.py` - `ContentItem` dataclass definition
+- `report.py` - JSON report generation
+- `storage/archive.py` - Deduplication tracking
+
+### frontend
+**Purpose:** Web-based dashboard
+
+**Key Features:**
+- 9-card grid for top stories
+- Trending term filtering
+- Star/tag system with localStorage
+- Publication stats tracking
+- Source type indicators
+
+---
 
 ## CLI Commands
+
 ```bash
-python -m src.main run              # Full pipeline (keyword scoring, free)
-python -m src.main run --dev        # Use mock data (skip fetching)
-python -m src.main run --force      # Re-process all items
-python -m src.main run --use-llm    # Use LLM for semantic scoring (uses API tokens)
-python -m src.main run --summarize  # Generate AI summaries (uses API tokens)
-python -m src.main refresh-dev      # Fetch live data and save to mock_data.json
+# Full pipeline (keyword scoring, free)
+python -m backend.main run
+
+# Use mock data (skip fetching)
+python -m backend.main run --dev
+
+# Re-process all items
+python -m backend.main run --force
+
+# Generate AI summaries (uses API tokens)
+python -m backend.main run --summarize
+
+# Refresh dev data from live sources
+python -m backend.main refresh-dev
 ```
 
-### Daily Development Workflow
+**Default behavior is FREE** - no API tokens used unless `--summarize` flag is passed.
+
+---
+
+## Data Flow
+
+```
+[RSS Feeds] ──┐
+              ├──► [Ingestion] ──► [Scoring] ──► [Summarizer] ──► [Report] ──► [Frontend]
+[Gmail]    ───┘         │              │             │
+                        │              │             │
+                        ▼              ▼             ▼
+                   ContentItem    relevance_score  summary
+```
+
+---
+
+## Configuration
+
+### interests.yaml
+Topics and keywords for scoring. Keywords use word-boundary matching.
+
+### sources.yaml
+RSS feed URLs and Gmail settings.
+
+### .env
+```
+GEMINI_API_KEY=your-key-here
+ANTHROPIC_API_KEY=your-key-here
+```
+
+---
+
+## Development Workflow
+
 ```bash
 # Start of day: refresh dev data from live sources
-python -m src.main refresh-dev
+python -m backend.main refresh-dev
 
 # During development: use cached dev data (fast, no network)
-python -m src.main run --dev
+python -m backend.main run --dev
+
+# Start frontend dev server
+cd frontend && npm run dev
 ```
 
-**Default behavior is FREE** - no API tokens used unless `--use-llm` or `--summarize` flags are passed.
-
-## Configuration Files
-- `config/interests.yaml` - Topics and keywords for scoring
-- `config/sources.yaml` - RSS feeds and Gmail settings
-- `.env` - API keys (GEMINI_API_KEY, ANTHROPIC_API_KEY)
+---
 
 ## Current Status
 - RSS + Gmail ingestion: Working
-- Keyword scoring: Working
-- LLM scoring: Available but hitting free tier limits
+- Keyword scoring: Working (word boundary matching)
+- YouTube transcript extraction: Working
 - Trending detection: Cross-source story clustering with score boost
-- Star/save: LocalStorage-based starring with panel UI
-- Dashboard: Fully interactive with trending badges and star functionality
-- Summaries: Requires API tokens (optional)
+- Star/save: LocalStorage-based starring with tags
+- Dashboard: Fully interactive with source type indicators
+- Summaries: Optional (requires API tokens)
 
 ## Future Features (Planned)
-- Generate social posts from starred stories
-- Group stories for newsletter sections
-- Usage history tracking for source optimization
-- Export starred stories to various formats
+- Bluesky/Mastodon integration
+- Podcast transcript integration
+- Creator compensation tracking
+- Newsletter export functionality
+- C2PA manifest viewer

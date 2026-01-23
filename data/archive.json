@@ -1,207 +1,5 @@
 {
   "items": {
-    "https://the-decoder.com/?p=30708": {
-      "added_at": "2026-01-07T17:24:50.968148"
-    },
-    "https://www.technologyreview.com/?p=1128990": {
-      "added_at": "2026-01-08T09:39:35.758349",
-      "published_date": "2026-01-06T22:00:00"
-    },
-    "https://www.theguardian.com/technology/2026/jan/06/grok-ai-fake-images-women-girls-undressed-uk-minister-liz-kendall": {
-      "added_at": "2026-01-08T09:39:35.632531",
-      "published_date": "2026-01-06T16:56:15"
-    },
-    "https://huggingface.co/blog/nvidia/llama-nemotron-vl-1b": {
-      "added_at": "2026-01-07T17:26:07.669320",
-      "published_date": "2026-01-06T21:16:17"
-    },
-    "https://www.theguardian.com/business/2026/jan/04/ai-reality-growing-economic-risk-2026": {
-      "added_at": "2026-01-07T17:24:50.968175"
-    },
-    "https://www.technologyreview.com/?p=1129490": {
-      "added_at": "2026-01-08T09:39:35.741883",
-      "published_date": "2026-01-07T14:00:00"
-    },
-    "https://www.technologyreview.com/?p=1128993": {
-      "added_at": "2026-01-08T09:39:35.760621",
-      "published_date": "2026-01-06T22:00:00"
-    },
-    "https://www.canarymedia.com/articles/data-centers/pjm-needs-flexible-data-centers": {
-      "added_at": "2026-01-16T16:43:20.308614",
-      "published_date": "2026-01-07T08:30:00"
-    },
-    "https://the-decoder.com/?p=30745": {
-      "added_at": "2026-01-08T09:39:35.686585",
-      "published_date": "2026-01-07T11:45:55"
-    },
-    "https://the-decoder.com/?p=30774": {
-      "added_at": "2026-01-08T09:39:35.684370",
-      "published_date": "2026-01-07T13:54:36"
-    },
-    "https://www.theverge.com/?p=856207": {
-      "added_at": "2026-01-07T17:26:07.784391",
-      "published_date": "2026-01-06T19:00:00"
-    },
-    "https://insideclimatenews.org/?p=104439": {
-      "added_at": "2026-01-08T09:39:35.511888",
-      "published_date": "2026-01-06T21:30:51"
-    },
-    "https://www.theguardian.com/politics/live/2026/jan/06/badenoch-trump-venezuela-maduro-starmer-streeting-uk-politics-latest-news-updates": {
-      "added_at": "2026-01-09T12:12:17.572707",
-      "published_date": "2026-01-06T17:49:47"
-    },
-    "https://www.technologyreview.com/?p=1128661": {
-      "added_at": "2026-01-08T09:39:35.753203",
-      "published_date": "2026-01-06T22:00:00"
-    },
-    "https://www.technologyreview.com/?p=1128655": {
-      "added_at": "2026-01-08T09:39:35.750932",
-      "published_date": "2026-01-06T22:00:00"
-    },
-    "https://the-decoder.com/?p=30743": {
-      "added_at": "2026-01-08T09:39:35.689086",
-      "published_date": "2026-01-07T11:40:28"
-    },
-    "https://www.theverge.com/?p=855038": {
-      "added_at": "2026-01-07T17:24:50.968208"
-    },
-    "https://www.technologyreview.com/?p=1129748": {
-      "added_at": "2026-01-08T09:39:35.748674",
-      "published_date": "2026-01-07T11:00:00"
-    },
-    "https://www.theverge.com/?p=853434": {
-      "added_at": "2026-01-08T09:39:35.785003",
-      "published_date": "2026-01-07T01:00:00"
-    },
-    "https://www.theverge.com/?p=854159": {
-      "added_at": "2026-01-08T09:39:35.779697",
-      "published_date": "2026-01-07T13:13:25"
-    },
-    "695d30e7a225d53752746fb1": {
-      "added_at": "2026-01-08T09:39:35.713308",
-      "published_date": "2026-01-06T22:20:08"
-    },
-    "https://the-decoder.com/?p=30729": {
-      "added_at": "2026-01-09T12:12:17.560628",
-      "published_date": "2026-01-06T18:20:52"
-    },
-    "https://www.canarymedia.com/articles/just-transition/win-by-time-how-poland-is-preparing-for-the-death-of-coal": {
-      "added_at": "2026-01-16T16:43:20.312125",
-      "published_date": "2026-01-07T08:30:00"
-    },
-    "https://insideclimatenews.org/?p=104447": {
-      "added_at": "2026-01-08T09:39:35.507444",
-      "published_date": "2026-01-07T10:00:00"
-    },
-    "https://www.technologyreview.com/?p=1130795": {
-      "added_at": "2026-01-16T16:43:20.693737",
-      "published_date": "2026-01-07T11:23:47"
-    },
-    "https://www.technologyreview.com/?p=1129000": {
-      "added_at": "2026-01-07T17:24:50.968243"
-    },
-    "https://www.theguardian.com/technology/2026/jan/07/grok-deepfake-images-sexualise-women-children-investigated-australia-esafety": {
-      "added_at": "2026-01-09T12:12:17.570311",
-      "published_date": "2026-01-07T04:48:51"
-    },
-    "https://www.theguardian.com/technology/2026/jan/06/elon-musk-xai-investment-grok-backlash": {
-      "added_at": "2026-01-09T12:12:17.591478",
-      "published_date": "2026-01-06T22:31:48"
-    },
-    "https://www.theverge.com/?p=856849": {
-      "added_at": "2026-01-07T17:26:07.782827",
-      "published_date": "2026-01-06T20:07:03"
-    },
-    "https://www.theguardian.com/technology/2026/jan/06/ai-consciousness-is-a-red-herring-in-the-safety-debate": {
-      "added_at": "2026-01-08T09:39:35.629229",
-      "published_date": "2026-01-06T17:27:56"
-    },
-    "https://news.mit.edu/2026/emily-reichert-positioning-massachusetts-hub-climate-tech-economic-development-0106": {
-      "added_at": "2026-01-16T16:43:20.149721",
-      "published_date": "2026-01-06T21:55:00"
-    },
-    "https://www.theverge.com/856815/how-silicon-valley-turned-trump-into-a-fellow-broligarch": {
-      "added_at": "2026-01-08T09:39:35.787914",
-      "published_date": "2026-01-06T22:46:00"
-    },
-    "https://www.technologyreview.com/?p=1128665": {
-      "added_at": "2026-01-09T12:12:17.563089",
-      "published_date": "2026-01-06T22:00:00"
-    },
-    "https://the-decoder.com/?p=30738": {
-      "added_at": "2026-01-08T09:39:35.694618",
-      "published_date": "2026-01-07T09:54:36"
-    },
-    "https://arstechnica.com/ai/2026/01/news-orgs-want-openai-to-dig-up-millions-of-deleted-chatgpt-logs/": {
-      "added_at": "2026-01-09T12:12:17.541941",
-      "published_date": "2026-01-06T18:59:21"
-    },
-    "https://www.theverge.com/?p=857053": {
-      "added_at": "2026-01-09T12:12:17.616836",
-      "published_date": "2026-01-07T02:30:00"
-    },
-    "https://the-decoder.com/?p=30676": {
-      "added_at": "2026-01-07T17:24:50.968282"
-    },
-    "https://insideclimatenews.org/?p=104097": {
-      "added_at": "2026-01-07T17:24:50.968286"
-    },
-    "https://www.technologyreview.com/?p=1128996": {
-      "added_at": "2026-01-08T09:39:35.762958",
-      "published_date": "2026-01-06T22:00:00"
-    },
-    "https://the-decoder.com/?p=30704": {
-      "added_at": "2026-01-07T17:24:50.968289"
-    },
-    "https://the-decoder.com/?p=30732": {
-      "added_at": "2026-01-09T12:12:17.557532",
-      "published_date": "2026-01-07T10:08:56"
-    },
-    "https://www.canarymedia.com/articles/carbon-free-buildings/numbers-future-buildings-all-electric-us": {
-      "added_at": "2026-01-16T16:43:20.315618",
-      "published_date": "2026-01-07T08:30:00"
-    },
-    "https://www.theguardian.com/business/2026/jan/04/global-economic-outlook-2026": {
-      "added_at": "2026-01-07T17:24:50.968297"
-    },
-    "https://www.technologyreview.com/?p=1129004": {
-      "added_at": "2026-01-07T17:24:50.968304"
-    },
-    "https://www.technologyreview.com/?p=1129007": {
-      "added_at": "2026-01-07T17:24:50.968309"
-    },
-    "https://www.technologyreview.com/?p=1130806": {
-      "added_at": "2026-01-08T09:39:35.744077",
-      "published_date": "2026-01-07T13:10:00"
-    },
-    "https://insideclimatenews.org/?p=104446": {
-      "added_at": "2026-01-08T09:39:35.509608",
-      "published_date": "2026-01-06T22:59:52"
-    },
-    "https://www.theverge.com/?p=855832": {
-      "added_at": "2026-01-08T09:39:35.790501",
-      "published_date": "2026-01-06T20:08:18"
-    },
-    "https://insideclimatenews.org/?p=104472": {
-      "added_at": "2026-01-08T09:39:35.504919",
-      "published_date": "2026-01-07T16:05:06"
-    },
-    "https://techcrunch.com/?p=3080537": {
-      "added_at": "2026-01-16T16:43:20.189366",
-      "published_date": "2026-01-07T16:00:00"
-    },
-    "https://www.theguardian.com/world/2026/jan/07/how-is-it-possible-berliners-demand-answers-after-sabotage-causes-blackout": {
-      "added_at": "2026-01-07T17:26:07.682458",
-      "published_date": "2026-01-07T16:20:06"
-    },
-    "https://www.theguardian.com/technology/2026/jan/07/commons-women-equalities-committee-stop-using-x-ai-altered-grok-images": {
-      "added_at": "2026-01-08T09:39:35.618046",
-      "published_date": "2026-01-07T17:40:44"
-    },
-    "https://arstechnica.com/ai/2026/01/computer-scientist-yann-lecun-intelligence-really-is-about-learning/": {
-      "added_at": "2026-01-08T09:39:35.798170",
-      "published_date": "2026-01-07T15:06:53"
-    },
     "gmail-19b99395cd6790b9": {
       "added_at": "2026-01-08T09:39:35.869547",
       "published_date": "2026-01-07T16:10:29+00:00"
@@ -215,7 +13,7 @@
       "published_date": "2026-01-07T15:00:28+00:00"
     },
     "gmail-19b98cf10b938d61": {
-      "added_at": "2026-01-09T12:12:17.548401",
+      "added_at": "2026-01-23T10:04:58.388515",
       "published_date": "2026-01-07T14:14:24+00:00"
     },
     "gmail-19b98cd741b01ab8": {
@@ -227,7 +25,7 @@
       "published_date": "2026-01-07T12:31:42+00:00"
     },
     "gmail-19b96132614fd349": {
-      "added_at": "2026-01-09T12:12:17.551193",
+      "added_at": "2026-01-23T10:04:58.394709",
       "published_date": "2026-01-07T01:26:47+00:00"
     },
     "gmail-19b94b1b18ca3c9a": {
@@ -235,11 +33,11 @@
       "published_date": "2026-01-06T19:03:49+00:00"
     },
     "gmail-19b946bc606fbf62": {
-      "added_at": "2026-01-09T12:12:17.498774",
+      "added_at": "2026-01-23T10:04:58.294454",
       "published_date": "2026-01-06T17:41:49+00:00"
     },
     "gmail-19b942600f93743b": {
-      "added_at": "2026-01-09T12:12:17.515430",
+      "added_at": "2026-01-23T10:04:58.325733",
       "published_date": "2026-01-06T16:30:55+00:00"
     },
     "gmail-19b940c1c084629d": {
@@ -255,7 +53,7 @@
       "published_date": "2026-01-06T14:02:59+00:00"
     },
     "gmail-19b93376fc79fb8c": {
-      "added_at": "2026-01-09T12:12:17.482022",
+      "added_at": "2026-01-23T10:04:58.263788",
       "published_date": "2026-01-06T12:10:41+00:00"
     },
     "gmail-19b93335b8dedc05": {
@@ -267,11 +65,11 @@
       "published_date": "2026-01-06T11:00:11+00:00"
     },
     "gmail-19b924b3ef91f274": {
-      "added_at": "2026-01-09T12:12:17.491372",
+      "added_at": "2026-01-23T10:04:58.282154",
       "published_date": "2026-01-06T07:46:59+00:00"
     },
     "gmail-19b91e2fd3b473fd": {
-      "added_at": "2026-01-09T12:12:17.472078",
+      "added_at": "2026-01-23T10:04:58.244819",
       "published_date": "2026-01-06T05:56:01+00:00"
     },
     "gmail-19b90d64e5155d20": {
@@ -279,7 +77,7 @@
       "published_date": "2026-01-06T01:02:23+00:00"
     },
     "gmail-19b906403560bcce": {
-      "added_at": "2026-01-09T12:12:17.583123",
+      "added_at": "2026-01-23T10:04:58.471955",
       "published_date": "2026-01-05T23:00:24+00:00"
     },
     "gmail-19b8f92a6962a959": {
@@ -287,7 +85,7 @@
       "published_date": "2026-01-05T19:11:22+00:00"
     },
     "gmail-19b8eef39ad20482": {
-      "added_at": "2026-01-09T12:12:17.518677",
+      "added_at": "2026-01-23T10:04:58.331988",
       "published_date": "2026-01-05T16:11:24+00:00"
     },
     "gmail-19b8eda4ea123ce4": {
@@ -295,11 +93,11 @@
       "published_date": "2026-01-05T07:50:29-08:00"
     },
     "gmail-19b8ea351f2116ec": {
-      "added_at": "2026-01-09T12:12:17.495145",
+      "added_at": "2026-01-23T10:04:58.288323",
       "published_date": "2026-01-05T14:50:25+00:00"
     },
     "gmail-19b8e5ccf1b8df4e": {
-      "added_at": "2026-01-09T12:12:17.521839",
+      "added_at": "2026-01-23T10:04:58.338342",
       "published_date": "2026-01-05T13:32:28+00:00"
     },
     "gmail-19b8e4130e21f1dd": {
@@ -402,88 +200,8 @@
       "added_at": "2026-01-07T17:26:07.900231",
       "published_date": "2026-01-01T16:01:36+00:00"
     },
-    "https://insideclimatenews.org/?p=104496": {
-      "added_at": "2026-01-08T09:39:35.496127",
-      "published_date": "2026-01-07T23:16:59"
-    },
-    "https://insideclimatenews.org/?p=104493": {
-      "added_at": "2026-01-08T09:39:35.498493",
-      "published_date": "2026-01-07T23:00:01"
-    },
-    "https://insideclimatenews.org/?p=104484": {
-      "added_at": "2026-01-08T09:39:35.500737",
-      "published_date": "2026-01-07T21:35:59"
-    },
-    "https://insideclimatenews.org/?p=104480": {
-      "added_at": "2026-01-08T09:39:35.502888",
-      "published_date": "2026-01-07T20:08:59"
-    },
-    "https://www.theguardian.com/technology/2026/jan/07/ai-anthropic-funding-valuation": {
-      "added_at": "2026-01-09T12:12:17.532260",
-      "published_date": "2026-01-07T21:50:49"
-    },
-    "https://www.theguardian.com/commentisfree/2026/jan/07/the-guardian-view-on-granting-legal-rights-to-ai-humans-should-not-give-house-room-to-an-ill-advised-debate": {
-      "added_at": "2026-01-09T12:12:17.535588",
-      "published_date": "2026-01-07T18:25:45"
-    },
-    "https://www.sciencedaily.com/releases/2026/01/260101160849.htm": {
-      "added_at": "2026-01-16T16:43:20.554686",
-      "published_date": "2026-01-08T02:08:42"
-    },
-    "https://the-decoder.com/?p=30804": {
-      "added_at": "2026-01-08T09:39:35.677265",
-      "published_date": "2026-01-07T19:24:40"
-    },
-    "https://the-decoder.com/?p=30801": {
-      "added_at": "2026-01-08T09:39:35.679484",
-      "published_date": "2026-01-07T18:42:35"
-    },
-    "https://the-decoder.com/?p=30795": {
-      "added_at": "2026-01-08T09:39:35.681773",
-      "published_date": "2026-01-07T17:57:05"
-    },
-    "4ri2LVmhlv34kOOk94nnsi": {
-      "added_at": "2026-01-16T16:43:20.623179",
-      "published_date": "2026-01-07T20:00:00"
-    },
-    "695d7fbcdbe489ef91435a3f": {
-      "added_at": "2026-01-08T09:39:35.707533",
-      "published_date": "2026-01-07T21:47:56"
-    },
-    "695c2c5d42ca0c1575d636b0": {
-      "added_at": "2026-01-08T09:39:35.710948",
-      "published_date": "2026-01-07T19:00:00"
-    },
-    "https://www.theverge.com/?p=857400": {
-      "added_at": "2026-01-08T09:39:35.767511",
-      "published_date": "2026-01-08T00:00:00"
-    },
-    "https://www.theverge.com/?p=858102": {
-      "added_at": "2026-01-08T09:39:35.769785",
-      "published_date": "2026-01-07T22:30:22"
-    },
-    "https://www.theverge.com/?p=857924": {
-      "added_at": "2026-01-09T12:12:17.613751",
-      "published_date": "2026-01-07T21:09:54"
-    },
-    "https://www.theverge.com/?p=857640": {
-      "added_at": "2026-01-09T12:12:17.565511",
-      "published_date": "2026-01-07T19:00:00"
-    },
-    "https://www.theverge.com/?p=857723": {
-      "added_at": "2026-01-08T09:39:35.777386",
-      "published_date": "2026-01-07T17:57:27"
-    },
-    "https://arstechnica.com/cars/2026/01/in-car-ai-assistant-coming-to-fords-and-lincolns-in-2027/": {
-      "added_at": "2026-01-08T09:39:35.792886",
-      "published_date": "2026-01-08T00:00:33"
-    },
-    "https://arstechnica.com/health/2026/01/utah-allows-ai-to-autonomously-prescribe-medication-refills/": {
-      "added_at": "2026-01-08T09:39:35.795853",
-      "published_date": "2026-01-07T22:20:08"
-    },
     "gmail-19b9ab16ed79cc1e": {
-      "added_at": "2026-01-09T12:12:17.512132",
+      "added_at": "2026-01-23T10:04:58.319342",
       "published_date": "2026-01-07T23:00:11+00:00"
     },
     "gmail-19b9a3c3ecdba0ff": {
@@ -507,7 +225,7 @@
       "published_date": "2026-01-07T19:53:21+00:00"
     },
     "gmail-19b9a055e41c75e7": {
-      "added_at": "2026-01-09T12:12:17.567912",
+      "added_at": "2026-01-23T10:04:58.432447",
       "published_date": "2026-01-07T19:53:21+00:00"
     },
     "gmail-19b9a047091d3a4e": {
@@ -527,7 +245,7 @@
       "published_date": "2026-01-07T19:38:48+00:00"
     },
     "gmail-19b99d5159a8fdba": {
-      "added_at": "2026-01-09T12:12:17.485181",
+      "added_at": "2026-01-23T10:04:58.270208",
       "published_date": "2026-01-07T19:00:26+00:00"
     },
     "gmail-19b99d50541f2061": {
@@ -547,91 +265,75 @@
       "published_date": "2026-01-07T17:07:27+00:00"
     },
     "gmail-19b9db33a5a20ed3": {
-      "added_at": "2026-01-09T12:12:17.508191",
+      "added_at": "2026-01-23T10:04:58.312840",
       "published_date": "2026-01-08T13:00:59+00:00"
     },
     "gmail-19b9d871a9dc734b": {
-      "added_at": "2026-01-09T12:12:17.525054",
+      "added_at": "2026-01-23T10:04:58.344497",
       "published_date": "2026-01-08T12:13:55+00:00"
     },
-    "https://www.theguardian.com/technology/2026/jan/08/elon-musk-openai-lawsuit-for-profit-conversion-can-go-to-trial-us-judge-says": {
-      "added_at": "2026-01-09T12:12:17.529038",
-      "published_date": "2026-01-08T11:56:58"
-    },
-    "https://the-decoder.com/?p=30807": {
-      "added_at": "2026-01-09T12:12:17.538801",
-      "published_date": "2026-01-08T09:22:49"
-    },
     "gmail-19b9d6559f96dcc2": {
-      "added_at": "2026-01-09T12:12:17.545170",
+      "added_at": "2026-01-23T10:04:58.382051",
       "published_date": "2026-01-08T11:37:02+00:00"
     },
     "gmail-19b9dca934621cc2": {
-      "added_at": "2026-01-09T12:12:17.575115",
+      "added_at": "2026-01-23T10:04:58.451997",
       "published_date": "2026-01-08T13:27:36+00:00"
     },
     "gmail-19b9d890f5db6d85": {
-      "added_at": "2026-01-09T12:12:17.577869",
+      "added_at": "2026-01-23T10:04:58.458776",
       "published_date": "2026-01-08T12:16:03+00:00"
     },
     "gmail-19b9d0d72ea45a49": {
-      "added_at": "2026-01-09T12:12:17.580500",
+      "added_at": "2026-01-23T10:04:58.465206",
       "published_date": "2026-01-08T10:00:25+00:00"
     },
     "https://www.carbonbrief.org/?p=60901": {
-      "added_at": "2026-01-16T16:43:20.020449",
+      "added_at": "2026-01-23T10:29:19.636638",
       "published_date": "2026-01-16T13:57:18"
     },
     "https://www.carbonbrief.org/?p=60895": {
-      "added_at": "2026-01-16T16:43:20.025655",
+      "added_at": "2026-01-23T10:29:19.642884",
       "published_date": "2026-01-16T13:36:59"
     },
     "https://www.carbonbrief.org/?p=60846": {
-      "added_at": "2026-01-16T16:43:20.030607",
+      "added_at": "2026-01-23T10:29:19.649483",
       "published_date": "2026-01-16T13:12:19"
     },
     "https://www.carbonbrief.org/?p=60840": {
-      "added_at": "2026-01-16T16:43:20.036260",
+      "added_at": "2026-01-23T10:29:19.655719",
       "published_date": "2026-01-15T16:26:03"
     },
     "https://www.carbonbrief.org/?p=60825": {
-      "added_at": "2026-01-16T16:43:20.042268",
+      "added_at": "2026-01-23T10:29:19.662605",
       "published_date": "2026-01-15T14:47:23"
     },
     "https://www.carbonbrief.org/?p=60793": {
-      "added_at": "2026-01-16T16:43:20.047633",
+      "added_at": "2026-01-21T19:12:47.486526",
       "published_date": "2026-01-14T15:13:21"
     },
     "https://www.carbonbrief.org/?p=60772": {
-      "added_at": "2026-01-16T16:43:20.053270",
+      "added_at": "2026-01-21T19:12:47.492423",
       "published_date": "2026-01-14T14:09:53"
     },
     "https://www.carbonbrief.org/?p=60741": {
-      "added_at": "2026-01-16T16:43:20.058760",
+      "added_at": "2026-01-18T16:07:42.367806",
       "published_date": "2026-01-13T16:19:13"
     },
-    "https://www.carbonbrief.org/?p=60698": {
-      "added_at": "2026-01-16T16:43:20.063741",
-      "published_date": "2026-01-13T00:01:00"
-    },
-    "https://www.carbonbrief.org/?p=60724": {
-      "added_at": "2026-01-16T16:43:20.069129",
-      "published_date": "2026-01-09T15:55:41"
-    },
     "https://insideclimatenews.org/?p=104774": {
-      "added_at": "2026-01-16T16:43:20.075286",
+      "added_at": "2026-01-18T16:07:42.519614",
       "published_date": "2026-01-16T10:00:00"
     },
     "https://insideclimatenews.org/?p=104778": {
-      "added_at": "2026-01-16T16:43:20.080286",
+      "added_at": "2026-01-17T15:07:50.572205",
       "published_date": "2026-01-16T09:55:00"
     },
     "https://insideclimatenews.org/?p=104795": {
-      "added_at": "2026-01-16T16:43:20.085484",
+      "added_at": "2026-01-17T15:07:50.575655",
       "published_date": "2026-01-15T23:55:54"
     },
     "https://insideclimatenews.org/?p=104786": {
-      "added_at": "2026-01-16T16:43:20.090054",
+      "added_at": "2026-01-17T15:07:50.579063",
       "published_date": "2026-01-15T23:43:44"
     },
     "https://insideclimatenews.org/?p=104782": {
@@ -659,335 +361,219 @@
       "published_date": "2026-01-14T22:20:23"
     },
     "https://www.theverge.com/?p=861950": {
-      "added_at": "2026-01-16T16:43:20.807157",
+      "added_at": "2026-01-23T10:29:19.914973",
       "published_date": "2026-01-16T12:00:00"
     },
     "https://www.theverge.com/?p=861326": {
-      "added_at": "2026-01-16T16:43:20.129575",
+      "added_at": "2026-01-21T19:12:47.736403",
       "published_date": "2026-01-13T20:01:37"
     },
-    "https://www.theverge.com/?p=857978": {
-      "added_at": "2026-01-16T16:43:20.133437",
-      "published_date": "2026-01-08T12:00:00"
-    },
-    "https://news.mit.edu/2026/understanding-ammonia-energy-tradeoffs-around-world-0113": {
-      "added_at": "2026-01-16T16:43:20.137975",
-      "published_date": "2026-01-13T05:00:00"
-    },
-    "https://news.mit.edu/2026/3-questions-how-ai-could-optimize-power-grid-0109": {
-      "added_at": "2026-01-16T16:43:20.142081",
-      "published_date": "2026-01-09T05:00:00"
-    },
-    "https://news.mit.edu/2026/decoding-arctic-to-predict-winter-weather-0108": {
-      "added_at": "2026-01-16T16:43:20.145855",
-      "published_date": "2026-01-08T21:55:00"
-    },
     "https://techcrunch.com/?p=3082927": {
-      "added_at": "2026-01-16T16:43:20.153874",
+      "added_at": "2026-01-23T10:29:19.966265",
       "published_date": "2026-01-15T15:00:00"
     },
     "https://techcrunch.com/?p=3082552": {
-      "added_at": "2026-01-16T16:43:20.158266",
+      "added_at": "2026-01-22T15:27:55.897725",
       "published_date": "2026-01-15T09:30:00"
     },
     "https://techcrunch.com/?p=3082610": {
-      "added_at": "2026-01-16T16:43:20.161990",
+      "added_at": "2026-01-22T15:27:55.904278",
       "published_date": "2026-01-14T16:39:49"
     },
     "https://techcrunch.com/?p=3082421": {
-      "added_at": "2026-01-16T16:43:20.165760",
+      "added_at": "2026-01-21T19:12:47.806761",
       "published_date": "2026-01-13T19:17:24"
     },
     "https://techcrunch.com/?p=3082183": {
-      "added_at": "2026-01-16T16:43:20.169981",
+      "added_at": "2026-01-18T16:07:42.619633",
       "published_date": "2026-01-13T12:30:00"
     },
-    "https://techcrunch.com/?p=3081966": {
-      "added_at": "2026-01-16T16:43:20.174723",
-      "published_date": "2026-01-12T19:23:13"
-    },
-    "https://techcrunch.com/?p=3081577": {
-      "added_at": "2026-01-16T16:43:20.179701",
-      "published_date": "2026-01-11T16:15:00"
-    },
-    "https://techcrunch.com/?p=3081433": {
-      "added_at": "2026-01-16T16:43:20.184877",
-      "published_date": "2026-01-09T17:51:15"
-    },
     "https://www.canarymedia.com/articles/green-steel/hyundai-will-test-cleaner-iron-tech": {
-      "added_at": "2026-01-16T16:43:20.201171",
+      "added_at": "2026-01-23T10:29:19.748917",
       "published_date": "2026-01-16T08:30:00"
     },
     "https://www.canarymedia.com/articles/data-centers/disputes-clean-energy-wisconsin-data-center-bill": {
-      "added_at": "2026-01-16T16:43:20.205936",
+      "added_at": "2026-01-23T10:29:19.755193",
       "published_date": "2026-01-16T08:30:00"
     },
     "https://www.canarymedia.com/articles/solar/chart-solar-is-finally-bigger-than-coal-in-texas": {
-      "added_at": "2026-01-16T16:43:20.209931",
+      "added_at": "2026-01-23T10:29:19.762233",
       "published_date": "2026-01-16T08:30:00"
     },
     "https://www.canarymedia.com/articles/clean-energy/22gw-renewables-under-trump-blockade": {
-      "added_at": "2026-01-16T16:43:20.213711",
+      "added_at": "2026-01-23T10:29:19.768506",
       "published_date": "2026-01-16T08:30:00"
     },
     "https://www.canarymedia.com/articles/batteries/pjm-power-grid-big-battery-this-year": {
-      "added_at": "2026-01-16T16:43:20.217478",
+      "added_at": "2026-01-23T10:29:19.774706",
       "published_date": "2026-01-15T15:30:00"
     },
     "https://www.canarymedia.com/articles/ev-charging/plug-more-evs-into-grid-report": {
-      "added_at": "2026-01-16T16:43:20.221684",
+      "added_at": "2026-01-23T10:29:19.781505",
       "published_date": "2026-01-15T13:00:00"
     },
     "https://www.canarymedia.com/articles/hydropower/duke-energy-retreating-major-pumped-hydro-expansion": {
-      "added_at": "2026-01-16T16:43:20.225592",
+      "added_at": "2026-01-22T15:27:55.716240",
       "published_date": "2026-01-15T08:30:00"
     },
     "https://www.canarymedia.com/articles/data-centers/data-center-developers-eye-black-area": {
-      "added_at": "2026-01-16T16:43:20.229693",
+      "added_at": "2026-01-21T19:12:47.588474",
       "published_date": "2026-01-14T08:30:00"
     },
     "https://www.canarymedia.com/articles/energy-efficiency/cuts-to-mobile-home-efficiency-standards-southeast": {
-      "added_at": "2026-01-16T16:43:20.233991",
+      "added_at": "2026-01-21T19:12:47.594264",
       "published_date": "2026-01-14T08:30:00"
     },
     "https://www.canarymedia.com/articles/solar/illinois-young-people-jobs-renewable-energy": {
-      "added_at": "2026-01-16T16:43:20.238143",
+      "added_at": "2026-01-21T19:12:47.600753",
       "published_date": "2026-01-14T08:30:00"
     },
     "https://www.canarymedia.com/articles/offshore-wind/judge-blocks-trump-revolution-orsted-order": {
-      "added_at": "2026-01-16T16:43:20.243495",
+      "added_at": "2026-01-18T16:07:42.432060",
       "published_date": "2026-01-13T10:30:00"
     },
-    "https://www.canarymedia.com/articles/emissions-reduction/us-carbon-emissions-rose-coal": {
-      "added_at": "2026-01-16T16:43:20.248651",
-      "published_date": "2026-01-13T10:00:00"
-    },
-    "https://www.canarymedia.com/articles/fossil-fuels/fracking-waste-dispute-ohio-double-standard": {
-      "added_at": "2026-01-16T16:43:20.254578",
-      "published_date": "2026-01-13T08:30:00"
-    },
-    "https://www.canarymedia.com/articles/clean-energy/trump-doj-turns-attention-gas-bans": {
-      "added_at": "2026-01-16T16:43:20.260272",
-      "published_date": "2026-01-13T08:30:00"
-    },
-    "https://www.canarymedia.com/articles/solar/biggest-us-solar-storage-project-california": {
-      "added_at": "2026-01-16T16:43:20.264818",
-      "published_date": "2026-01-12T08:30:00"
-    },
-    "https://www.canarymedia.com/articles/transmission/new-england-clean-energy-connect-come-online": {
-      "added_at": "2026-01-16T16:43:20.269256",
-      "published_date": "2026-01-12T08:30:00"
-    },
-    "https://www.canarymedia.com/articles/green-steel/2025-not-great-year-for-green-steel": {
-      "added_at": "2026-01-16T16:43:20.274264",
-      "published_date": "2026-01-12T08:30:00"
-    },
-    "https://www.canarymedia.com/articles/clean-energy/energy-legislation-takes-center-stage-virginia": {
-      "added_at": "2026-01-16T16:43:20.278204",
-      "published_date": "2026-01-12T08:30:00"
-    },
-    "https://www.canarymedia.com/articles/politics/energy-permitting-offshore-wind-congress": {
-      "added_at": "2026-01-16T16:43:20.281881",
-      "published_date": "2026-01-09T18:23:00"
-    },
-    "https://www.canarymedia.com/articles/fossil-fuels/epa-free-pass-toxic-ash-disposal": {
-      "added_at": "2026-01-16T16:43:20.285756",
-      "published_date": "2026-01-09T08:30:00"
-    },
-    "https://www.canarymedia.com/articles/clean-energy/chart-how-the-us-electricity-mix-changed-last-year": {
-      "added_at": "2026-01-16T16:43:20.289726",
-      "published_date": "2026-01-09T08:30:00"
-    },
-    "https://www.canarymedia.com/articles/fossil-fuels/trump-order-broken-coal-plant-run": {
-      "added_at": "2026-01-16T16:43:20.293705",
-      "published_date": "2026-01-09T08:30:00"
-    },
-    "https://www.canarymedia.com/articles/long-duration-energy-storage/novel-energy-storage-project-california": {
-      "added_at": "2026-01-16T16:43:20.297254",
-      "published_date": "2026-01-08T21:43:00"
-    },
-    "https://www.canarymedia.com/articles/offshore-wind/offshore-wind-lessons-from-2025": {
-      "added_at": "2026-01-16T16:43:20.300762",
-      "published_date": "2026-01-08T08:30:00"
-    },
-    "https://www.canarymedia.com/articles/utilities/ohio-utility-corruption-defendants-appeal-scotus": {
-      "added_at": "2026-01-16T16:43:20.304861",
-      "published_date": "2026-01-08T08:30:00"
-    },
     "https://www.nature.com/articles/s41558-025-02541-5": {
-      "added_at": "2026-01-16T16:43:20.326601",
+      "added_at": "2026-01-23T10:29:19.901472",
       "published_date": "2026-01-16T00:00:00"
     },
     "https://www.nature.com/articles/s41558-025-02533-5": {
-      "added_at": "2026-01-16T16:43:20.330095",
+      "added_at": "2026-01-22T15:27:55.831041",
       "published_date": "2026-01-15T00:00:00"
     },
     "https://www.nature.com/articles/s41558-025-02539-z": {
-      "added_at": "2026-01-16T16:43:20.333531",
+      "added_at": "2026-01-22T15:27:55.837947",
       "published_date": "2026-01-15T00:00:00"
     },
     "https://www.nature.com/articles/s41558-025-02518-4": {
-      "added_at": "2026-01-16T16:43:20.338029",
+      "added_at": "2026-01-21T19:12:47.709769",
       "published_date": "2026-01-14T00:00:00"
     },
     "https://www.nature.com/articles/s41558-025-02510-y": {
-      "added_at": "2026-01-16T16:43:20.341761",
+      "added_at": "2026-01-21T19:12:47.716336",
       "published_date": "2026-01-14T00:00:00"
     },
-    "https://www.nature.com/articles/s41558-025-02542-4": {
-      "added_at": "2026-01-16T16:43:20.345824",
-      "published_date": "2026-01-12T00:00:00"
-    },
-    "https://www.nature.com/articles/s41558-025-02534-4": {
-      "added_at": "2026-01-16T16:43:20.349548",
-      "published_date": "2026-01-09T00:00:00"
-    },
-    "https://www.nature.com/articles/s41558-025-02537-1": {
-      "added_at": "2026-01-16T16:43:20.353450",
-      "published_date": "2026-01-09T00:00:00"
-    },
     "https://blog.comfy.org/p/flux2-klein-4b-fast-local-image-editing": {
-      "added_at": "2026-01-16T16:43:20.357019",
+      "added_at": "2026-01-23T10:29:19.271069",
       "published_date": "2026-01-15T15:56:58"
     },
     "https://blog.comfy.org/p/preprocessor-and-frame-interpolation": {
-      "added_at": "2026-01-16T16:43:20.360674",
+      "added_at": "2026-01-22T15:27:55.196496",
       "published_date": "2026-01-14T18:51:31"
     },
     "https://blog.comfy.org/p/kling-26-motion-control": {
-      "added_at": "2026-01-16T16:43:20.364223",
+      "added_at": "2026-01-21T16:55:46.829088",
       "published_date": "2026-01-13T17:18:02"
     },
-    "https://blog.comfy.org/p/upscaler-4k-malicious-node-pack-post": {
-      "added_at": "2026-01-16T16:43:20.367965",
-      "published_date": "2026-01-11T01:03:44"
-    },
-    "https://blog.comfy.org/p/made-with-comfyui-2025-from-open": {
-      "added_at": "2026-01-16T16:43:20.372983",
-      "published_date": "2026-01-09T18:53:15"
-    },
-    "https://blog.comfy.org/p/new-comfyui-optimizations-for-nvidia": {
-      "added_at": "2026-01-16T16:43:20.376695",
-      "published_date": "2026-01-09T00:49:30"
-    },
     "https://www.bensbites.com/p/agents-that-keep-running": {
-      "added_at": "2026-01-16T16:43:20.743296",
+      "added_at": "2026-01-23T10:29:20.538827",
       "published_date": "2026-01-15T14:15:37"
     },
     "https://www.bensbites.com/p/claude-code-for-everybody": {
-      "added_at": "2026-01-16T16:43:20.752306",
+      "added_at": "2026-01-18T16:07:43.071334",
       "published_date": "2026-01-13T14:03:42"
     },
-    "https://www.bensbites.com/p/dr-chatgpt-will-see-you-now": {
-      "added_at": "2026-01-16T16:43:20.757013",
-      "published_date": "2026-01-08T14:03:09"
-    },
     "https://huggingface.co/blog/microsoft/optimind": {
-      "added_at": "2026-01-16T16:43:20.403950",
+      "added_at": "2026-01-18T16:07:42.063075",
       "published_date": "2026-01-15T18:49:16"
     },
     "https://huggingface.co/blog/open-responses": {
-      "added_at": "2026-01-16T16:43:20.407632",
+      "added_at": "2026-01-22T15:27:55.124187",
       "published_date": "2026-01-15T00:00:00"
     },
     "https://www.theverge.com/?p=861863": {
-      "added_at": "2026-01-16T16:43:20.416132",
+      "added_at": "2026-01-17T15:07:50.850863",
       "published_date": "2026-01-14T18:16:39"
     },
-    "https://dougshapiro.substack.com/p/my-base-presentation-deck-january": {
-      "added_at": "2026-01-16T16:43:20.420238",
-      "published_date": "2026-01-12T19:05:04"
-    },
     "55bd7005e4b06da83f63b8d9:56bc10857da24fcc14e3a119:69600c4746915f2422290f77": {
-      "added_at": "2026-01-16T16:43:20.424120",
+      "added_at": "2026-01-23T10:29:19.289931",
       "published_date": "2026-01-15T15:47:00"
     },
     "55bd7005e4b06da83f63b8d9:56bc10857da24fcc14e3a119:69447f28b4b6ef7241cf0291": {
-      "added_at": "2026-01-16T16:43:20.428241",
+      "added_at": "2026-01-23T10:29:19.296496",
       "published_date": "2026-01-15T15:33:00"
     },
     "55bd7005e4b06da83f63b8d9:56bc10857da24fcc14e3a119:694455bd8a55fd6e0bbf3f59": {
-      "added_at": "2026-01-16T16:43:20.432202",
+      "added_at": "2026-01-23T10:29:19.302766",
       "published_date": "2026-01-15T15:24:00"
     },
     "55bd7005e4b06da83f63b8d9:56bc10857da24fcc14e3a119:6945a4083fa9286d2f0e05a4": {
-      "added_at": "2026-01-16T16:43:20.436261",
+      "added_at": "2026-01-23T10:29:19.308822",
       "published_date": "2026-01-15T15:00:00"
     },
     "55bd7005e4b06da83f63b8d9:56bc10857da24fcc14e3a119:6967ef0609f05f17a75d2f70": {
-      "added_at": "2026-01-16T16:43:20.440344",
+      "added_at": "2026-01-22T15:27:55.244399",
       "published_date": "2026-01-14T19:31:17"
     },
     "55bd7005e4b06da83f63b8d9:56bc10857da24fcc14e3a119:696695f39f88c96f42e77d47": {
-      "added_at": "2026-01-16T16:43:20.444673",
+      "added_at": "2026-01-21T16:55:46.859590",
       "published_date": "2026-01-13T18:58:59"
     },
     "https://deepmind.google/blog/veo-3-1-ingredients-to-video-more-consistency-creativity-and-control/": {
-      "added_at": "2026-01-16T16:43:20.460488",
+      "added_at": "2026-01-21T16:55:46.744285",
       "published_date": "2026-01-13T17:00:18"
     },
     "https://www.theguardian.com/technology/2026/jan/16/ai-will-transform-the-human-job-and-enhance-skills-says-science-minister": {
-      "added_at": "2026-01-16T16:43:20.464359",
+      "added_at": "2026-01-18T16:07:43.440575",
       "published_date": "2026-01-16T06:00:02"
     },
     "https://www.theguardian.com/technology/2026/jan/16/sacked-tiktok-workers-uk-legal-action-union": {
-      "added_at": "2026-01-16T16:43:20.467965",
+      "added_at": "2026-01-18T16:07:43.431427",
       "published_date": "2026-01-16T15:04:24"
     },
     "https://www.theguardian.com/technology/2026/jan/16/x-still-allowing-sexualised-images-grok-ai-nudification": {
-      "added_at": "2026-01-16T16:43:20.472316",
+      "added_at": "2026-01-18T16:07:43.436045",
       "published_date": "2026-01-16T07:00:05"
     },
     "https://www.theguardian.com/technology/2026/jan/15/elon-musk-xai-datacenter-memphis": {
-      "added_at": "2026-01-16T16:43:20.476008",
+      "added_at": "2026-01-18T16:07:43.446997",
       "published_date": "2026-01-16T00:09:42"
     },
     "https://www.theguardian.com/technology/2026/jan/15/mother-of-one-of-elon-musks-sons-sues-over-grok-generated-explicit-images": {
-      "added_at": "2026-01-16T16:43:20.479769",
+      "added_at": "2026-01-18T16:07:43.452612",
       "published_date": "2026-01-15T22:35:01"
     },
     "https://www.theguardian.com/wellness/2026/jan/15/ai-life-coach": {
-      "added_at": "2026-01-16T16:43:20.483619",
+      "added_at": "2026-01-18T16:07:43.457309",
       "published_date": "2026-01-15T17:00:45"
     },
     "https://www.theguardian.com/technology/2026/jan/15/grok-ai-images-uk-limits-x-app-ofcom": {
-      "added_at": "2026-01-16T16:43:20.487781",
+      "added_at": "2026-01-18T16:07:43.461900",
       "published_date": "2026-01-15T16:07:11"
     },
     "https://www.theguardian.com/film/2026/jan/15/matthew-mcconaughey-trademarks-all-right-all-right-all-right-catchphrase-in-bid-to-beat-ai-fakes": {
-      "added_at": "2026-01-16T16:43:20.491672",
+      "added_at": "2026-01-18T16:07:43.467110",
       "published_date": "2026-01-15T14:39:08"
     },
     "https://www.theguardian.com/technology/2026/jan/15/trump-tariff-nvidia-ai-chips": {
-      "added_at": "2026-01-16T16:43:20.495541",
+      "added_at": "2026-01-18T16:07:43.472022",
       "published_date": "2026-01-15T14:01:38"
     },
     "https://www.theguardian.com/technology/2026/jan/15/chatgpt-health-ai-chatbot-medical-advice": {
-      "added_at": "2026-01-16T16:43:20.503685",
+      "added_at": "2026-01-18T16:07:43.476705",
       "published_date": "2026-01-15T14:00:21"
     },
     "https://www.theguardian.com/australia-news/2026/jan/15/aboriginal-steve-irwin-ai-character-created-new-zealand": {
-      "added_at": "2026-01-16T16:43:20.499514",
+      "added_at": "2026-01-18T16:07:43.481377",
       "published_date": "2026-01-15T14:00:21"
     },
     "https://www.theguardian.com/politics/2026/jan/15/sadiq-khan-to-urge-ministers-to-act-over-colossal-impact-of-ai-on-london-jobs": {
-      "added_at": "2026-01-16T16:43:20.507745",
+      "added_at": "2026-01-18T16:07:43.486232",
       "published_date": "2026-01-15T12:38:22"
     },
     "https://www.theguardian.com/technology/2026/jan/15/grok-scandal-ai-industry-too-unconstrained-yoshua-bengio-elon-musk": {
-      "added_at": "2026-01-16T16:43:20.511312",
+      "added_at": "2026-01-18T11:10:43.081995",
       "published_date": "2026-01-15T11:57:17"
     },
     "https://www.theguardian.com/technology/2026/jan/14/elon-musk-grok-ai-explicit-images": {
-      "added_at": "2026-01-16T16:43:20.515323",
+      "added_at": "2026-01-17T15:07:50.971254",
       "published_date": "2026-01-15T09:19:12"
     },
     "https://www.theguardian.com/commentisfree/2026/jan/15/elon-musk-grok-backflip-blocked-x-ai-sexualised-images-backlash": {
-      "added_at": "2026-01-16T16:43:20.519358",
+      "added_at": "2026-01-17T15:07:50.976011",
       "published_date": "2026-01-15T05:14:14"
     },
     "https://www.theguardian.com/commentisfree/picture/2026/jan/15/why-are-so-many-still-sticking-with-twitter": {
-      "added_at": "2026-01-16T16:43:20.523504",
+      "added_at": "2026-01-17T15:07:50.980625",
       "published_date": "2026-01-15T01:29:52"
     },
     "https://www.theguardian.com/technology/2026/jan/14/california-attorney-general-investigates-grok-ai-elon-musk": {
@@ -1007,27 +593,23 @@
       "published_date": "2026-01-14T16:48:22"
     },
     "https://www.sciencedaily.com/releases/2026/01/260112214317.htm": {
-      "added_at": "2026-01-16T16:43:20.542794",
+      "added_at": "2026-01-18T16:07:43.385509",
       "published_date": "2026-01-13T13:50:24"
     },
-    "https://www.sciencedaily.com/releases/2026/01/260109023114.htm": {
-      "added_at": "2026-01-16T16:43:20.546829",
-      "published_date": "2026-01-09T07:39:02"
-    },
     "https://news.mit.edu/2026/samsara-helps-companies-physical-operations-run-more-intelligently-0116": {
-      "added_at": "2026-01-16T16:43:20.558398",
+      "added_at": "2026-01-17T15:07:51.001319",
       "published_date": "2026-01-16T05:00:00"
     },
     "https://news.mit.edu/2026/genai-tool-helps-3d-print-personal-items-sustain-daily-use-0114": {
-      "added_at": "2026-01-16T16:43:20.562104",
+      "added_at": "2026-01-17T15:07:51.004966",
       "published_date": "2026-01-14T21:00:00"
     },
     "https://the-decoder.com/?p=31087": {
-      "added_at": "2026-01-16T16:43:20.569759",
+      "added_at": "2026-01-17T15:07:51.043998",
       "published_date": "2026-01-16T15:18:09"
     },
     "https://the-decoder.com/?p=31088": {
-      "added_at": "2026-01-16T16:43:20.573514",
+      "added_at": "2026-01-17T14:57:43.544651",
       "published_date": "2026-01-16T15:13:37"
     },
     "https://the-decoder.com/?p=31084": {
@@ -1063,47 +645,43 @@
       "published_date": "2026-01-15T13:54:45"
     },
     "wOG0z6nm91FOeUqhpizqI": {
-      "added_at": "2026-01-16T16:43:20.610735",
+      "added_at": "2026-01-23T10:29:20.928003",
       "published_date": "2026-01-16T14:01:00"
     },
     "1dxpkoyNmn8ceRMHCKLlT8": {
-      "added_at": "2026-01-16T16:43:20.614978",
+      "added_at": "2026-01-18T16:07:43.349396",
       "published_date": "2026-01-13T13:00:00"
     },
-    "7EaNv4Ip2AUlW9RClUv2cB": {
-      "added_at": "2026-01-16T16:43:20.618893",
-      "published_date": "2026-01-12T11:30:00"
-    },
     "6967d917aac0bb6ef1ecddf9": {
-      "added_at": "2026-01-16T16:43:20.627441",
+      "added_at": "2026-01-21T19:12:48.702928",
       "published_date": "2026-01-15T21:14:23"
     },
     "6968fedb43f4ea26029fe444": {
-      "added_at": "2026-01-16T16:43:20.631323",
+      "added_at": "2026-01-21T19:12:48.709178",
       "published_date": "2026-01-15T19:30:14"
     },
     "69690b5f02bfb33402ce33e6": {
-      "added_at": "2026-01-16T16:43:20.635216",
+      "added_at": "2026-01-21T16:55:48.006872",
       "published_date": "2026-01-15T18:24:51"
     },
     "6967e9a5585d9a70fc535834": {
-      "added_at": "2026-01-16T16:43:20.640037",
+      "added_at": "2026-01-18T16:07:43.319765",
       "published_date": "2026-01-15T17:40:41"
     },
     "696163043130781388ec5263": {
-      "added_at": "2026-01-16T16:43:20.644208",
+      "added_at": "2026-01-18T16:07:43.324372",
       "published_date": "2026-01-15T13:00:00"
     },
     "696693322ef346736f0541ca": {
-      "added_at": "2026-01-16T16:43:20.647888",
-      "published_date": "2026-01-15T12:00:00"
+      "added_at": "2026-01-23T10:29:20.871881",
+      "published_date": "2026-01-22T10:35:53"
     },
     "690bda56aa038d5636bfbc75": {
-      "added_at": "2026-01-16T16:43:20.651828",
+      "added_at": "2026-01-18T16:07:43.334769",
       "published_date": "2026-01-15T11:30:00"
     },
     "69656b22bf96e65096dda915": {
-      "added_at": "2026-01-16T16:43:20.655944",
+      "added_at": "2026-01-18T16:07:43.340021",
       "published_date": "2026-01-15T10:30:00"
     },
     "69682efe6376ac7cbf488f44": {
@@ -1114,72 +692,44 @@
       "added_at": "2026-01-16T16:43:20.664075",
       "published_date": "2026-01-14T19:00:00"
     },
-    "https://www.technologyreview.com/?p=1131193": {
-      "added_at": "2026-01-16T16:43:20.733678",
-      "published_date": "2026-01-12T17:01:00"
-    },
-    "https://www.technologyreview.com/?p=1129782": {
-      "added_at": "2026-01-16T16:43:20.673185",
-      "published_date": "2026-01-12T11:00:00"
-    },
-    "https://www.technologyreview.com/?p=1129982": {
-      "added_at": "2026-01-16T16:43:20.677837",
-      "published_date": "2026-01-12T11:00:00"
-    },
-    "https://www.technologyreview.com/?p=1130003": {
-      "added_at": "2026-01-16T16:43:20.682123",
-      "published_date": "2026-01-12T11:00:00"
-    },
-    "https://www.technologyreview.com/?p=1130018": {
-      "added_at": "2026-01-16T16:43:20.686064",
-      "published_date": "2026-01-12T11:00:00"
-    },
-    "https://www.technologyreview.com/?p=1130027": {
-      "added_at": "2026-01-16T16:43:20.689999",
-      "published_date": "2026-01-12T11:00:00"
-    },
     "https://www.technologyreview.com/?p=1131375": {
-      "added_at": "2026-01-16T16:43:20.701302",
+      "added_at": "2026-01-17T15:07:51.123341",
       "published_date": "2026-01-16T12:59:42"
     },
     "https://www.technologyreview.com/?p=1131363": {
-      "added_at": "2026-01-16T16:43:20.705464",
+      "added_at": "2026-01-17T15:07:51.126878",
       "published_date": "2026-01-16T10:00:00"
     },
     "https://www.technologyreview.com/?p=1131079": {
-      "added_at": "2026-01-16T16:43:20.709482",
+      "added_at": "2026-01-17T15:07:51.130324",
       "published_date": "2026-01-15T17:16:58"
     },
     "https://www.technologyreview.com/?p=1131361": {
-      "added_at": "2026-01-16T16:43:20.713407",
+      "added_at": "2026-01-17T15:07:51.133862",
       "published_date": "2026-01-15T13:10:39"
     },
     "https://www.technologyreview.com/?p=1131348": {
-      "added_at": "2026-01-16T16:43:20.717460",
+      "added_at": "2026-01-17T15:07:51.137499",
       "published_date": "2026-01-15T11:00:00"
     },
     "https://www.technologyreview.com/?p=1131317": {
-      "added_at": "2026-01-16T16:43:20.721505",
+      "added_at": "2026-01-17T15:07:51.141047",
       "published_date": "2026-01-14T13:10:00"
     },
     "https://www.technologyreview.com/?p=1131253": {
-      "added_at": "2026-01-16T16:43:20.725598",
+      "added_at": "2026-01-17T15:07:51.144572",
       "published_date": "2026-01-14T11:17:46"
     },
     "https://www.technologyreview.com/?p=1131245": {
-      "added_at": "2026-01-16T16:43:20.729219",
+      "added_at": "2026-01-17T15:07:51.148064",
       "published_date": "2026-01-13T13:00:00"
     },
-    "https://www.technologyreview.com/?p=1128939": {
-      "added_at": "2026-01-16T16:43:20.738504",
-      "published_date": "2026-01-12T14:00:00"
-    },
     "https://www.theverge.com/?p=863097": {
-      "added_at": "2026-01-16T16:43:20.772589",
+      "added_at": "2026-01-18T16:07:43.284630",
       "published_date": "2026-01-15T23:33:29"
     },
     "https://www.theverge.com/?p=861957": {
-      "added_at": "2026-01-16T16:43:20.776281",
+      "added_at": "2026-01-18T16:07:43.289159",
       "published_date": "2026-01-15T19:00:00"
     },
     "https://www.theverge.com/?p=862402": {
@@ -1211,263 +761,243 @@
       "published_date": "2026-01-15T00:46:54"
     },
     "https://www.theverge.com/?p=861968": {
-      "added_at": "2026-01-16T16:43:20.810993",
+      "added_at": "2026-01-17T15:07:51.210990",
       "published_date": "2026-01-15T14:00:00"
     },
     "https://arstechnica.com/tech-policy/2026/01/mother-of-one-of-elon-musks-offspring-sues-xai-over-sexualized-deepfakes/": {
-      "added_at": "2026-01-16T16:43:20.816192",
+      "added_at": "2026-01-23T10:29:20.756766",
       "published_date": "2026-01-16T14:16:26"
     },
     "https://arstechnica.com/tech-policy/2026/01/chatgpt-wrote-goodnight-moon-suicide-lullaby-for-man-who-later-killed-himself/": {
-      "added_at": "2026-01-16T16:43:20.821369",
+      "added_at": "2026-01-23T10:29:20.763617",
       "published_date": "2026-01-15T19:07:09"
     },
     "https://arstechnica.com/ai/2026/01/wikipedia-will-share-content-with-ai-firms-in-new-licensing-deals/": {
-      "added_at": "2026-01-16T16:43:20.826362",
+      "added_at": "2026-01-23T10:29:20.770136",
       "published_date": "2026-01-15T15:25:52"
     },
     "https://arstechnica.com/cars/2026/01/exclusive-volvo-tells-us-why-having-gemini-in-your-next-car-is-a-good-thing/": {
-      "added_at": "2026-01-16T16:43:20.830547",
+      "added_at": "2026-01-22T15:27:56.681958",
       "published_date": "2026-01-15T08:00:15"
     },
     "https://arstechnica.com/culture/2026/01/pentagons-arsenal-of-freedom-tour-borrows-name-from-star-trek-episode-about-killer-ai/": {
-      "added_at": "2026-01-16T16:43:20.835702",
+      "added_at": "2026-01-22T15:27:56.688559",
       "published_date": "2026-01-14T23:43:46"
     },
     "https://arstechnica.com/security/2026/01/a-single-click-mounted-a-covert-multistage-attack-against-copilot/": {
-      "added_at": "2026-01-16T16:43:20.839804",
+      "added_at": "2026-01-22T15:27:56.694781",
       "published_date": "2026-01-14T22:03:11"
     },
     "https://arstechnica.com/tech-policy/2026/01/musk-still-defending-groks-partial-nudes-as-california-ag-opens-probe/": {
-      "added_at": "2026-01-16T16:43:20.843475",
+      "added_at": "2026-01-22T15:27:56.701447",
       "published_date": "2026-01-14T20:39:00"
     },
     "https://arstechnica.com/ai/2026/01/bandcamp-bans-purely-ai-generated-music-from-its-platform/": {
-      "added_at": "2026-01-16T16:43:20.847147",
+      "added_at": "2026-01-22T15:27:56.707749",
       "published_date": "2026-01-14T17:46:19"
     },
     "https://arstechnica.com/google/2026/01/gemini-can-now-scan-your-photos-email-and-more-to-provide-better-answers/": {
-      "added_at": "2026-01-16T16:43:20.850812",
+      "added_at": "2026-01-22T15:27:56.714097",
       "published_date": "2026-01-14T16:42:32"
     },
     "https://arstechnica.com/ai/2026/01/deny-deny-admit-uk-police-used-copilot-ai-hallucination-when-banning-football-fans/": {
-      "added_at": "2026-01-16T16:43:20.855020",
+      "added_at": "2026-01-22T15:27:56.720383",
       "published_date": "2026-01-14T16:08:58"
     },
     "https://arstechnica.com/gadgets/2026/01/the-ram-shortages-silver-lining-less-talk-about-ai-pcs/": {
-      "added_at": "2026-01-16T16:43:20.858708",
+      "added_at": "2026-01-21T19:12:48.564148",
       "published_date": "2026-01-13T22:34:41"
     },
     "https://arstechnica.com/ai/2026/01/hegseth-wants-to-integrate-musks-grok-ai-into-military-networks-this-month/": {
-      "added_at": "2026-01-16T16:43:20.863856",
+      "added_at": "2026-01-21T19:12:48.570381",
       "published_date": "2026-01-13T21:13:07"
     },
     "https://arstechnica.com/ai/2026/01/microsoft-vows-to-cover-full-power-costs-for-energy-hungry-ai-data-centers/": {
-      "added_at": "2026-01-16T16:43:20.867631",
+      "added_at": "2026-01-21T19:12:48.576356",
       "published_date": "2026-01-13T20:05:14"
     },
     "https://arstechnica.com/google/2026/01/googles-updated-veo-model-can-make-vertical-videos-from-reference-images-with-4k-upscaling/": {
-      "added_at": "2026-01-16T16:43:20.872328",
+      "added_at": "2026-01-21T19:12:48.582458",
       "published_date": "2026-01-13T19:28:15"
     },
     "https://arstechnica.com/security/2026/01/signal-creator-moxie-marlinspike-wants-to-do-for-ai-what-he-did-for-messaging/": {
-      "added_at": "2026-01-16T16:43:20.876277",
+      "added_at": "2026-01-18T16:07:43.226678",
       "published_date": "2026-01-13T12:00:36"
     },
-    "https://arstechnica.com/ai/2026/01/anthropic-launches-cowork-a-claude-code-like-for-general-computing/": {
-      "added_at": "2026-01-16T16:43:20.879959",
-      "published_date": "2026-01-12T23:42:09"
-    },
-    "https://arstechnica.com/ai/2026/01/hobby-github-repo-shows-linus-torvalds-vibe-codes-sometimes/": {
-      "added_at": "2026-01-16T16:43:20.885120",
-      "published_date": "2026-01-12T22:27:50"
-    },
-    "https://arstechnica.com/ai/2026/01/google-removes-some-ai-health-summaries-after-investigation-finds-dangerous-flaws/": {
-      "added_at": "2026-01-16T16:43:20.889271",
-      "published_date": "2026-01-12T21:47:32"
-    },
-    "https://arstechnica.com/google/2026/01/apps-like-grok-are-explicitly-banned-under-googles-rules-why-is-it-still-in-the-play-store/": {
-      "added_at": "2026-01-16T16:43:20.893869",
-      "published_date": "2026-01-12T19:36:17"
-    },
-    "https://arstechnica.com/apple/2026/01/apple-says-its-new-ai-powered-siri-will-use-googles-gemini-language-models/": {
-      "added_at": "2026-01-16T16:43:20.897623",
-      "published_date": "2026-01-12T17:57:32"
-    },
     "gmail-19bc73183fd4cbc2": {
-      "added_at": "2026-01-16T16:43:20.901456",
+      "added_at": "2026-01-21T19:12:49.198128",
       "published_date": "2026-01-16T14:24:28+00:00"
     },
     "gmail-19bc70011d9ba255": {
-      "added_at": "2026-01-16T16:43:20.905462",
+      "added_at": "2026-01-21T19:12:49.204685",
       "published_date": "2026-01-16T13:30:28+00:00"
     },
     "gmail-19bc6fbdec22a1b8": {
-      "added_at": "2026-01-16T16:43:20.909122",
+      "added_at": "2026-01-21T16:55:48.440910",
       "published_date": "2026-01-16T13:25:53+00:00"
     },
     "gmail-19bc6e2c9d7f3c1e": {
-      "added_at": "2026-01-16T16:43:20.913502",
+      "added_at": "2026-01-21T16:55:48.446709",
       "published_date": "2026-01-16T12:58:15+00:00"
     },
     "gmail-19bc6bebfa3dcf48": {
-      "added_at": "2026-01-16T16:43:20.917345",
+      "added_at": "2026-01-21T16:55:48.452477",
       "published_date": "2026-01-16T12:19:07+00:00"
     },
     "gmail-19bc6b78fd4d779e": {
-      "added_at": "2026-01-16T16:43:20.921236",
+      "added_at": "2026-01-18T16:07:43.570032",
       "published_date": "2026-01-16T12:11:16+00:00"
     },
     "gmail-19bc6977996c7106": {
-      "added_at": "2026-01-16T16:43:20.924958",
+      "added_at": "2026-01-18T16:07:43.574587",
       "published_date": "2026-01-16T11:36:13+00:00"
     },
     "gmail-19bc466543e5c082": {
-      "added_at": "2026-01-16T16:43:20.928720",
+      "added_at": "2026-01-18T16:07:43.579191",
       "published_date": "2026-01-16T01:23:16+00:00"
     },
     "gmail-19bc3e3bacfe5cc5": {
-      "added_at": "2026-01-16T16:43:20.932528",
+      "added_at": "2026-01-18T16:07:43.583936",
       "published_date": "2026-01-15T23:00:24+00:00"
     },
     "gmail-19bc3567132dc8c2": {
-      "added_at": "2026-01-16T16:43:20.936445",
+      "added_at": "2026-01-18T16:07:43.588700",
       "published_date": "2026-01-15T20:26:13+00:00"
     },
     "gmail-19bc2d17faae1d51": {
-      "added_at": "2026-01-16T16:43:20.940218",
+      "added_at": "2026-01-18T16:07:43.593401",
       "published_date": "2026-01-15T18:00:52+00:00"
     },
     "gmail-19bc266139dc2c95": {
-      "added_at": "2026-01-16T16:43:20.943996",
+      "added_at": "2026-01-18T16:07:43.597916",
       "published_date": "2026-01-15T16:02:01+00:00"
     },
     "gmail-19bc20ff62fae4be": {
-      "added_at": "2026-01-16T16:43:20.948767",
+      "added_at": "2026-01-18T16:07:43.602551",
       "published_date": "2026-01-15T14:29:44+00:00"
     },
     "gmail-19bc1f82025d4fc1": {
-      "added_at": "2026-01-16T16:43:20.953019",
+      "added_at": "2026-01-18T16:07:43.607208",
       "published_date": "2026-01-15T14:03:38+00:00"
     },
     "gmail-19bc1c92a3a1f1f8": {
-      "added_at": "2026-01-16T16:43:20.956934",
+      "added_at": "2026-01-18T16:07:43.611685",
       "published_date": "2026-01-15T13:12:08+00:00"
     },
     "gmail-19bc1c5851953a63": {
-      "added_at": "2026-01-16T16:43:20.961997",
+      "added_at": "2026-01-18T16:07:43.616410",
       "published_date": "2026-01-15T13:08:24+00:00"
     },
     "gmail-19bc1934df53bfef": {
-      "added_at": "2026-01-16T16:43:20.965781",
+      "added_at": "2026-01-18T16:07:43.621043",
       "published_date": "2026-01-15T12:13:34+00:00"
     },
     "gmail-19bc18ebd5a779a9": {
-      "added_at": "2026-01-16T16:43:20.969592",
+      "added_at": "2026-01-18T16:07:43.625540",
       "published_date": "2026-01-15T12:08:35+00:00"
     },
     "gmail-19bc171d0d5f1ce0": {
-      "added_at": "2026-01-16T16:43:20.974741",
+      "added_at": "2026-01-18T16:07:43.630135",
       "published_date": "2026-01-15T11:36:59+00:00"
     },
     "gmail-19bbf3b97d422a48": {
-      "added_at": "2026-01-16T16:43:20.980246",
+      "added_at": "2026-01-18T16:07:43.634767",
       "published_date": "2026-01-15T01:18:21+00:00"
     },
     "gmail-19bbe4f0f17bbc8e": {
-      "added_at": "2026-01-16T16:43:20.984240",
+      "added_at": "2026-01-18T16:07:43.639400",
       "published_date": "2026-01-14T21:00:08+00:00"
     },
     "gmail-19bbdec8728e685a": {
-      "added_at": "2026-01-16T16:43:20.988665",
+      "added_at": "2026-01-18T16:07:43.643909",
       "published_date": "2026-01-14T19:12:30+00:00"
     },
     "gmail-19bbde188c3d5075": {
-      "added_at": "2026-01-16T16:43:20.994592",
+      "added_at": "2026-01-18T16:07:43.648320",
       "published_date": "2026-01-14T19:00:24+00:00"
     },
     "gmail-19bbdd9abbc82a35": {
-      "added_at": "2026-01-16T16:43:20.998545",
+      "added_at": "2026-01-18T16:07:43.653376",
       "published_date": "2026-01-14T18:51:56+00:00"
     },
     "gmail-19bbd7a3a82d8979": {
-      "added_at": "2026-01-16T16:43:21.002632",
+      "added_at": "2026-01-18T16:07:43.658080",
       "published_date": "2026-01-14T17:01:03+00:00"
     },
     "gmail-19bbd799aa3e8411": {
-      "added_at": "2026-01-16T16:43:21.007300",
+      "added_at": "2026-01-18T16:07:43.662711",
       "published_date": "2026-01-14T17:07:00+00:00"
     },
     "gmail-19bbd3d9d5f95116": {
-      "added_at": "2026-01-16T16:43:21.011334",
+      "added_at": "2026-01-18T16:07:43.667434",
       "published_date": "2026-01-14T16:01:14+00:00"
     },
     "gmail-19bbd20b64d22658": {
-      "added_at": "2026-01-16T16:43:21.015499",
+      "added_at": "2026-01-18T16:07:43.671892",
       "published_date": "2026-01-14T15:29:50+00:00"
     },
     "gmail-19bbce4fb6e7444c": {
-      "added_at": "2026-01-16T16:43:21.019437",
+      "added_at": "2026-01-18T16:07:43.676426",
       "published_date": "2026-01-14T14:24:40+00:00"
     },
     "gmail-19bbcad3ce5e027b": {
-      "added_at": "2026-01-16T16:43:21.023790",
+      "added_at": "2026-01-18T16:07:43.681186",
       "published_date": "2026-01-14T13:23:48+00:00"
     },
     "gmail-19bbca67cab90f7b": {
-      "added_at": "2026-01-16T16:43:21.027572",
+      "added_at": "2026-01-18T16:07:43.685803",
       "published_date": "2026-01-14T13:01:24+00:00"
     },
     "gmail-19bbca3ec1b0cae1": {
-      "added_at": "2026-01-16T16:43:21.031857",
+      "added_at": "2026-01-18T16:07:43.690374",
       "published_date": "2026-01-14T13:13:37+00:00"
     },
     "gmail-19bbc74b06e4fb20": {
-      "added_at": "2026-01-16T16:43:21.035761",
+      "added_at": "2026-01-18T16:07:43.694858",
       "published_date": "2026-01-14T12:22:01+00:00"
     },
     "gmail-19bbc6f6ffa0b8a9": {
-      "added_at": "2026-01-16T16:43:21.041023",
+      "added_at": "2026-01-18T16:07:43.699644",
       "published_date": "2026-01-14T12:16:17+00:00"
     },
     "gmail-19bbc49f56761214": {
-      "added_at": "2026-01-16T16:43:21.047050",
+      "added_at": "2026-01-18T16:07:43.704197",
       "published_date": "2026-01-14T11:35:21+00:00"
     },
     "gmail-19bba0507bf2e73b": {
-      "added_at": "2026-01-16T16:43:21.053042",
+      "added_at": "2026-01-18T16:07:43.708649",
       "published_date": "2026-01-14T01:00:35+00:00"
     },
     "gmail-19bb92abd108d083": {
-      "added_at": "2026-01-16T16:43:21.058425",
+      "added_at": "2026-01-18T16:07:43.713314",
       "published_date": "2026-01-13T21:02:23+00:00"
     },
     "gmail-19bb8d88d0750c63": {
-      "added_at": "2026-01-16T16:43:21.064339",
+      "added_at": "2026-01-18T16:07:43.717871",
       "published_date": "2026-01-13T19:32:27+00:00"
     },
     "gmail-19bb8c4070628df5": {
-      "added_at": "2026-01-16T16:43:21.069219",
+      "added_at": "2026-01-18T16:07:43.722416",
       "published_date": "2026-01-13T19:10:06+00:00"
     },
     "gmail-19bb88558e65bc9d": {
-      "added_at": "2026-01-16T16:43:21.075338",
+      "added_at": "2026-01-18T11:10:43.318881",
       "published_date": "2026-01-13T18:01:29+00:00"
     },
     "gmail-19bb884a5935da5f": {
-      "added_at": "2026-01-16T16:43:21.079184",
+      "added_at": "2026-01-17T15:07:51.500911",
       "published_date": "2026-01-13T18:00:12+00:00"
     },
     "gmail-19bb87ca7d4d407b": {
-      "added_at": "2026-01-16T16:43:21.083400",
+      "added_at": "2026-01-17T15:07:51.504945",
       "published_date": "2026-01-13T17:46:25+00:00"
     },
     "gmail-19bb85da45bb4ec5": {
-      "added_at": "2026-01-16T16:43:21.087558",
+      "added_at": "2026-01-17T15:07:51.508809",
       "published_date": "2026-01-13T17:18:02+00:00"
     },
     "gmail-19bb8190ee70d35e": {
-      "added_at": "2026-01-16T16:43:21.093472",
+      "added_at": "2026-01-17T14:57:43.953239",
       "published_date": "2026-01-13T16:02:29+00:00"
     },
     "gmail-19bb806f2cab8e4d": {
@@ -1494,69 +1024,2037 @@
       "added_at": "2026-01-16T16:43:21.124850",
       "published_date": "2026-01-13T13:01:01+00:00"
     },
-    "https://techcrunch.com/?p=3080246": {
-      "added_at": "2026-01-16T16:43:20.193355",
-      "published_date": "2026-01-06T16:30:00"
-    },
-    "https://techcrunch.com/?p=3079751": {
-      "added_at": "2026-01-16T16:43:20.197155",
-      "published_date": "2026-01-05T18:20:23"
-    },
-    "https://www.canarymedia.com/articles/solar/ohio-utility-slash-rooftop-solar-compensation": {
-      "added_at": "2026-01-16T16:43:20.319467",
-      "published_date": "2026-01-06T08:30:00"
-    },
-    "https://www.canarymedia.com/articles/clean-energy/is-us-headed-toward-electricity-crisis": {
-      "added_at": "2026-01-16T16:43:20.323016",
-      "published_date": "2026-01-06T08:30:00"
-    },
-    "https://blog.comfy.org/p/ltx-2-open-source-audio-video-ai": {
-      "added_at": "2026-01-16T16:43:20.380266",
-      "published_date": "2026-01-06T07:46:58"
-    },
-    "https://blog.comfy.org/p/official-amd-rocm-support-arrives": {
-      "added_at": "2026-01-16T16:43:20.384344",
-      "published_date": "2026-01-06T03:28:15"
-    },
-    "https://www.bensbites.com/p/how-i-code-with-agents-without-being": {
-      "added_at": "2026-01-16T16:43:20.760720",
-      "published_date": "2026-01-06T14:02:59"
-    },
-    "https://huggingface.co/blog/nvidia/nvidia-cosmos-reason-2-brings-advanced-reasoning": {
-      "added_at": "2026-01-16T16:43:20.412226",
-      "published_date": "2026-01-05T22:56:51"
-    },
-    "55bd7005e4b06da83f63b8d9:56bc10857da24fcc14e3a119:6940a1e681e2dd7fa3d6d7aa": {
-      "added_at": "2026-01-16T16:43:20.448803",
-      "published_date": "2026-01-06T16:39:00"
-    },
-    "55bd7005e4b06da83f63b8d9:56bc10857da24fcc14e3a119:693aee317ed1ce487e529e40": {
-      "added_at": "2026-01-16T16:43:20.452652",
-      "published_date": "2026-01-06T16:13:00"
-    },
-    "55bd7005e4b06da83f63b8d9:56bc10857da24fcc14e3a119:6931d02c1e474830806163ed": {
-      "added_at": "2026-01-16T16:43:20.456840",
-      "published_date": "2026-01-05T22:52:00"
-    },
-    "https://www.sciencedaily.com/releases/2026/01/260105165815.htm": {
-      "added_at": "2026-01-16T16:43:20.550440",
-      "published_date": "2026-01-06T12:33:12"
-    },
-    "https://news.mit.edu/2026/mit-scientists-investigate-memorization-risk-clinical-ai-0105": {
-      "added_at": "2026-01-16T16:43:20.565786",
-      "published_date": "2026-01-05T21:55:00"
-    },
-    "https://www.technologyreview.com/?p=1130707": {
-      "added_at": "2026-01-16T16:43:20.697523",
-      "published_date": "2026-01-06T10:00:00"
-    },
     "https://www.theverge.com/?p=863340": {
-      "added_at": "2026-01-16T16:43:20.764841",
+      "added_at": "2026-01-18T16:07:43.275327",
       "published_date": "2026-01-16T14:21:05"
     },
     "https://www.theverge.com/?p=863319": {
-      "added_at": "2026-01-16T16:43:20.768582",
+      "added_at": "2026-01-18T16:07:43.279840",
       "published_date": "2026-01-16T13:15:00"
+    },
+    "https://insideclimatenews.org/?p=104903": {
+      "added_at": "2026-01-21T16:55:47.236453",
+      "published_date": "2026-01-17T10:00:00"
+    },
+    "https://insideclimatenews.org/?p=104856": {
+      "added_at": "2026-01-18T16:07:42.495894",
+      "published_date": "2026-01-17T09:57:00"
+    },
+    "https://insideclimatenews.org/?p=104902": {
+      "added_at": "2026-01-18T16:07:42.500631",
+      "published_date": "2026-01-17T02:03:22"
+    },
+    "https://insideclimatenews.org/?p=104892": {
+      "added_at": "2026-01-18T16:07:42.505146",
+      "published_date": "2026-01-17T00:28:29"
+    },
+    "https://insideclimatenews.org/?p=104847": {
+      "added_at": "2026-01-18T16:07:42.510324",
+      "published_date": "2026-01-16T22:38:51"
+    },
+    "https://insideclimatenews.org/?p=104844": {
+      "added_at": "2026-01-18T16:07:42.515203",
+      "published_date": "2026-01-16T21:45:52"
+    },
+    "https://techcrunch.com/?p=3083507": {
+      "added_at": "2026-01-23T10:29:19.950651",
+      "published_date": "2026-01-16T20:49:18"
+    },
+    "https://techcrunch.com/?p=3083434": {
+      "added_at": "2026-01-23T10:29:19.957600",
+      "published_date": "2026-01-16T19:38:27"
+    },
+    "https://www.canarymedia.com/articles/data-centers/trump-pjm-governors-agreement-energy-costs": {
+      "added_at": "2026-01-23T10:29:19.735914",
+      "published_date": "2026-01-16T21:05:00"
+    },
+    "https://www.canarymedia.com/articles/politics/trump-climate-grants-court-offshore-wind": {
+      "added_at": "2026-01-23T10:29:19.742159",
+      "published_date": "2026-01-16T18:23:00"
+    },
+    "https://blog.comfy.org/p/wan26-reference-to-video": {
+      "added_at": "2026-01-23T10:29:19.264421",
+      "published_date": "2026-01-16T20:15:34"
+    },
+    "55bd7005e4b06da83f63b8d9:56bc10857da24fcc14e3a119:696a750200781145bb6a98fd": {
+      "added_at": "2026-01-23T10:29:19.283840",
+      "published_date": "2026-01-16T17:27:30"
+    },
+    "https://www.theguardian.com/technology/2026/jan/17/why-trillions-dollars-risk-no-guarantee-ai-reward": {
+      "added_at": "2026-01-21T19:12:48.879960",
+      "published_date": "2026-01-17T12:00:27"
+    },
+    "https://www.theguardian.com/commentisfree/2026/jan/17/child-abuse-images-ai-exploitation": {
+      "added_at": "2026-01-21T19:12:48.874112",
+      "published_date": "2026-01-17T12:00:27"
+    },
+    "https://www.theguardian.com/technology/2026/jan/16/chatgpt-ads-in-revenue-boost": {
+      "added_at": "2026-01-21T19:12:48.886046",
+      "published_date": "2026-01-16T18:24:58"
+    },
+    "https://www.theguardian.com/technology/2026/jan/16/partly-ai-generated-folk-pop-hit-barred-from-swedens-official-charts": {
+      "added_at": "2026-01-21T16:55:48.167066",
+      "published_date": "2026-01-16T17:09:30"
+    },
+    "https://www.sciencedaily.com/releases/2026/01/260116035308.htm": {
+      "added_at": "2026-01-23T10:29:20.974073",
+      "published_date": "2026-01-16T15:28:30"
+    },
+    "https://the-decoder.com/?p=31141": {
+      "added_at": "2026-01-18T16:07:43.109223",
+      "published_date": "2026-01-17T13:02:57"
+    },
+    "https://the-decoder.com/?p=31131": {
+      "added_at": "2026-01-18T16:07:43.113900",
+      "published_date": "2026-01-17T10:49:36"
+    },
+    "https://the-decoder.com/?p=31124": {
+      "added_at": "2026-01-18T16:07:43.118867",
+      "published_date": "2026-01-17T09:03:16"
+    },
+    "https://the-decoder.com/?p=31119": {
+      "added_at": "2026-01-18T11:10:42.693327",
+      "published_date": "2026-01-16T19:21:41"
+    },
+    "https://the-decoder.com/?p=31111": {
+      "added_at": "2026-01-18T11:10:42.697382",
+      "published_date": "2026-01-16T19:01:40"
+    },
+    "https://the-decoder.com/?p=31108": {
+      "added_at": "2026-01-18T11:10:42.703287",
+      "published_date": "2026-01-16T18:16:41"
+    },
+    "https://the-decoder.com/?p=31101": {
+      "added_at": "2026-01-18T11:10:42.707696",
+      "published_date": "2026-01-16T18:00:59"
+    },
+    "https://the-decoder.com/?p=31090": {
+      "added_at": "2026-01-17T15:07:51.039959",
+      "published_date": "2026-01-16T15:43:49"
+    },
+    "696a8a91923bd5a5b73b232c": {
+      "added_at": "2026-01-21T19:12:48.690346",
+      "published_date": "2026-01-17T00:40:41"
+    },
+    "6969b129d6ddbc660392573b": {
+      "added_at": "2026-01-21T19:12:48.696398",
+      "published_date": "2026-01-16T18:00:00"
+    },
+    "https://www.theverge.com/?p=863620": {
+      "added_at": "2026-01-23T10:29:19.908007",
+      "published_date": "2026-01-16T20:51:18"
+    },
+    "https://www.theverge.com/?p=863570": {
+      "added_at": "2026-01-18T16:07:43.251954",
+      "published_date": "2026-01-16T19:37:52"
+    },
+    "https://www.theverge.com/?p=863428": {
+      "added_at": "2026-01-18T16:07:43.256597",
+      "published_date": "2026-01-16T18:00:00"
+    },
+    "https://www.theverge.com/?p=863466": {
+      "added_at": "2026-01-18T16:07:43.261251",
+      "published_date": "2026-01-16T18:00:00"
+    },
+    "https://www.theverge.com/?p=863425": {
+      "added_at": "2026-01-18T16:07:43.266130",
+      "published_date": "2026-01-16T17:09:05"
+    },
+    "https://www.theverge.com/?p=863365": {
+      "added_at": "2026-01-18T16:07:43.270835",
+      "published_date": "2026-01-16T16:37:02"
+    },
+    "https://arstechnica.com/information-technology/2026/01/openai-to-test-ads-in-chatgpt-as-it-burns-through-billions/": {
+      "added_at": "2026-01-23T10:29:20.743564",
+      "published_date": "2026-01-16T21:20:03"
+    },
+    "https://arstechnica.com/ai/2026/01/tsmc-says-ai-demand-is-endless-after-record-q4-earnings/": {
+      "added_at": "2026-01-23T10:29:20.750228",
+      "published_date": "2026-01-16T16:55:08"
+    },
+    "gmail-19bcc186c357c77e": {
+      "added_at": "2026-01-21T19:12:49.160816",
+      "published_date": "2026-01-17T13:15:05+00:00"
+    },
+    "gmail-19bc8370909ccd86": {
+      "added_at": "2026-01-21T19:12:49.166995",
+      "published_date": "2026-01-16T19:10:05+00:00"
+    },
+    "gmail-19bc7e9f8eaa0d4f": {
+      "added_at": "2026-01-21T19:12:49.173158",
+      "published_date": "2026-01-16T17:45:52+00:00"
+    },
+    "gmail-19bc7c61a3a2eac2": {
+      "added_at": "2026-01-21T19:12:49.179555",
+      "published_date": "2026-01-16T17:06:41+00:00"
+    },
+    "gmail-19bc7a831c6cc6ab": {
+      "added_at": "2026-01-21T19:12:49.185875",
+      "published_date": "2026-01-16T16:32:33+00:00"
+    },
+    "gmail-19bc78a554e62ca6": {
+      "added_at": "2026-01-21T19:12:49.192061",
+      "published_date": "2026-01-16T16:01:14+00:00"
+    },
+    "https://the-decoder.com/?p=31144": {
+      "added_at": "2026-01-18T16:07:43.104772",
+      "published_date": "2026-01-17T14:00:54"
+    },
+    "gmail-19bcc4292c97a1a4": {
+      "added_at": "2026-01-21T19:12:49.154606",
+      "published_date": "2026-01-17T14:01:11+00:00"
+    },
+    "https://openai.com/index/the-truth-elon-left-out": {
+      "added_at": "2026-01-23T10:29:19.129225",
+      "published_date": "2026-01-16T12:00:00"
+    },
+    "https://openai.com/index/introducing-chatgpt-go": {
+      "added_at": "2026-01-23T10:29:19.142520",
+      "published_date": "2026-01-16T00:00:00"
+    },
+    "https://openai.com/index/our-approach-to-advertising-and-expanding-access": {
+      "added_at": "2026-01-23T10:29:19.136359",
+      "published_date": "2026-01-16T00:00:00"
+    },
+    "https://openai.com/index/investing-in-merge-labs": {
+      "added_at": "2026-01-22T15:27:55.061900",
+      "published_date": "2026-01-15T07:00:00"
+    },
+    "https://openai.com/index/strengthening-the-us-ai-supply-chain": {
+      "added_at": "2026-01-22T15:27:55.070018",
+      "published_date": "2026-01-15T00:00:00"
+    },
+    "https://openai.com/index/cerebras-partnership": {
+      "added_at": "2026-01-21T19:12:47.029558",
+      "published_date": "2026-01-14T14:00:00"
+    },
+    "https://openai.com/index/zenken": {
+      "added_at": "2026-01-18T16:07:42.028680",
+      "published_date": "2026-01-13T16:00:00"
+    },
+    "https://blog.google/products-and-platforms/products/gemini/how-nano-banana-got-its-name/": {
+      "added_at": "2026-01-23T10:29:19.168124",
+      "published_date": "2026-01-15T16:06:00"
+    },
+    "https://blog.google/products-and-platforms/products/education/our-life-with-ai-2025/": {
+      "added_at": "2026-01-23T10:29:19.174155",
+      "published_date": "2026-01-15T11:00:00"
+    },
+    "https://blog.google/innovation-and-ai/technology/developers-tools/kaggle-community-benchmarks/": {
+      "added_at": "2026-01-21T19:12:47.054062",
+      "published_date": "2026-01-14T14:00:00"
+    },
+    "https://blog.google/company-news/inside-google/around-the-globe/google-middle-east/winner-of-the-global-ai-film-award/": {
+      "added_at": "2026-01-21T19:12:47.060114",
+      "published_date": "2026-01-14T10:00:00"
+    },
+    "https://blog.google/innovation-and-ai/technology/ai/veo-3-1-ingredients-to-video/": {
+      "added_at": "2026-01-21T16:55:46.771925",
+      "published_date": "2026-01-13T17:00:00"
+    },
+    "https://blogs.nvidia.com/?p=89137": {
+      "added_at": "2026-01-23T10:29:19.232124",
+      "published_date": "2026-01-15T14:00:35"
+    },
+    "https://blogs.nvidia.com/?p=89117": {
+      "added_at": "2026-01-21T19:12:47.103108",
+      "published_date": "2026-01-13T20:00:43"
+    },
+    "https://nofilmschool.com/adrian-diery-interview": {
+      "added_at": "2026-01-18T16:07:42.153520",
+      "published_date": "2026-01-17T00:45:02"
+    },
+    "https://nofilmschool.com/dji-mic-sale": {
+      "added_at": "2026-01-18T16:07:42.158075",
+      "published_date": "2026-01-17T00:29:29"
+    },
+    "https://nofilmschool.com/the-three-colors-of-love": {
+      "added_at": "2026-01-18T16:07:42.164423",
+      "published_date": "2026-01-16T22:40:03"
+    },
+    "https://nofilmschool.com/production-has-not-bounced-back": {
+      "added_at": "2026-01-18T16:07:42.170902",
+      "published_date": "2026-01-16T22:30:03"
+    },
+    "https://nofilmschool.com/steven-spielbergs-advice-for-filmmakers": {
+      "added_at": "2026-01-18T16:07:42.175647",
+      "published_date": "2026-01-16T22:20:05"
+    },
+    "https://nofilmschool.com/sony-a7-iv-firmware-update-601": {
+      "added_at": "2026-01-18T16:07:42.181727",
+      "published_date": "2026-01-16T19:00:03"
+    },
+    "https://nofilmschool.com/voigtlander-portrait-heliar-75mm-f-1-8-aspherical-lens-2674902170": {
+      "added_at": "2026-01-18T16:07:42.186444",
+      "published_date": "2026-01-16T18:51:21"
+    },
+    "https://nofilmschool.com/four-elements-film-emulation": {
+      "added_at": "2026-01-18T16:07:42.191080",
+      "published_date": "2026-01-16T17:55:03"
+    },
+    "https://nofilmschool.com/panasonic-4k-multi-purpose-camera": {
+      "added_at": "2026-01-18T16:07:42.195699",
+      "published_date": "2026-01-16T17:39:48"
+    },
+    "https://nofilmschool.com/iconic-movie-roles-almost-played-by-someone-else": {
+      "added_at": "2026-01-18T16:07:42.200327",
+      "published_date": "2026-01-16T07:55:05"
+    },
+    "https://nofilmschool.com/movie-lines-predicted-the-ending": {
+      "added_at": "2026-01-18T16:07:42.206697",
+      "published_date": "2026-01-16T07:50:04"
+    },
+    "https://nofilmschool.com/raiders-of-the-lost-ark-swordfight-accident": {
+      "added_at": "2026-01-18T16:07:42.211431",
+      "published_date": "2026-01-16T07:45:03"
+    },
+    "https://nofilmschool.com/retired-legend-pulled-back-in-trope-evolution": {
+      "added_at": "2026-01-18T16:07:42.216200",
+      "published_date": "2026-01-16T07:35:05"
+    },
+    "https://nofilmschool.com/hero-hunted-by-their-own-side-trope": {
+      "added_at": "2026-01-18T16:07:42.220866",
+      "published_date": "2026-01-16T07:22:14"
+    },
+    "https://nofilmschool.com/social-media-secrets-from-idea-to-upload-without-overthinking-it": {
+      "added_at": "2026-01-18T16:07:42.225494",
+      "published_date": "2026-01-15T22:30:04"
+    },
+    "https://nofilmschool.com/breaking-down-a-doc-fest-run-process-people-and-payoff": {
+      "added_at": "2026-01-18T16:07:42.230454",
+      "published_date": "2026-01-15T22:21:04"
+    },
+    "https://nofilmschool.com/best-western-gunfights": {
+      "added_at": "2026-01-18T16:07:42.235418",
+      "published_date": "2026-01-15T22:10:04"
+    },
+    "https://nofilmschool.com/radical-cinematography-the-prestige": {
+      "added_at": "2026-01-18T16:07:42.240070",
+      "published_date": "2026-01-15T21:57:03"
+    },
+    "https://nofilmschool.com/saturation-credit-card": {
+      "added_at": "2026-01-18T16:07:42.244894",
+      "published_date": "2026-01-15T19:25:04"
+    },
+    "https://nofilmschool.com/best-david-lynch-quotes": {
+      "added_at": "2026-01-18T16:07:42.249968",
+      "published_date": "2026-01-15T19:13:40"
+    },
+    "https://nofilmschool.com/new-tomb-raider-old-look": {
+      "added_at": "2026-01-18T16:07:42.254690",
+      "published_date": "2026-01-15T17:45:04"
+    },
+    "https://nofilmschool.com/the-highest-grossing-actor": {
+      "added_at": "2026-01-18T16:07:42.259580",
+      "published_date": "2026-01-15T17:35:03"
+    },
+    "https://nofilmschool.com/vampires-in-marty-supreme": {
+      "added_at": "2026-01-18T16:07:42.264304",
+      "published_date": "2026-01-15T17:25:04"
+    },
+    "https://nofilmschool.com/viltrox-nexusfocus-f1": {
+      "added_at": "2026-01-18T16:07:42.269091",
+      "published_date": "2026-01-15T17:15:04"
+    },
+    "https://nofilmschool.com/ricoh-gr-iv-monochrome-camera": {
+      "added_at": "2026-01-18T16:07:42.274330",
+      "published_date": "2026-01-15T17:05:04"
+    },
+    "https://nofilmschool.com/ruko-u11mini-4k-drone": {
+      "added_at": "2026-01-18T16:07:42.279047",
+      "published_date": "2026-01-15T16:55:04"
+    },
+    "https://nofilmschool.com/now-voyager-romantic-realism-line": {
+      "added_at": "2026-01-18T16:07:42.284879",
+      "published_date": "2026-01-15T07:15:03"
+    },
+    "https://nofilmschool.com/get-out-deer-scene-meaning": {
+      "added_at": "2026-01-18T16:07:42.290573",
+      "published_date": "2026-01-15T07:05:03"
+    },
+    "https://nofilmschool.com/enemies-to-lovers-trope": {
+      "added_at": "2026-01-18T16:07:42.295757",
+      "published_date": "2026-01-15T06:55:05"
+    },
+    "https://nofilmschool.com/maybe-pokers-just-not-your-game-ike-tombstone-meaning": {
+      "added_at": "2026-01-18T16:07:42.301354",
+      "published_date": "2026-01-15T06:45:54"
+    },
+    "111650 at https://www.eff.org": {
+      "added_at": "2026-01-23T10:29:19.570073",
+      "published_date": "2026-01-16T23:19:20"
+    },
+    "111649 at https://www.eff.org": {
+      "added_at": "2026-01-23T10:29:19.576509",
+      "published_date": "2026-01-16T21:22:23"
+    },
+    "111647 at https://www.eff.org": {
+      "added_at": "2026-01-23T10:29:19.583269",
+      "published_date": "2026-01-16T20:30:00"
+    },
+    "111646 at https://www.eff.org": {
+      "added_at": "2026-01-23T10:29:19.589709",
+      "published_date": "2026-01-16T18:43:24"
+    },
+    "111641 at https://www.eff.org": {
+      "added_at": "2026-01-23T10:29:19.596317",
+      "published_date": "2026-01-15T20:30:48"
+    },
+    "111614 at https://www.eff.org": {
+      "added_at": "2026-01-22T15:27:55.533036",
+      "published_date": "2026-01-14T17:08:43"
+    },
+    "https://insideclimatenews.org/?p=104848": {
+      "added_at": "2026-01-21T19:12:47.672732",
+      "published_date": "2026-01-18T10:00:00"
+    },
+    "https://insideclimatenews.org/?p=104915": {
+      "added_at": "2026-01-21T19:12:47.678635",
+      "published_date": "2026-01-18T09:55:00"
+    },
+    "https://insideclimatenews.org/?p=104898": {
+      "added_at": "2026-01-21T16:55:47.231508",
+      "published_date": "2026-01-18T09:50:00"
+    },
+    "https://news.mit.edu/2026/demystifying-college-enlisted-veterans-service-members-warrior-scholar-0118": {
+      "added_at": "2026-01-23T10:29:19.879273",
+      "published_date": "2026-01-18T05:00:00"
+    },
+    "https://techcrunch.com/?p=3083476": {
+      "added_at": "2026-01-23T10:29:19.935713",
+      "published_date": "2026-01-17T17:30:00"
+    },
+    "https://techcrunch.com/?p=3082677": {
+      "added_at": "2026-01-23T10:29:19.942288",
+      "published_date": "2026-01-17T16:00:00"
+    },
+    "34bf0c95-ffcc-4c2c-8bff-0a95fe070757": {
+      "added_at": "2026-01-23T10:29:19.974033",
+      "published_date": "2026-01-17T01:23:00"
+    },
+    "https://lastweekin.ai/p/last-week-in-ai-332-apple-gemini": {
+      "added_at": "2026-01-22T15:27:55.930605",
+      "published_date": "2026-01-15T07:06:16"
+    },
+    "16d51ad8-f16a-11f0-8b5a-4bc0648a5df9": {
+      "added_at": "2026-01-23T10:29:20.022625",
+      "published_date": "2026-01-15T12:30:00"
+    },
+    "yt:video:LEJzdSsPfok": {
+      "added_at": "2026-01-23T10:29:20.044606",
+      "published_date": "2026-01-16T16:33:10"
+    },
+    "yt:video:mIDiG5VC-mo": {
+      "added_at": "2026-01-22T15:27:55.984022",
+      "published_date": "2026-01-15T07:33:18"
+    },
+    "yt:video:-geek4wi2O0": {
+      "added_at": "2026-01-21T19:12:47.881716",
+      "published_date": "2026-01-14T06:41:10"
+    },
+    "yt:video:a4cSS50ziDI": {
+      "added_at": "2026-01-23T10:29:20.065510",
+      "published_date": "2026-01-17T17:00:01"
+    },
+    "yt:video:xDbmiWkrOJg": {
+      "added_at": "2026-01-23T10:29:20.072062",
+      "published_date": "2026-01-17T16:58:00"
+    },
+    "yt:video:bZxyYHRlIc8": {
+      "added_at": "2026-01-21T16:55:47.400900",
+      "published_date": "2026-01-13T17:01:06"
+    },
+    "yt:video:a_T5fjA2ulY": {
+      "added_at": "2026-01-23T10:29:20.089861",
+      "published_date": "2026-01-17T14:00:22"
+    },
+    "yt:video:lIhkjoceZ20": {
+      "added_at": "2026-01-23T10:29:20.097279",
+      "published_date": "2026-01-16T15:39:02"
+    },
+    "yt:video:2me3MuDEtPQ": {
+      "added_at": "2026-01-23T10:29:20.103835",
+      "published_date": "2026-01-16T02:08:01"
+    },
+    "yt:video:GFwCeEDuvnw": {
+      "added_at": "2026-01-23T10:29:20.110255",
+      "published_date": "2026-01-15T16:16:52"
+    },
+    "yt:video:tn_LSdehnAQ": {
+      "added_at": "2026-01-22T15:27:56.049212",
+      "published_date": "2026-01-15T02:43:24"
+    },
+    "yt:video:Tp0uyfsK90U": {
+      "added_at": "2026-01-18T16:07:42.727290",
+      "published_date": "2026-01-13T13:30:26"
+    },
+    "yt:video:KKdEgpA3rjw": {
+      "added_at": "2026-01-23T10:29:20.117335",
+      "published_date": "2026-01-17T20:28:06"
+    },
+    "yt:video:c1GXOeR5G2c": {
+      "added_at": "2026-01-23T10:29:20.154200",
+      "published_date": "2026-01-16T13:06:55"
+    },
+    "yt:video:wngalQ32Cro": {
+      "added_at": "2026-01-23T10:29:20.161322",
+      "published_date": "2026-01-15T12:44:22"
+    },
+    "yt:video:kC49JCXP-zU": {
+      "added_at": "2026-01-22T15:27:56.101844",
+      "published_date": "2026-01-14T16:52:57"
+    },
+    "yt:video:IENQd8UimZw": {
+      "added_at": "2026-01-18T16:07:42.760787",
+      "published_date": "2026-01-13T12:56:56"
+    },
+    "yt:video:wYs6HWZ2FdM": {
+      "added_at": "2026-01-22T15:27:56.114497",
+      "published_date": "2026-01-14T16:26:37"
+    },
+    "yt:video:82DyXL0ZXI8": {
+      "added_at": "2026-01-18T16:07:42.916818",
+      "published_date": "2026-01-13T15:27:50"
+    },
+    "tag:github.com,2008:Repository/589831718/v0.9.2": {
+      "added_at": "2026-01-23T10:29:20.364030",
+      "published_date": "2026-01-15T17:55:42"
+    },
+    "tag:github.com,2008:Repository/493402689/c2patool-v0.26.15": {
+      "added_at": "2026-01-23T10:29:20.410142",
+      "published_date": "2026-01-16T23:42:55"
+    },
+    "tag:github.com,2008:Repository/493402689/c2patool-v0.26.14": {
+      "added_at": "2026-01-23T10:29:20.417874",
+      "published_date": "2026-01-16T21:24:20"
+    },
+    "tag:github.com,2008:Repository/493402689/c2pa-v0.75.4": {
+      "added_at": "2026-01-23T10:29:20.424360",
+      "published_date": "2026-01-16T23:33:34"
+    },
+    "tag:github.com,2008:Repository/493402689/c2pa-v0.75.3": {
+      "added_at": "2026-01-23T10:29:20.431629",
+      "published_date": "2026-01-16T21:23:11"
+    },
+    "tag:github.com,2008:Repository/493402689/c2pa-c-ffi-v0.75.4": {
+      "added_at": "2026-01-22T15:27:56.364809",
+      "published_date": "2026-01-16T23:23:34"
+    },
+    "tag:github.com,2008:Repository/493402689/c2pa-c-ffi-v0.75.3": {
+      "added_at": "2026-01-22T15:27:56.371360",
+      "published_date": "2026-01-16T21:06:01"
+    },
+    "tag:github.com,2008:Repository/493402689/c2patool-v0.26.13": {
+      "added_at": "2026-01-22T15:27:56.377814",
+      "published_date": "2026-01-15T22:08:55"
+    },
+    "tag:github.com,2008:Repository/493402689/c2patool-v0.26.12": {
+      "added_at": "2026-01-21T16:55:47.638594",
+      "published_date": "2026-01-15T21:32:13"
+    },
+    "tag:github.com,2008:Repository/493402689/c2pa-v0.75.2": {
+      "added_at": "2026-01-21T16:55:47.643614",
+      "published_date": "2026-01-15T22:05:19"
+    },
+    "tag:github.com,2008:Repository/493402689/c2pa-v0.75.1": {
+      "added_at": "2026-01-21T16:55:47.648615",
+      "published_date": "2026-01-15T21:24:20"
+    },
+    "tag:github.com,2008:Repository/552661142/langchain==1.2.6": {
+      "added_at": "2026-01-23T10:29:20.438120",
+      "published_date": "2026-01-16T19:21:38"
+    },
+    "tag:github.com,2008:Repository/552661142/langchain==1.2.5": {
+      "added_at": "2026-01-23T10:29:20.445206",
+      "published_date": "2026-01-16T16:09:29"
+    },
+    "tag:github.com,2008:Repository/552661142/langchain==1.2.4": {
+      "added_at": "2026-01-22T15:27:56.403605",
+      "published_date": "2026-01-14T19:35:44"
+    },
+    "tag:github.com,2008:Repository/658928958/v0.14.3-rc1": {
+      "added_at": "2026-01-23T10:29:20.485910",
+      "published_date": "2026-01-17T00:34:22"
+    },
+    "tag:github.com,2008:Repository/658928958/v0.14.3-rc0": {
+      "added_at": "2026-01-23T10:29:20.492604",
+      "published_date": "2026-01-16T14:05:04"
+    },
+    "tag:github.com,2008:Repository/658928958/v0.14.2": {
+      "added_at": "2026-01-23T10:29:20.501362",
+      "published_date": "2026-01-21T19:30:01"
+    },
+    "tag:github.com,2008:Repository/658928958/v0.14.2-rc1": {
+      "added_at": "2026-01-23T10:29:20.507909",
+      "published_date": "2026-01-15T23:46:36"
+    },
+    "tag:github.com,2008:Repository/658928958/v0.14.2-rc0": {
+      "added_at": "2026-01-23T10:29:20.515065",
+      "published_date": "2026-01-15T19:03:52"
+    },
+    "tag:github.com,2008:Repository/658928958/v0.14.1": {
+      "added_at": "2026-01-22T15:27:56.483421",
+      "published_date": "2026-01-15T17:45:35"
+    },
+    "tag:github.com,2008:Repository/658928958/v0.14.0": {
+      "added_at": "2026-01-21T19:12:48.340264",
+      "published_date": "2026-01-16T03:02:00"
+    },
+    "tag:github.com,2008:Repository/658928958/v0.14.0-rc11": {
+      "added_at": "2026-01-21T16:55:47.714367",
+      "published_date": "2026-01-13T23:29:47"
+    },
+    "tag:github.com,2008:Repository/658928958/v0.14.0-rc10": {
+      "added_at": "2026-01-18T16:07:43.057189",
+      "published_date": "2026-01-13T19:25:31"
+    },
+    "tag:github.com,2008:Repository/658928958/v0.14.0-rc9": {
+      "added_at": "2026-01-18T16:07:43.061770",
+      "published_date": "2026-01-13T17:13:09"
+    },
+    "https://the-decoder.com/?p=31154": {
+      "added_at": "2026-01-18T16:07:43.094249",
+      "published_date": "2026-01-18T09:35:48"
+    },
+    "https://the-decoder.com/?p=31151": {
+      "added_at": "2026-01-18T16:07:43.100188",
+      "published_date": "2026-01-17T17:14:19"
+    },
+    "https://www.thealgorithmicbridge.com/p/learn-to-use-ai-competently-in-1": {
+      "added_at": "2026-01-23T10:29:20.947951",
+      "published_date": "2026-01-15T21:01:21"
+    },
+    "https://www.thealgorithmicbridge.com/p/claude-code-coded-claude-cowork": {
+      "added_at": "2026-01-21T16:55:48.038605",
+      "published_date": "2026-01-13T19:09:29"
+    },
+    "https://www.theguardian.com/technology/2026/jan/18/grok-x-ai-tool-still-accessible-malaysia-despite-ban-vpns": {
+      "added_at": "2026-01-22T15:04:17.535562",
+      "published_date": "2026-01-18T09:39:37"
+    },
+    "https://www.theguardian.com/politics/2026/jan/17/tech-companies-access-to-uk-ministers-dwarfs-that-of-child-safety-groups": {
+      "added_at": "2026-01-21T19:12:48.861745",
+      "published_date": "2026-01-17T17:00:31"
+    },
+    "https://www.theguardian.com/us-news/ng-interactive/2026/jan/17/trump-promise-energy-bills-costs": {
+      "added_at": "2026-01-21T19:12:48.867893",
+      "published_date": "2026-01-17T15:00:29"
+    },
+    "gmail-19bcd59b3cc78015": {
+      "added_at": "2026-01-22T15:27:57.366649",
+      "published_date": "2026-01-17T19:06:03+00:00"
+    },
+    "gmail-19bcd24737a5065a": {
+      "added_at": "2026-01-22T15:27:57.375357",
+      "published_date": "2026-01-17T18:07:54+00:00"
+    },
+    "gmail-19bccb165b0c623f": {
+      "added_at": "2026-01-21T19:12:49.148474",
+      "published_date": "2026-01-17T16:01:54+00:00"
+    },
+    "696a629ddb42ca0001f2a282": {
+      "added_at": "2026-01-23T10:29:19.794567",
+      "published_date": "2026-01-16T17:37:23"
+    },
+    "https://www.volts.wtf/p/making-the-electricity-grid-work": {
+      "added_at": "2026-01-22T15:27:55.943808",
+      "published_date": "2026-01-14T17:03:13"
+    },
+    "yt:video:hjIQAM27LLQ": {
+      "added_at": "2026-01-23T10:29:20.178774",
+      "published_date": "2026-01-16T17:28:30"
+    },
+    "yt:video:9cPy6Yk3Gwk": {
+      "added_at": "2026-01-18T16:07:42.777549",
+      "published_date": "2026-01-13T10:47:25"
+    },
+    "yt:video:jjUuKprosHw": {
+      "added_at": "2026-01-23T10:29:20.255292",
+      "published_date": "2026-01-17T16:01:09"
+    },
+    "yt:video:wdnsXOtRmng": {
+      "added_at": "2026-01-23T10:29:20.262108",
+      "published_date": "2026-01-17T15:01:43"
+    },
+    "yt:video:qAgXQgBeOhM": {
+      "added_at": "2026-01-23T10:29:20.268761",
+      "published_date": "2026-01-16T22:37:40"
+    },
+    "yt:video:qWaqGGl7Ug0": {
+      "added_at": "2026-01-23T10:29:20.275191",
+      "published_date": "2026-01-16T18:48:56"
+    },
+    "yt:video:3R5ovQeMehY": {
+      "added_at": "2026-01-23T10:29:20.282464",
+      "published_date": "2026-01-16T13:00:07"
+    },
+    "yt:video:Ue7PDC-S2uU": {
+      "added_at": "2026-01-22T15:27:56.214754",
+      "published_date": "2026-01-16T12:01:03"
+    },
+    "yt:video:ojqPNWYv9cg": {
+      "added_at": "2026-01-21T19:12:48.103813",
+      "published_date": "2026-01-13T19:55:59"
+    },
+    "yt:video:Xt016_rkZnM": {
+      "added_at": "2026-01-18T16:07:42.822180",
+      "published_date": "2026-01-13T15:01:09"
+    },
+    "yt:video:YADqrvfStEg": {
+      "added_at": "2026-01-18T16:07:42.826775",
+      "published_date": "2026-01-13T13:01:13"
+    },
+    "yt:video:kKcy_nQ1_90": {
+      "added_at": "2026-01-23T10:29:20.296188",
+      "published_date": "2026-01-15T21:30:59"
+    },
+    "yt:video:_I6qcTwG8yE": {
+      "added_at": "2026-01-22T15:27:56.234415",
+      "published_date": "2026-01-14T21:32:42"
+    },
+    "yt:video:BtQ8jaDmw_w": {
+      "added_at": "2026-01-21T19:12:48.122378",
+      "published_date": "2026-01-13T20:26:43"
+    },
+    "yt:video:Iiz1KgFexx4": {
+      "added_at": "2026-01-23T10:29:20.333096",
+      "published_date": "2026-01-18T10:17:16"
+    },
+    "yt:video:bEbaQMKmfdc": {
+      "added_at": "2026-01-23T10:29:20.342721",
+      "published_date": "2026-01-16T14:05:42"
+    },
+    "yt:video:F_Yly8Ra520": {
+      "added_at": "2026-01-22T15:27:56.275639",
+      "published_date": "2026-01-15T05:30:30"
+    },
+    "https://the-decoder.com/?p=31186": {
+      "added_at": "2026-01-18T16:07:43.075757",
+      "published_date": "2026-01-18T13:31:43"
+    },
+    "https://the-decoder.com/?p=31174": {
+      "added_at": "2026-01-18T16:07:43.080258",
+      "published_date": "2026-01-18T12:32:42"
+    },
+    "https://the-decoder.com/?p=31169": {
+      "added_at": "2026-01-18T16:07:43.085446",
+      "published_date": "2026-01-18T11:26:02"
+    },
+    "https://the-decoder.com/?p=31163": {
+      "added_at": "2026-01-18T16:07:43.089870",
+      "published_date": "2026-01-18T10:25:35"
+    },
+    "https://www.theverge.com/?p=863502": {
+      "added_at": "2026-01-21T19:12:48.646480",
+      "published_date": "2026-01-18T13:00:00"
+    },
+    "https://www.theguardian.com/us-news/ng-interactive/2026/jan/18/tech-ai-bubble-burst-reverse-centaur": {
+      "added_at": "2026-01-22T15:27:57.042122",
+      "published_date": "2026-01-18T14:00:57"
+    },
+    "gmail-19bd0c414cb872dd": {
+      "added_at": "2026-01-22T15:27:57.357985",
+      "published_date": "2026-01-18T11:01:02+00:00"
+    },
+    "yt:video:O7q52WxYZN8": {
+      "added_at": "2026-01-23T10:29:20.051258",
+      "published_date": "2026-01-18T14:42:42"
+    },
+    "https://openai.com/index/how-countries-can-end-the-capability-overhang": {
+      "added_at": "2026-01-23T10:29:19.068429",
+      "published_date": "2026-01-21T01:00:00"
+    },
+    "https://openai.com/index/edu-for-countries": {
+      "added_at": "2026-01-23T10:29:19.076421",
+      "published_date": "2026-01-21T01:00:00"
+    },
+    "https://openai.com/index/horizon-1000": {
+      "added_at": "2026-01-23T10:29:19.083157",
+      "published_date": "2026-01-20T21:00:00"
+    },
+    "https://openai.com/index/stargate-community": {
+      "added_at": "2026-01-23T10:29:19.089433",
+      "published_date": "2026-01-20T19:00:00"
+    },
+    "https://openai.com/index/cisco": {
+      "added_at": "2026-01-23T10:29:19.096011",
+      "published_date": "2026-01-20T11:00:00"
+    },
+    "https://openai.com/index/servicenow-powers-actionable-enterprise-ai-with-openai": {
+      "added_at": "2026-01-23T10:29:19.102541",
+      "published_date": "2026-01-20T05:45:00"
+    },
+    "https://openai.com/index/our-approach-to-age-prediction": {
+      "added_at": "2026-01-23T10:29:19.108814",
+      "published_date": "2026-01-20T00:00:00"
+    },
+    "https://openai.com/index/ai-for-self-empowerment": {
+      "added_at": "2026-01-23T10:29:19.115491",
+      "published_date": "2026-01-18T12:00:00"
+    },
+    "https://openai.com/index/a-business-that-scales-with-the-value-of-intelligence": {
+      "added_at": "2026-01-23T10:29:19.122364",
+      "published_date": "2026-01-18T10:00:00"
+    },
+    "https://blog.google/company-news/outreach-and-initiatives/google-org/sundance-institute-ai-education/": {
+      "added_at": "2026-01-23T10:29:19.161967",
+      "published_date": "2026-01-20T20:30:00"
+    },
+    "https://huggingface.co/blog/ibm-research/assetopsbench-playground-on-hugging-face": {
+      "added_at": "2026-01-23T10:29:19.181047",
+      "published_date": "2026-01-21T06:25:31"
+    },
+    "https://huggingface.co/blog/microsoft/diff-attn-v2": {
+      "added_at": "2026-01-23T10:29:19.187158",
+      "published_date": "2026-01-20T03:20:57"
+    },
+    "https://huggingface.co/blog/waypoint-1": {
+      "added_at": "2026-01-23T10:29:19.193416",
+      "published_date": "2026-01-20T00:00:00"
+    },
+    "https://blogs.nvidia.com/?p=89255": {
+      "added_at": "2026-01-23T10:29:19.225394",
+      "published_date": "2026-01-21T12:50:16"
+    },
+    "https://blog.comfy.org/p/meshy-6-now-available-in-comfyui": {
+      "added_at": "2026-01-23T10:29:19.251090",
+      "published_date": "2026-01-20T15:50:27"
+    },
+    "https://blog.comfy.org/p/introducing-bria-fibo-edit-precision-image": {
+      "added_at": "2026-01-23T10:29:19.257489",
+      "published_date": "2026-01-20T14:03:15"
+    },
+    "https://nofilmschool.com/directors-defined-by-single-great-movie": {
+      "added_at": "2026-01-22T15:27:55.356122",
+      "published_date": "2026-01-21T07:35:06"
+    },
+    "https://nofilmschool.com/found-family-trope-explained-movie-examples": {
+      "added_at": "2026-01-22T15:27:55.364240",
+      "published_date": "2026-01-21T07:25:04"
+    },
+    "https://nofilmschool.com/race-against-time-trope-explained": {
+      "added_at": "2026-01-22T15:27:55.372045",
+      "published_date": "2026-01-21T07:20:04"
+    },
+    "https://nofilmschool.com/low-budget-movies-that-looked-expensive": {
+      "added_at": "2026-01-22T15:27:55.378795",
+      "published_date": "2026-01-21T07:15:04"
+    },
+    "https://nofilmschool.com/you-have-my-sword-lord-of-the-rings-loyalty": {
+      "added_at": "2026-01-22T15:27:55.387745",
+      "published_date": "2026-01-21T07:10:05"
+    },
+    "https://nofilmschool.com/movies-that-open-with-main-character-dying": {
+      "added_at": "2026-01-22T15:27:55.394187",
+      "published_date": "2026-01-21T07:05:05"
+    },
+    "https://nofilmschool.com/filmmakers-with-distinct-styles": {
+      "added_at": "2026-01-22T15:27:55.400782",
+      "published_date": "2026-01-21T06:55:48"
+    },
+    "https://nofilmschool.com/train-dreams-cinematography-and-lighting": {
+      "added_at": "2026-01-22T15:27:55.407074",
+      "published_date": "2026-01-20T23:25:03"
+    },
+    "https://nofilmschool.com/one-battle-after-another-car-chase": {
+      "added_at": "2026-01-22T15:27:55.414006",
+      "published_date": "2026-01-20T23:15:04"
+    },
+    "https://nofilmschool.com/how-to-hide-your-exposition": {
+      "added_at": "2026-01-22T15:27:55.420475",
+      "published_date": "2026-01-20T22:50:04"
+    },
+    "https://nofilmschool.com/action-sequences-character-beats": {
+      "added_at": "2026-01-22T15:27:55.426803",
+      "published_date": "2026-01-20T22:29:06"
+    },
+    "https://nofilmschool.com/john-august-book": {
+      "added_at": "2026-01-22T15:27:55.433393",
+      "published_date": "2026-01-20T17:45:04"
+    },
+    "https://nofilmschool.com/fujifilm-gfx-eterna-55-imax-certified": {
+      "added_at": "2026-01-22T15:27:55.439786",
+      "published_date": "2026-01-20T17:35:04"
+    },
+    "https://nofilmschool.com/godox-2674912686": {
+      "added_at": "2026-01-22T15:27:55.446298",
+      "published_date": "2026-01-20T17:25:04"
+    },
+    "https://nofilmschool.com/behringer-flow-4v": {
+      "added_at": "2026-01-22T15:27:55.452589",
+      "published_date": "2026-01-20T17:15:04"
+    },
+    "https://nofilmschool.com/smallrig-video-production-camera-cart-lite": {
+      "added_at": "2026-01-21T19:12:47.319917",
+      "published_date": "2026-01-20T17:04:39"
+    },
+    "https://nofilmschool.com/confirmed-movie-fan-theories": {
+      "added_at": "2026-01-21T19:12:47.325647",
+      "published_date": "2026-01-20T07:58:04"
+    },
+    "https://nofilmschool.com/edge-of-tomorrow-ending-explained": {
+      "added_at": "2026-01-21T19:12:47.331975",
+      "published_date": "2026-01-20T07:53:03"
+    },
+    "https://nofilmschool.com/peter-jackson-cut-gandalf-important-line-lord-of-the-rings": {
+      "added_at": "2026-01-21T19:12:47.338119",
+      "published_date": "2026-01-20T07:48:04"
+    },
+    "https://nofilmschool.com/serious-movie-scenes-that-are-actually-funny": {
+      "added_at": "2026-01-21T19:12:47.344452",
+      "published_date": "2026-01-20T07:43:04"
+    },
+    "https://nofilmschool.com/fight-club-the-things-you-own-end-up-owning-you-line": {
+      "added_at": "2026-01-21T19:12:47.350623",
+      "published_date": "2026-01-20T07:38:04"
+    },
+    "https://nofilmschool.com/actors-refused-to-deliver-their-lines-movie-scenes": {
+      "added_at": "2026-01-21T19:12:47.356500",
+      "published_date": "2026-01-20T07:30:08"
+    },
+    "https://nofilmschool.com/streaming-ruining-way-movies-written": {
+      "added_at": "2026-01-21T19:12:47.362610",
+      "published_date": "2026-01-19T22:45:03"
+    },
+    "https://nofilmschool.com/civil-rights-movies": {
+      "added_at": "2026-01-21T19:12:47.368686",
+      "published_date": "2026-01-19T22:39:00"
+    },
+    "https://nofilmschool.com/verify-my-writing-isa": {
+      "added_at": "2026-01-21T19:12:47.374706",
+      "published_date": "2026-01-19T22:35:02"
+    },
+    "https://nofilmschool.com/behind-the-scenes-knight": {
+      "added_at": "2026-01-21T16:55:46.978636",
+      "published_date": "2026-01-19T22:25:03"
+    },
+    "https://nofilmschool.com/godox-knowled-p600r-hard-p4-rgb-led-light-panel": {
+      "added_at": "2026-01-21T16:55:46.983185",
+      "published_date": "2026-01-19T22:06:24"
+    },
+    "https://nofilmschool.com/lumix-camera-tutorial": {
+      "added_at": "2026-01-21T16:55:46.987710",
+      "published_date": "2026-01-19T19:20:04"
+    },
+    "https://nofilmschool.com/affleck-damon-ai": {
+      "added_at": "2026-01-21T16:55:46.992687",
+      "published_date": "2026-01-19T19:10:04"
+    },
+    "https://nofilmschool.com/google-veo-3-1-update": {
+      "added_at": "2026-01-21T16:55:46.997303",
+      "published_date": "2026-01-19T18:53:08"
+    },
+    "111658 at https://www.eff.org": {
+      "added_at": "2026-01-23T10:29:19.549720",
+      "published_date": "2026-01-20T21:15:26"
+    },
+    "111637 at https://www.eff.org": {
+      "added_at": "2026-01-23T10:29:19.555965",
+      "published_date": "2026-01-20T19:14:19"
+    },
+    "111656 at https://www.eff.org": {
+      "added_at": "2026-01-23T10:29:19.563536",
+      "published_date": "2026-01-20T18:00:08"
+    },
+    "https://ainowinstitute.org/?p=11777": {
+      "added_at": "2026-01-21T19:12:47.436678",
+      "published_date": "2026-01-13T20:15:57"
+    },
+    "https://www.carbonbrief.org/?p=60925": {
+      "added_at": "2026-01-23T10:29:19.622775",
+      "published_date": "2026-01-21T08:00:00"
+    },
+    "https://www.carbonbrief.org/?p=60878": {
+      "added_at": "2026-01-23T10:29:19.629724",
+      "published_date": "2026-01-19T08:00:00"
+    },
+    "https://www.canarymedia.com/articles/virtual-power-plants/massachusetts-national-grid-piclo-marketplace-grid-costs": {
+      "added_at": "2026-01-23T10:29:19.696154",
+      "published_date": "2026-01-21T08:30:00"
+    },
+    "https://www.canarymedia.com/articles/green-steel/stegra-lands-key-customer-steel-plant": {
+      "added_at": "2026-01-23T10:29:19.703084",
+      "published_date": "2026-01-21T08:30:00"
+    },
+    "https://www.canarymedia.com/articles/solar/rural-north-carolina-solar-battery-hubs": {
+      "added_at": "2026-01-23T10:29:19.709395",
+      "published_date": "2026-01-20T08:30:00"
+    },
+    "https://www.canarymedia.com/articles/politics/affordability-massachusetts-clean-energy-legislation": {
+      "added_at": "2026-01-23T10:29:19.716482",
+      "published_date": "2026-01-20T08:30:00"
+    },
+    "https://www.canarymedia.com/articles/batteries/brooklyn-bagel-shop-plug-in-batteries": {
+      "added_at": "2026-01-23T10:29:19.722743",
+      "published_date": "2026-01-19T08:30:00"
+    },
+    "https://www.canarymedia.com/articles/solar/california-bills-balcony-solar-heat-pumps": {
+      "added_at": "2026-01-23T10:29:19.729547",
+      "published_date": "2026-01-19T08:30:00"
+    },
+    "696f3f98d276d60001c890f7": {
+      "added_at": "2026-01-23T10:29:19.787877",
+      "published_date": "2026-01-20T14:10:09"
+    },
+    "https://insideclimatenews.org/?p=105043": {
+      "added_at": "2026-01-23T10:29:19.861640",
+      "published_date": "2026-01-21T10:00:00"
+    },
+    "https://insideclimatenews.org/?p=105052": {
+      "added_at": "2026-01-23T10:29:19.870441",
+      "published_date": "2026-01-21T09:55:00"
+    },
+    "https://insideclimatenews.org/?p=105037": {
+      "added_at": "2026-01-22T15:27:55.775898",
+      "published_date": "2026-01-20T22:49:03"
+    },
+    "https://insideclimatenews.org/?p=105035": {
+      "added_at": "2026-01-22T15:27:55.783817",
+      "published_date": "2026-01-20T22:37:36"
+    },
+    "https://insideclimatenews.org/?p=104818": {
+      "added_at": "2026-01-22T15:27:55.793197",
+      "published_date": "2026-01-20T10:00:00"
+    },
+    "https://insideclimatenews.org/?p=104914": {
+      "added_at": "2026-01-22T15:27:55.800841",
+      "published_date": "2026-01-19T10:00:00"
+    },
+    "https://techcrunch.com/?p=3083882": {
+      "added_at": "2026-01-23T10:29:19.928663",
+      "published_date": "2026-01-21T13:00:00"
+    },
+    "57872af6-b6b7-4832-86a9-35608a8296b8": {
+      "added_at": "2026-01-23T10:29:19.980923",
+      "published_date": "2026-01-20T19:10:20"
+    },
+    "https://lastweekin.ai/p/lwiai-podcast-231-claude-cowork-anthropic": {
+      "added_at": "2026-01-23T10:29:19.996079",
+      "published_date": "2026-01-21T03:22:53"
+    },
+    "d3716a56-f4c2-11f0-a014-2b3c161d251e": {
+      "added_at": "2026-01-23T10:29:20.015961",
+      "published_date": "2026-01-20T14:58:00"
+    },
+    "yt:video:uXOEI9-p11Y": {
+      "added_at": "2026-01-23T10:29:20.037396",
+      "published_date": "2026-01-20T11:53:21"
+    },
+    "yt:video:xieh2k-9oAM": {
+      "added_at": "2026-01-23T10:29:20.078971",
+      "published_date": "2026-01-19T15:37:10"
+    },
+    "yt:video:FrdLcKDSm4o": {
+      "added_at": "2026-01-23T10:29:20.134013",
+      "published_date": "2026-01-21T11:55:44"
+    },
+    "yt:video:-HFTKzy5xRM": {
+      "added_at": "2026-01-23T10:29:20.140592",
+      "published_date": "2026-01-20T16:16:58"
+    },
+    "yt:video:iLCom31oY7c": {
+      "added_at": "2026-01-23T10:29:20.147981",
+      "published_date": "2026-01-19T15:11:14"
+    },
+    "yt:video:ucnhz2cSY_k": {
+      "added_at": "2026-01-23T10:29:20.221225",
+      "published_date": "2026-01-20T16:01:31"
+    },
+    "yt:video:ya3-m54mPIo": {
+      "added_at": "2026-01-23T10:29:20.228032",
+      "published_date": "2026-01-20T15:01:48"
+    },
+    "yt:video:x9KShgQSFzc": {
+      "added_at": "2026-01-23T10:29:20.234647",
+      "published_date": "2026-01-20T14:01:41"
+    },
+    "yt:video:V8RWPwxbSEg": {
+      "added_at": "2026-01-23T10:29:20.241154",
+      "published_date": "2026-01-20T13:01:06"
+    },
+    "yt:video:hWqutqeAB40": {
+      "added_at": "2026-01-23T10:29:20.248772",
+      "published_date": "2026-01-19T13:01:21"
+    },
+    "yt:video:RP-k7AFqTuo": {
+      "added_at": "2026-01-23T10:29:20.309677",
+      "published_date": "2026-01-21T09:17:02"
+    },
+    "yt:video:Wn5fmdJ7Oxw": {
+      "added_at": "2026-01-23T10:29:20.317371",
+      "published_date": "2026-01-20T19:03:46"
+    },
+    "yt:video:bBjEMQlsL4A": {
+      "added_at": "2026-01-23T10:29:20.324126",
+      "published_date": "2026-01-19T07:26:07"
+    },
+    "yt:video:IdV5TEIsJhs": {
+      "added_at": "2026-01-23T10:29:20.350107",
+      "published_date": "2026-01-21T14:33:49"
+    },
+    "tag:github.com,2008:Repository/589831718/v0.10.0": {
+      "added_at": "2026-01-23T10:29:20.356499",
+      "published_date": "2026-01-21T19:22:06"
+    },
+    "tag:github.com,2008:Repository/658928958/v0.14.3-rc3": {
+      "added_at": "2026-01-23T10:29:20.471322",
+      "published_date": "2026-01-20T20:20:53"
+    },
+    "tag:github.com,2008:Repository/658928958/v0.14.3-rc2": {
+      "added_at": "2026-01-23T10:29:20.478288",
+      "published_date": "2026-01-19T20:48:34"
+    },
+    "https://www.bensbites.com/p/ads-in-your-chats": {
+      "added_at": "2026-01-23T10:29:20.532249",
+      "published_date": "2026-01-20T14:03:22"
+    },
+    "https://the-decoder.com/?p=31247": {
+      "added_at": "2026-01-23T10:29:20.609125",
+      "published_date": "2026-01-21T14:02:07"
+    },
+    "https://the-decoder.com/?p=31246": {
+      "added_at": "2026-01-22T15:27:56.554983",
+      "published_date": "2026-01-21T13:57:19"
+    },
+    "https://the-decoder.com/?p=31242": {
+      "added_at": "2026-01-22T15:27:56.562106",
+      "published_date": "2026-01-21T13:37:57"
+    },
+    "https://the-decoder.com/?p=31239": {
+      "added_at": "2026-01-22T15:27:56.571088",
+      "published_date": "2026-01-20T19:32:15"
+    },
+    "https://the-decoder.com/?p=31236": {
+      "added_at": "2026-01-21T19:12:48.393623",
+      "published_date": "2026-01-20T19:17:35"
+    },
+    "https://the-decoder.com/?p=31225": {
+      "added_at": "2026-01-21T19:12:48.400596",
+      "published_date": "2026-01-20T18:49:20"
+    },
+    "https://the-decoder.com/?p=31221": {
+      "added_at": "2026-01-21T19:12:48.407876",
+      "published_date": "2026-01-20T17:42:17"
+    },
+    "https://the-decoder.com/?p=31213": {
+      "added_at": "2026-01-21T19:12:48.415061",
+      "published_date": "2026-01-20T14:51:02"
+    },
+    "https://the-decoder.com/?p=31214": {
+      "added_at": "2026-01-23T10:29:20.588042",
+      "published_date": "2026-01-22T11:43:44"
+    },
+    "https://the-decoder.com/?p=31210": {
+      "added_at": "2026-01-21T16:55:47.774640",
+      "published_date": "2026-01-19T20:14:50"
+    },
+    "https://www.technologyreview.com/?p=1131366": {
+      "added_at": "2026-01-23T10:29:20.632861",
+      "published_date": "2026-01-21T15:00:00"
+    },
+    "https://www.technologyreview.com/?p=1130911": {
+      "added_at": "2026-01-23T10:29:20.649822",
+      "published_date": "2026-01-20T15:00:00"
+    },
+    "https://www.technologyreview.com/?p=1131462": {
+      "added_at": "2026-01-23T10:29:20.656531",
+      "published_date": "2026-01-20T13:28:21"
+    },
+    "https://www.technologyreview.com/?p=1131422": {
+      "added_at": "2026-01-23T10:29:20.663487",
+      "published_date": "2026-01-19T11:59:33"
+    },
+    "https://arstechnica.com/features/2026/01/has-gemini-surpassed-chatgpt-we-put-the-ai-models-to-the-test/": {
+      "added_at": "2026-01-23T10:29:20.717041",
+      "published_date": "2026-01-21T15:03:39"
+    },
+    "https://arstechnica.com/ai/2026/01/new-ai-plugin-uses-wikipedias-ai-writing-detection-rules-to-help-it-sound-human/": {
+      "added_at": "2026-01-23T10:29:20.723535",
+      "published_date": "2026-01-21T12:15:23"
+    },
+    "https://arstechnica.com/tech-policy/2026/01/elon-musk-accused-of-making-up-math-to-squeeze-134b-from-openai-microsoft/": {
+      "added_at": "2026-01-23T10:29:20.730586",
+      "published_date": "2026-01-19T19:04:18"
+    },
+    "https://arstechnica.com/information-technology/2026/01/10-things-i-learned-from-burning-myself-out-with-ai-coding-agents/": {
+      "added_at": "2026-01-23T10:29:20.737061",
+      "published_date": "2026-01-19T12:00:45"
+    },
+    "https://www.theverge.com/?p=864768": {
+      "added_at": "2026-01-23T10:29:20.818156",
+      "published_date": "2026-01-21T14:15:00"
+    },
+    "https://www.theverge.com/?p=864610": {
+      "added_at": "2026-01-23T10:29:20.824622",
+      "published_date": "2026-01-21T14:00:00"
+    },
+    "https://www.theverge.com/?p=864811": {
+      "added_at": "2026-01-23T10:29:20.831500",
+      "published_date": "2026-01-21T14:00:00"
+    },
+    "https://www.theverge.com/?p=864798": {
+      "added_at": "2026-01-23T10:29:20.838246",
+      "published_date": "2026-01-21T10:58:15"
+    },
+    "https://www.theverge.com/?p=864784": {
+      "added_at": "2026-01-22T15:18:12.479694",
+      "published_date": "2026-01-21T10:23:14"
+    },
+    "https://www.theverge.com/?p=864314": {
+      "added_at": "2026-01-21T19:12:48.626918",
+      "published_date": "2026-01-20T13:40:00"
+    },
+    "https://www.theverge.com/?p=864229": {
+      "added_at": "2026-01-21T19:12:48.634222",
+      "published_date": "2026-01-19T21:05:30"
+    },
+    "https://www.theverge.com/?p=863361": {
+      "added_at": "2026-01-21T19:12:48.640355",
+      "published_date": "2026-01-19T15:00:00"
+    },
+    "691ba3c42d19dc17f7c647a2": {
+      "added_at": "2026-01-23T10:29:20.892423",
+      "published_date": "2026-01-21T11:30:00"
+    },
+    "6969308f0c83d3fa3f25aafb": {
+      "added_at": "2026-01-22T15:27:56.836141",
+      "published_date": "2026-01-20T11:00:00"
+    },
+    "692dd2c954bc86901c669564": {
+      "added_at": "2026-01-23T10:29:20.900748",
+      "published_date": "2026-01-20T11:00:00"
+    },
+    "695d905a622a5fef5397a0ad": {
+      "added_at": "2026-01-23T10:29:20.907367",
+      "published_date": "2026-01-20T11:00:00"
+    },
+    "696546712c1f479acb71ca37": {
+      "added_at": "2026-01-22T15:27:56.848777",
+      "published_date": "2026-01-19T07:00:00"
+    },
+    "2CUHNkdUg4dnjDFiMtJJQ": {
+      "added_at": "2026-01-23T10:29:20.921140",
+      "published_date": "2026-01-19T14:00:00"
+    },
+    "https://www.thealgorithmicbridge.com/p/how-the-businessmen-lost-the-ai-race": {
+      "added_at": "2026-01-23T10:29:20.934639",
+      "published_date": "2026-01-21T12:00:38"
+    },
+    "https://www.thealgorithmicbridge.com/p/why-i-deleted-chatgpt-after-three": {
+      "added_at": "2026-01-23T10:29:20.941157",
+      "published_date": "2026-01-19T09:48:52"
+    },
+    "https://jack-clark.net/2026/01/19/import-ai-441-my-agents-are-working-are-yours/": {
+      "added_at": "2026-01-23T10:29:20.954465",
+      "published_date": "2026-01-19T14:03:24"
+    },
+    "https://www.sciencedaily.com/releases/2026/01/260120000330.htm": {
+      "added_at": "2026-01-23T10:29:20.960982",
+      "published_date": "2026-01-20T14:03:36"
+    },
+    "https://www.sciencedaily.com/releases/2026/01/260120000308.htm": {
+      "added_at": "2026-01-23T10:29:20.967598",
+      "published_date": "2026-01-21T06:49:52"
+    },
+    "https://www.theguardian.com/commentisfree/2026/jan/22/the-imfs-banal-language-is-sane-washing-an-economic-crisis-created-by-the-egomaniacal-donald-trump": {
+      "added_at": "2026-01-23T10:29:21.084436",
+      "published_date": "2026-01-21T14:00:41"
+    },
+    "https://www.theguardian.com/commentisfree/2026/jan/21/italy-using-ai-therapists-mental-health": {
+      "added_at": "2026-01-23T10:29:21.091158",
+      "published_date": "2026-01-21T05:00:53"
+    },
+    "https://www.theguardian.com/books/2026/jan/20/superstates-and-spheres-of-influence": {
+      "added_at": "2026-01-23T10:29:21.101044",
+      "published_date": "2026-01-20T17:51:18"
+    },
+    "https://www.theguardian.com/technology/2026/jan/20/trump-tech-alliance-datacenters-social-media": {
+      "added_at": "2026-01-23T10:29:21.108918",
+      "published_date": "2026-01-20T15:55:55"
+    },
+    "https://www.theguardian.com/technology/2026/jan/20/tell-us-has-a-chatbot-helped-you-out-of-a-difficult-time-in-your-life": {
+      "added_at": "2026-01-23T10:29:21.117292",
+      "published_date": "2026-01-20T14:45:08"
+    },
+    "https://www.theguardian.com/business/2026/jan/20/donald-trump-global-economy-impact-on-australia": {
+      "added_at": "2026-01-23T10:29:21.124246",
+      "published_date": "2026-01-20T14:00:07"
+    },
+    "https://www.theguardian.com/film/2026/jan/20/cosmic-princess-kaguya-review-trippy-anime-adapted-from-japanese-folk-dives-into-virtual-reality-popworld": {
+      "added_at": "2026-01-22T15:27:57.004209",
+      "published_date": "2026-01-20T11:00:01"
+    },
+    "https://www.theguardian.com/business/2026/jan/20/uk-ai-risks-mps-government-bank-of-england-fca": {
+      "added_at": "2026-01-22T15:27:57.010504",
+      "published_date": "2026-01-20T00:01:08"
+    },
+    "https://www.theguardian.com/music/2026/jan/19/ai-music-company-mikey-shulman-suna": {
+      "added_at": "2026-01-22T15:27:57.016799",
+      "published_date": "2026-01-19T16:30:13"
+    },
+    "https://www.theguardian.com/australia-news/audio/2026/jan/19/dr-bot-can-chatgpt-be-trusted-with-your-health-full-story-podcast": {
+      "added_at": "2026-01-22T15:27:57.023174",
+      "published_date": "2026-01-19T14:00:27"
+    },
+    "https://www.theguardian.com/technology/2026/jan/19/ed-zitron-on-big-tech-backlash-boom-and-bust-ai-has-taught-us-that-people-are-excited-to-replace-human-beings": {
+      "added_at": "2026-01-22T15:27:57.029479",
+      "published_date": "2026-01-19T05:00:15"
+    },
+    "https://www.theguardian.com/technology/2026/jan/18/deactivate-your-x-account-you-wont-miss-it-when-its-gone": {
+      "added_at": "2026-01-22T15:27:57.035892",
+      "published_date": "2026-01-18T17:37:26"
+    },
+    "gmail-19be0f137532711a": {
+      "added_at": "2026-01-23T10:29:21.293159",
+      "published_date": "2026-01-21T14:24:22+00:00"
+    },
+    "gmail-19be0dbeafe6c566": {
+      "added_at": "2026-01-23T10:29:21.300724",
+      "published_date": "2026-01-21T14:01:00+00:00"
+    },
+    "gmail-19be0c078934f1bb": {
+      "added_at": "2026-01-23T10:29:21.307555",
+      "published_date": "2026-01-21T13:31:08+00:00"
+    },
+    "gmail-19be0b79293869e4": {
+      "added_at": "2026-01-23T10:29:21.316233",
+      "published_date": "2026-01-21T13:21:25+00:00"
+    },
+    "gmail-19be0a657b896940": {
+      "added_at": "2026-01-23T10:29:21.325058",
+      "published_date": "2026-01-21T13:00:58+00:00"
+    },
+    "gmail-19be07c05b399e61": {
+      "added_at": "2026-01-23T10:29:21.335456",
+      "published_date": "2026-01-21T12:16:22+00:00"
+    },
+    "gmail-19be0769d0a922c4": {
+      "added_at": "2026-01-23T10:29:21.346356",
+      "published_date": "2026-01-21T12:10:27+00:00"
+    },
+    "gmail-19be05667905d70a": {
+      "added_at": "2026-01-23T10:29:21.353120",
+      "published_date": "2026-01-21T11:35:16+00:00"
+    },
+    "gmail-19bdce42d42597de": {
+      "added_at": "2026-01-23T10:29:21.360367",
+      "published_date": "2026-01-20T19:31:31+00:00"
+    },
+    "gmail-19bdccd0e12e876c": {
+      "added_at": "2026-01-23T10:29:21.368667",
+      "published_date": "2026-01-20T19:06:22+00:00"
+    },
+    "gmail-19bdc92a67786215": {
+      "added_at": "2026-01-23T10:29:21.377952",
+      "published_date": "2026-01-20T18:01:46+00:00"
+    },
+    "gmail-19bdc43c4f7a17e9": {
+      "added_at": "2026-01-23T10:29:21.387272",
+      "published_date": "2026-01-20T16:35:18+00:00"
+    },
+    "gmail-19bdc23a219e7695": {
+      "added_at": "2026-01-23T10:29:21.396651",
+      "published_date": "2026-01-20T16:01:11+00:00"
+    },
+    "gmail-19bdbe6d1b5c8510": {
+      "added_at": "2026-01-23T10:29:21.405222",
+      "published_date": "2026-01-20T14:54:50+00:00"
+    },
+    "gmail-19bdbcac3b041fe4": {
+      "added_at": "2026-01-23T10:29:21.412415",
+      "published_date": "2026-01-20T14:24:16+00:00"
+    },
+    "gmail-19bdb862e20b92fe": {
+      "added_at": "2026-01-23T10:29:21.420249",
+      "published_date": "2026-01-20T13:09:22+00:00"
+    },
+    "gmail-19bdb8193e7f211e": {
+      "added_at": "2026-01-23T10:29:21.429849",
+      "published_date": "2026-01-20T13:01:19+00:00"
+    },
+    "gmail-19bdb5301b079227": {
+      "added_at": "2026-01-23T10:29:21.436816",
+      "published_date": "2026-01-20T12:13:26+00:00"
+    },
+    "gmail-19bdb4ef03439acf": {
+      "added_at": "2026-01-23T10:29:21.443595",
+      "published_date": "2026-01-20T12:09:01+00:00"
+    },
+    "gmail-19bdb3038bb0b39d": {
+      "added_at": "2026-01-23T10:29:21.451131",
+      "published_date": "2026-01-20T11:35:28+00:00"
+    },
+    "gmail-19bd8167708f4990": {
+      "added_at": "2026-01-23T10:29:21.457942",
+      "published_date": "2026-01-19T21:08:29+00:00"
+    },
+    "gmail-19bd7a7402fd09e0": {
+      "added_at": "2026-01-23T10:29:21.465380",
+      "published_date": "2026-01-19T19:06:58+00:00"
+    },
+    "gmail-19bd776509d94dcb": {
+      "added_at": "2026-01-23T10:29:21.474952",
+      "published_date": "2026-01-19T18:13:24+00:00"
+    },
+    "gmail-19bd6fd475b72744": {
+      "added_at": "2026-01-23T10:29:21.482582",
+      "published_date": "2026-01-19T16:01:09+00:00"
+    },
+    "gmail-19bd6a92712df987": {
+      "added_at": "2026-01-23T10:29:21.489472",
+      "published_date": "2026-01-19T14:29:22+00:00"
+    },
+    "gmail-19bd6a8b8236cbf5": {
+      "added_at": "2026-01-23T10:29:21.496902",
+      "published_date": "2026-01-19T14:28:59+00:00"
+    },
+    "gmail-19bd66bd45dd1a1d": {
+      "added_at": "2026-01-23T10:29:21.504534",
+      "published_date": "2026-01-19T13:22:29+00:00"
+    },
+    "gmail-19bd662c9f196ebb": {
+      "added_at": "2026-01-23T10:29:21.513892",
+      "published_date": "2026-01-19T13:12:36+00:00"
+    },
+    "gmail-19bd6594976dff7c": {
+      "added_at": "2026-01-23T10:29:21.523905",
+      "published_date": "2026-01-19T13:00:51+00:00"
+    },
+    "gmail-19bd630044fe057f": {
+      "added_at": "2026-01-22T15:27:57.319283",
+      "published_date": "2026-01-19T12:17:09+00:00"
+    },
+    "gmail-19bd62acf351b6ea": {
+      "added_at": "2026-01-22T15:27:57.325582",
+      "published_date": "2026-01-19T12:11:27+00:00"
+    },
+    "gmail-19bd60bc15ff3952": {
+      "added_at": "2026-01-22T15:27:57.333590",
+      "published_date": "2026-01-19T11:37:32+00:00"
+    },
+    "gmail-19bd20d1c4af3ee2": {
+      "added_at": "2026-01-22T15:27:57.340140",
+      "published_date": "2026-01-18T17:00:25+00:00"
+    },
+    "gmail-19bd1d8edf8c8c43": {
+      "added_at": "2026-01-22T15:27:57.349180",
+      "published_date": "2026-01-18T16:03:29+00:00"
+    },
+    "https://openai.com/index/higgsfield": {
+      "added_at": "2026-01-23T10:29:19.062102",
+      "published_date": "2026-01-21T10:00:00"
+    },
+    "https://nofilmschool.com/mistakes-beginning-lighting": {
+      "added_at": "2026-01-23T10:29:19.496312",
+      "published_date": "2026-01-21T17:55:04"
+    },
+    "https://nofilmschool.com/kpop-demon-hunters-box-office": {
+      "added_at": "2026-01-23T10:29:19.504005",
+      "published_date": "2026-01-21T17:55:04"
+    },
+    "https://nofilmschool.com/adobe-ignite-day": {
+      "added_at": "2026-01-23T10:29:19.510451",
+      "published_date": "2026-01-21T17:45:04"
+    },
+    "https://nofilmschool.com/asus-proart-display-mac-monitor": {
+      "added_at": "2026-01-23T10:29:19.517431",
+      "published_date": "2026-01-21T17:30:52"
+    },
+    "https://nofilmschool.com/the-godfather-title-meaning-explained": {
+      "added_at": "2026-01-22T15:27:55.349358",
+      "published_date": "2026-01-21T07:45:05"
+    },
+    "https://insideclimatenews.org/?p=105090": {
+      "added_at": "2026-01-23T10:29:19.845821",
+      "published_date": "2026-01-21T18:01:22"
+    },
+    "https://insideclimatenews.org/?p=105084": {
+      "added_at": "2026-01-23T10:29:19.852747",
+      "published_date": "2026-01-21T17:29:57"
+    },
+    "https://www.volts.wtf/p/lets-dig-a-little-deeper-into-virtual": {
+      "added_at": "2026-01-23T10:29:20.002671",
+      "published_date": "2026-01-21T17:02:54"
+    },
+    "yt:video:TQA8ajjTJr4": {
+      "added_at": "2026-01-23T10:29:20.057742",
+      "published_date": "2026-01-21T17:00:50"
+    },
+    "yt:video:_mLR68-OmYA": {
+      "added_at": "2026-01-23T10:29:20.207526",
+      "published_date": "2026-01-21T16:49:17"
+    },
+    "yt:video:wpD2cxzgofk": {
+      "added_at": "2026-01-23T10:29:20.214553",
+      "published_date": "2026-01-21T16:01:27"
+    },
+    "tag:github.com,2008:Repository/493402689/c2patool-v0.26.16": {
+      "added_at": "2026-01-23T10:29:20.390267",
+      "published_date": "2026-01-21T17:16:58"
+    },
+    "tag:github.com,2008:Repository/493402689/c2pa-v0.75.5": {
+      "added_at": "2026-01-23T10:29:20.397095",
+      "published_date": "2026-01-21T17:14:44"
+    },
+    "tag:github.com,2008:Repository/493402689/c2pa-c-ffi-v0.75.5": {
+      "added_at": "2026-01-23T10:29:20.403496",
+      "published_date": "2026-01-21T17:16:03"
+    },
+    "tag:github.com,2008:Repository/658928958/v0.14.3": {
+      "added_at": "2026-01-23T10:29:20.464624",
+      "published_date": "2026-01-22T02:52:26"
+    },
+    "https://the-decoder.com/?p=31254": {
+      "added_at": "2026-01-23T10:29:20.601829",
+      "published_date": "2026-01-21T16:21:59"
+    },
+    "https://www.technologyreview.com/?p=1131513": {
+      "added_at": "2026-01-23T10:29:20.641622",
+      "published_date": "2026-01-21T14:00:00"
+    },
+    "https://www.theverge.com/?p=864843": {
+      "added_at": "2026-01-23T10:29:20.811470",
+      "published_date": "2026-01-21T17:00:00"
+    },
+    "696fc8a5ca96f83356758b0f": {
+      "added_at": "2026-01-23T10:29:20.885914",
+      "published_date": "2026-01-21T16:00:00"
+    },
+    "https://www.theguardian.com/film/2026/jan/21/mercy-review-chris-pratt-takes-on-ai-judge-rebecca-ferguson-in-ingenious-sci-fi-thriller": {
+      "added_at": "2026-01-23T10:29:21.077458",
+      "published_date": "2026-01-21T17:00:43"
+    },
+    "gmail-19be1883d7284fb6": {
+      "added_at": "2026-01-23T10:29:21.271870",
+      "published_date": "2026-01-21T17:09:19+00:00"
+    },
+    "gmail-19be15536202c1df": {
+      "added_at": "2026-01-23T10:29:21.279065",
+      "published_date": "2026-01-21T16:12:56+00:00"
+    },
+    "gmail-19be149f43d32529": {
+      "added_at": "2026-01-23T10:29:21.286187",
+      "published_date": "2026-01-21T16:01:05+00:00"
+    },
+    "https://openai.com/index/praktika": {
+      "added_at": "2026-01-23T10:29:19.053032",
+      "published_date": "2026-01-22T05:00:00"
+    },
+    "https://blog.comfy.org/p/seedance-1-5-pro-now-in-comfyui": {
+      "added_at": "2026-01-23T10:29:19.244941",
+      "published_date": "2026-01-21T18:15:42"
+    },
+    "55bd7005e4b06da83f63b8d9:56bc10857da24fcc14e3a119:693adf4bafb8b2291fbf1346": {
+      "added_at": "2026-01-23T10:29:19.277620",
+      "published_date": "2026-01-21T15:12:00"
+    },
+    "https://nofilmschool.com/subverting-expectations-narrative-rug-pull-explained": {
+      "added_at": "2026-01-23T10:29:19.424319",
+      "published_date": "2026-01-22T06:40:03"
+    },
+    "https://nofilmschool.com/matrix-reloaded-40-million-one-scene": {
+      "added_at": "2026-01-23T10:29:19.431124",
+      "published_date": "2026-01-22T06:30:03"
+    },
+    "https://nofilmschool.com/modern-movies-set-in-the-1970s": {
+      "added_at": "2026-01-23T10:29:19.437936",
+      "published_date": "2026-01-22T06:23:21"
+    },
+    "https://nofilmschool.com/marlon-brando-one-eyed-jacks-western-explained": {
+      "added_at": "2026-01-23T10:29:19.444839",
+      "published_date": "2026-01-22T06:20:03"
+    },
+    "https://nofilmschool.com/ways-to-make-writing-memorable": {
+      "added_at": "2026-01-23T10:29:19.451916",
+      "published_date": "2026-01-22T06:07:52"
+    },
+    "https://nofilmschool.com/stop-ignoring-sound-a-screenwriters-guide-to-adding-audio-in-scripts": {
+      "added_at": "2026-01-23T10:29:19.458392",
+      "published_date": "2026-01-21T23:20:57"
+    },
+    "https://nofilmschool.com/adobe-premiere-and-after-effects-updates": {
+      "added_at": "2026-01-23T10:29:19.466875",
+      "published_date": "2026-01-21T20:35:03"
+    },
+    "https://nofilmschool.com/the-20-page-rule": {
+      "added_at": "2026-01-23T10:29:19.473965",
+      "published_date": "2026-01-21T20:25:03"
+    },
+    "https://nofilmschool.com/adobe-film-tv-fund": {
+      "added_at": "2026-01-23T10:29:19.480967",
+      "published_date": "2026-01-21T20:12:38"
+    },
+    "https://nofilmschool.com/best-rachel-mcadams-movies": {
+      "added_at": "2026-01-23T10:29:19.488364",
+      "published_date": "2026-01-21T19:40:29"
+    },
+    "https://c2pa.org/?p=223": {
+      "added_at": "2026-01-23T10:29:19.523685",
+      "published_date": "2026-01-22T01:33:57"
+    },
+    "111663 at https://www.eff.org": {
+      "added_at": "2026-01-23T10:29:19.536509",
+      "published_date": "2026-01-21T23:14:02"
+    },
+    "111662 at https://www.eff.org": {
+      "added_at": "2026-01-23T10:29:19.542908",
+      "published_date": "2026-01-21T18:10:45"
+    },
+    "https://www.carbonbrief.org/?p=60940": {
+      "added_at": "2026-01-23T10:29:19.602669",
+      "published_date": "2026-01-22T13:48:25"
+    },
+    "https://www.carbonbrief.org/?p=60910": {
+      "added_at": "2026-01-23T10:29:19.609062",
+      "published_date": "2026-01-22T08:00:00"
+    },
+    "https://www.carbonbrief.org/?p=60918": {
+      "added_at": "2026-01-23T10:29:19.616173",
+      "published_date": "2026-01-22T08:00:00"
+    },
+    "https://www.canarymedia.com/articles/batteries/texas-data-center-open-sooner-grid-battery": {
+      "added_at": "2026-01-23T10:29:19.675178",
+      "published_date": "2026-01-22T08:30:00"
+    },
+    "https://www.canarymedia.com/articles/offshore-wind/american-offshore-wind-farms-court-victories": {
+      "added_at": "2026-01-23T10:29:19.682791",
+      "published_date": "2026-01-22T08:30:00"
+    },
+    "https://www.canarymedia.com/articles/green-steel/why-automakers-are-the-primary-bottleneck-to-decarbonizing-the-steel-industry": {
+      "added_at": "2026-01-23T10:29:19.689009",
+      "published_date": "2026-01-22T08:30:00"
+    },
+    "https://insideclimatenews.org/?p=105056": {
+      "added_at": "2026-01-23T10:29:19.830366",
+      "published_date": "2026-01-22T09:55:00"
+    },
+    "https://insideclimatenews.org/?p=105109": {
+      "added_at": "2026-01-23T10:29:19.836954",
+      "published_date": "2026-01-21T22:22:17"
+    },
+    "https://www.nature.com/articles/s41558-025-02545-1": {
+      "added_at": "2026-01-23T10:29:19.894503",
+      "published_date": "2026-01-21T00:00:00"
+    },
+    "b74878ae-f72b-11f0-be68-8ba2d2f83c93": {
+      "added_at": "2026-01-23T10:29:20.009175",
+      "published_date": "2026-01-22T11:00:00"
+    },
+    "yt:video:Sl1_uWdFUsk": {
+      "added_at": "2026-01-23T10:29:20.126242",
+      "published_date": "2026-01-22T13:33:09"
+    },
+    "yt:video:rLq8lx_9IeU": {
+      "added_at": "2026-01-23T10:29:20.289198",
+      "published_date": "2026-01-21T23:15:20"
+    },
+    "tag:github.com,2008:Repository/658928958/v0.15.0-rc0": {
+      "added_at": "2026-01-23T10:29:20.457911",
+      "published_date": "2026-01-21T21:37:08"
+    },
+    "https://the-decoder.com/?p=31267": {
+      "added_at": "2026-01-23T10:29:20.567693",
+      "published_date": "2026-01-22T13:30:00"
+    },
+    "https://the-decoder.com/?p=31276": {
+      "added_at": "2026-01-23T10:29:20.574493",
+      "published_date": "2026-01-22T13:27:34"
+    },
+    "https://the-decoder.com/?p=31265": {
+      "added_at": "2026-01-23T10:29:20.581410",
+      "published_date": "2026-01-22T13:22:52"
+    },
+    "https://the-decoder.com/?p=31260": {
+      "added_at": "2026-01-23T10:29:20.595207",
+      "published_date": "2026-01-21T20:03:29"
+    },
+    "https://www.technologyreview.com/?p=1131661": {
+      "added_at": "2026-01-23T10:29:20.625247",
+      "published_date": "2026-01-22T10:00:00"
+    },
+    "https://www.theverge.com/?p=864951": {
+      "added_at": "2026-01-23T10:29:20.784155",
+      "published_date": "2026-01-22T05:01:00"
+    },
+    "https://www.theverge.com/?p=865212": {
+      "added_at": "2026-01-23T10:29:20.790849",
+      "published_date": "2026-01-21T21:43:27"
+    },
+    "https://www.theverge.com/?p=865185": {
+      "added_at": "2026-01-23T10:29:20.798071",
+      "published_date": "2026-01-21T20:36:18"
+    },
+    "https://www.theverge.com/?p=865172": {
+      "added_at": "2026-01-23T10:29:20.804637",
+      "published_date": "2026-01-21T20:26:47"
+    },
+    "696a89b284a13bc873b584f8": {
+      "added_at": "2026-01-23T10:29:20.858041",
+      "published_date": "2026-01-22T12:00:00"
+    },
+    "69710fd2496fb61c2ef5297d": {
+      "added_at": "2026-01-23T10:29:20.864973",
+      "published_date": "2026-01-22T12:00:00"
+    },
+    "696ffdae18b82b3267d015a7": {
+      "added_at": "2026-01-23T10:29:20.878770",
+      "published_date": "2026-01-21T19:00:00"
+    },
+    "1l2gUXhw9OMzMzsSp8yAFk": {
+      "added_at": "2026-01-23T10:29:20.914544",
+      "published_date": "2026-01-22T14:00:00"
+    },
+    "https://www.theguardian.com/technology/2026/jan/22/trump-datacenters-republicans": {
+      "added_at": "2026-01-23T10:29:21.040238",
+      "published_date": "2026-01-22T12:30:25"
+    },
+    "https://www.theguardian.com/music/2026/jan/22/liza-minnelli-uses-ai-to-release-first-new-music-in-13-years": {
+      "added_at": "2026-01-23T10:29:21.049588",
+      "published_date": "2026-01-22T11:07:21"
+    },
+    "https://www.theguardian.com/australia-news/2026/jan/22/queensland-phd-candidate-accused-plotting-firebomb-australia-day-event-ntwnfb": {
+      "added_at": "2026-01-23T10:29:21.056734",
+      "published_date": "2026-01-22T04:38:14"
+    },
+    "https://www.theguardian.com/technology/2026/jan/21/blue-origin-satellites-2027-jeff-bezos": {
+      "added_at": "2026-01-23T10:29:21.063962",
+      "published_date": "2026-01-21T23:19:23"
+    },
+    "https://www.theguardian.com/technology/2026/jan/21/rollout-ai-slowed-save-society-jp-morgan-jamie-dimon-jensen-huang": {
+      "added_at": "2026-01-23T10:29:21.070796",
+      "published_date": "2026-01-21T18:18:20"
+    },
+    "gmail-19be5da95165cc3d": {
+      "added_at": "2026-01-23T10:29:21.198918",
+      "published_date": "2026-01-22T13:17:45+00:00"
+    },
+    "gmail-19be5cca230c1551": {
+      "added_at": "2026-01-23T10:29:21.205930",
+      "published_date": "2026-01-22T13:01:04+00:00"
+    },
+    "gmail-19be5a0811dfa1ac": {
+      "added_at": "2026-01-23T10:29:21.213262",
+      "published_date": "2026-01-22T12:14:19+00:00"
+    },
+    "gmail-19be59bb7c1e3f85": {
+      "added_at": "2026-01-23T10:29:21.221005",
+      "published_date": "2026-01-22T12:09:05+00:00"
+    },
+    "gmail-19be57e4139d1686": {
+      "added_at": "2026-01-23T10:29:21.228139",
+      "published_date": "2026-01-22T11:36:54+00:00"
+    },
+    "gmail-19be265e7a9c3919": {
+      "added_at": "2026-01-23T10:29:21.235187",
+      "published_date": "2026-01-21T21:11:27+00:00"
+    },
+    "gmail-19be1f52ab2e8e12": {
+      "added_at": "2026-01-23T10:29:21.242110",
+      "published_date": "2026-01-21T19:00:51+00:00"
+    },
+    "gmail-19be1f2f983052ff": {
+      "added_at": "2026-01-23T10:29:21.250723",
+      "published_date": "2026-01-21T19:05:52+00:00"
+    },
+    "gmail-19be1e97a2272ca0": {
+      "added_at": "2026-01-23T10:29:21.257709",
+      "published_date": "2026-01-21T18:55:26+00:00"
+    },
+    "gmail-19be1e7485e96d63": {
+      "added_at": "2026-01-23T10:29:21.264956",
+      "published_date": "2026-01-21T18:53:08+00:00"
+    },
+    "https://blogs.nvidia.com/?p=89346": {
+      "added_at": "2026-01-23T10:29:19.205724",
+      "published_date": "2026-01-22T14:00:57"
+    },
+    "https://blogs.nvidia.com/?p=89240": {
+      "added_at": "2026-01-23T10:29:19.212906",
+      "published_date": "2026-01-22T14:00:54"
+    },
+    "https://blogs.nvidia.com/?p=89310": {
+      "added_at": "2026-01-23T10:29:19.219270",
+      "published_date": "2026-01-22T14:00:53"
+    },
+    "https://www.theverge.com/?p=865077": {
+      "added_at": "2026-01-23T10:29:20.776915",
+      "published_date": "2026-01-22T14:00:00"
+    },
+    "https://www.theguardian.com/technology/2026/jan/22/scarlett-johansson-and-cate-blanchett-back-campaign-accusing-ai-firms-of-theft": {
+      "added_at": "2026-01-23T10:29:21.033427",
+      "published_date": "2026-01-22T14:04:03"
+    },
+    "yt:video:HDRsRz06IsE": {
+      "added_at": "2026-01-23T10:29:20.200856",
+      "published_date": "2026-01-22T14:00:33"
+    },
+    "https://openai.com/index/scaling-postgresql": {
+      "added_at": "2026-01-23T10:29:19.046212",
+      "published_date": "2026-01-22T12:00:00"
+    },
+    "https://deepmind.google/blog/d4rt-teaching-ai-to-see-the-world-in-four-dimensions/": {
+      "added_at": "2026-01-23T10:29:19.149109",
+      "published_date": "2026-01-16T10:39:00"
+    },
+    "https://blog.google/products-and-platforms/products/search/personal-intelligence-ai-mode-search/": {
+      "added_at": "2026-01-23T10:29:19.155330",
+      "published_date": "2026-01-22T16:00:00"
+    },
+    "https://blogs.nvidia.com/?p=89389": {
+      "added_at": "2026-01-23T10:29:19.199689",
+      "published_date": "2026-01-22T18:21:49"
+    },
+    "https://blog.comfy.org/p/vidu-q2-now-live-in-comfyui": {
+      "added_at": "2026-01-23T10:29:19.238198",
+      "published_date": "2026-01-22T15:25:33"
+    },
+    "https://nofilmschool.com/reservoir-dogs-improvised-scene-defined-film": {
+      "added_at": "2026-01-23T10:29:19.316421",
+      "published_date": "2026-01-23T07:15:04"
+    },
+    "https://nofilmschool.com/den-of-thieves-ending-explained": {
+      "added_at": "2026-01-23T10:29:19.322830",
+      "published_date": "2026-01-23T07:05:03"
+    },
+    "https://nofilmschool.com/i-find-your-lack-of-faith-disturbing-darth-vader-line": {
+      "added_at": "2026-01-23T10:29:19.329472",
+      "published_date": "2026-01-23T06:55:03"
+    },
+    "https://nofilmschool.com/byronic-hero-archetype-explained": {
+      "added_at": "2026-01-23T10:29:19.335755",
+      "published_date": "2026-01-23T06:42:55"
+    },
+    "https://nofilmschool.com/from-music-videos-to-feature-films-editing-lessons-that-translate": {
+      "added_at": "2026-01-23T10:29:19.342112",
+      "published_date": "2026-01-22T23:49:54"
+    },
+    "https://nofilmschool.com/the-industry-awakens-what-it-means-for-your-short-and-longterm-career": {
+      "added_at": "2026-01-23T10:29:19.348725",
+      "published_date": "2026-01-22T19:55:04"
+    },
+    "https://nofilmschool.com/nanlite-pavoslim-360c": {
+      "added_at": "2026-01-23T10:29:19.355098",
+      "published_date": "2026-01-22T19:40:04"
+    },
+    "https://nofilmschool.com/best-heath-ledger-movies": {
+      "added_at": "2026-01-23T10:29:19.361904",
+      "published_date": "2026-01-22T19:30:03"
+    },
+    "https://nofilmschool.com/runway-gen-4-5-video-model": {
+      "added_at": "2026-01-23T10:29:19.368280",
+      "published_date": "2026-01-22T19:20:04"
+    },
+    "https://nofilmschool.com/tilta-boulder-camera-cart-xl": {
+      "added_at": "2026-01-23T10:29:19.377080",
+      "published_date": "2026-01-22T19:10:04"
+    },
+    "https://nofilmschool.com/sinners-16-oscar-nominations": {
+      "added_at": "2026-01-23T10:29:19.383578",
+      "published_date": "2026-01-22T18:35:04"
+    },
+    "https://nofilmschool.com/is-hollywood-dead": {
+      "added_at": "2026-01-23T10:29:19.389903",
+      "published_date": "2026-01-22T18:14:09"
+    },
+    "https://nofilmschool.com/stealing-isnt-innovation-ai": {
+      "added_at": "2026-01-23T10:29:19.396762",
+      "published_date": "2026-01-22T17:10:03"
+    },
+    "https://nofilmschool.com/godox-light-app-update": {
+      "added_at": "2026-01-23T10:29:19.403134",
+      "published_date": "2026-01-22T16:54:13"
+    },
+    "https://nofilmschool.com/2026-oscar-nominations": {
+      "added_at": "2026-01-23T10:29:19.409579",
+      "published_date": "2026-01-22T15:30:33"
+    },
+    "https://nofilmschool.com/movie-tropes-that-need-to-come-back": {
+      "added_at": "2026-01-23T10:29:19.416298",
+      "published_date": "2026-01-22T07:00:03"
+    },
+    "111673 at https://www.eff.org": {
+      "added_at": "2026-01-23T10:29:19.530304",
+      "published_date": "2026-01-23T00:27:22"
+    },
+    "https://www.canarymedia.com/articles/geothermal/startup-fervo-energy-may-go-public": {
+      "added_at": "2026-01-23T10:29:19.668964",
+      "published_date": "2026-01-22T21:30:00"
+    },
+    "https://insideclimatenews.org/?p=105180": {
+      "added_at": "2026-01-23T10:29:19.801011",
+      "published_date": "2026-01-23T00:04:30"
+    },
+    "https://insideclimatenews.org/?p=105161": {
+      "added_at": "2026-01-23T10:29:19.807463",
+      "published_date": "2026-01-22T21:14:57"
+    },
+    "https://insideclimatenews.org/?p=105151": {
+      "added_at": "2026-01-23T10:29:19.816693",
+      "published_date": "2026-01-22T18:29:23"
+    },
+    "https://insideclimatenews.org/?p=105096": {
+      "added_at": "2026-01-23T10:29:19.823520",
+      "published_date": "2026-01-22T14:00:00"
+    },
+    "https://www.nature.com/articles/s41558-025-02538-0": {
+      "added_at": "2026-01-23T10:29:19.887663",
+      "published_date": "2026-01-22T00:00:00"
+    },
+    "https://techcrunch.com/?p=3085056": {
+      "added_at": "2026-01-23T10:29:19.921537",
+      "published_date": "2026-01-22T17:00:25"
+    },
+    "https://lastweekin.ai/p/last-week-in-ai-333-chatgpt-ads-zhipuhuawei": {
+      "added_at": "2026-01-23T10:29:19.988124",
+      "published_date": "2026-01-23T05:14:53"
+    },
+    "yt:video:y7RZiG4LSPM": {
+      "added_at": "2026-01-23T10:29:20.029849",
+      "published_date": "2026-01-23T07:08:31"
+    },
+    "yt:video:mksg0hyDWPc": {
+      "added_at": "2026-01-23T10:29:20.170241",
+      "published_date": "2026-01-22T17:11:49"
+    },
+    "yt:video:NPkY1o3B_ZM": {
+      "added_at": "2026-01-23T10:29:20.185299",
+      "published_date": "2026-01-22T21:23:46"
+    },
+    "yt:video:O9BpG-9o9FQ": {
+      "added_at": "2026-01-23T10:29:20.193991",
+      "published_date": "2026-01-22T18:14:35"
+    },
+    "yt:video:vAh1I6yI-hU": {
+      "added_at": "2026-01-23T10:29:20.303051",
+      "published_date": "2026-01-23T04:20:11"
+    },
+    "tag:github.com,2008:Repository/493402689/c2patool-v0.26.17": {
+      "added_at": "2026-01-23T10:29:20.370444",
+      "published_date": "2026-01-22T18:05:42"
+    },
+    "tag:github.com,2008:Repository/493402689/c2pa-v0.75.6": {
+      "added_at": "2026-01-23T10:29:20.376974",
+      "published_date": "2026-01-22T18:05:30"
+    },
+    "tag:github.com,2008:Repository/493402689/c2pa-c-ffi-v0.75.6": {
+      "added_at": "2026-01-23T10:29:20.383584",
+      "published_date": "2026-01-22T17:38:56"
+    },
+    "tag:github.com,2008:Repository/658928958/v0.15.0-rc1": {
+      "added_at": "2026-01-23T10:29:20.451585",
+      "published_date": "2026-01-23T06:56:27"
+    },
+    "https://www.bensbites.com/p/using-coding-agents-if-youre-not": {
+      "added_at": "2026-01-23T10:29:20.523955",
+      "published_date": "2026-01-22T14:52:55"
+    },
+    "https://the-decoder.com/?p=31291": {
+      "added_at": "2026-01-23T10:29:20.547289",
+      "published_date": "2026-01-22T20:35:37"
+    },
+    "https://the-decoder.com/?p=31288": {
+      "added_at": "2026-01-23T10:29:20.553946",
+      "published_date": "2026-01-22T19:55:55"
+    },
+    "https://the-decoder.com/?p=31284": {
+      "added_at": "2026-01-23T10:29:20.560699",
+      "published_date": "2026-01-22T19:29:31"
+    },
+    "https://www.technologyreview.com/?p=1131692": {
+      "added_at": "2026-01-23T10:29:20.615933",
+      "published_date": "2026-01-22T17:38:09"
+    },
+    "https://arstechnica.com/security/2026/01/overrun-with-ai-slop-curl-scraps-bug-bounties-to-ensure-intact-mental-health/": {
+      "added_at": "2026-01-23T10:29:20.670548",
+      "published_date": "2026-01-22T22:46:30"
+    },
+    "https://arstechnica.com/apple/2026/01/report-apple-plans-to-launch-ai-powered-wearable-pin-device-as-soon-as-2027/": {
+      "added_at": "2026-01-23T10:29:20.678880",
+      "published_date": "2026-01-22T21:32:28"
+    },
+    "https://arstechnica.com/tech-policy/2026/01/asking-grok-to-delete-fake-nudes-may-force-victims-to-sue-in-musks-chosen-court/": {
+      "added_at": "2026-01-23T10:29:20.686393",
+      "published_date": "2026-01-22T21:16:42"
+    },
+    "https://arstechnica.com/google/2026/01/google-begins-offering-free-sat-practice-tests-powered-by-gemini/": {
+      "added_at": "2026-01-23T10:29:20.696434",
+      "published_date": "2026-01-22T20:46:10"
+    },
+    "https://arstechnica.com/google/2026/01/google-ai-mode-can-now-customize-responses-with-your-email-and-photos/": {
+      "added_at": "2026-01-23T10:29:20.703130",
+      "published_date": "2026-01-22T16:35:41"
+    },
+    "https://arstechnica.com/information-technology/2026/01/ebay-bans-illicit-automated-shopping-amid-rapid-rise-of-ai-agents/": {
+      "added_at": "2026-01-23T10:29:20.709866",
+      "published_date": "2026-01-22T15:56:33"
+    },
+    "697129ce8c25eb9b6d63a92c": {
+      "added_at": "2026-01-23T10:29:20.845027",
+      "published_date": "2026-01-22T19:00:00"
+    },
+    "696fae551d9eb7b4565d30e5": {
+      "added_at": "2026-01-23T10:29:20.851671",
+      "published_date": "2026-01-22T19:00:00"
+    },
+    "https://www.theguardian.com/technology/2026/jan/22/experts-warn-of-threat-to-democracy-by-ai-bot-swarms-infesting-social-media": {
+      "added_at": "2026-01-23T10:29:20.981090",
+      "published_date": "2026-01-22T19:00:53"
+    },
+    "https://www.theguardian.com/business/2026/jan/23/peter-kyle-uk-business-secretary-activist-approach-economic-growth": {
+      "added_at": "2026-01-23T10:29:20.987549",
+      "published_date": "2026-01-23T07:00:11"
+    },
+    "https://www.theguardian.com/us-news/2026/jan/22/white-house-ice-protest-arrest-altered-image": {
+      "added_at": "2026-01-23T10:29:20.995817",
+      "published_date": "2026-01-22T22:14:42"
+    },
+    "https://www.theguardian.com/politics/2026/jan/22/government-ai-datacentre-approval-quashed": {
+      "added_at": "2026-01-23T10:29:21.002966",
+      "published_date": "2026-01-22T19:11:13"
+    },
+    "https://www.theguardian.com/commentisfree/2026/jan/22/the-guardian-view-on-toddlers-and-screens-more-reasons-to-be-fearful-of-big-tech": {
+      "added_at": "2026-01-23T10:29:21.009985",
+      "published_date": "2026-01-22T18:44:22"
+    },
+    "https://www.theguardian.com/uk-news/2026/jan/22/children-need-protecting-from-social-media-and-generative-ai": {
+      "added_at": "2026-01-23T10:29:21.018790",
+      "published_date": "2026-01-22T17:56:39"
+    },
+    "https://www.theguardian.com/technology/2026/jan/22/grok-ai-generated-millions-sexualised-images-in-month-research-says": {
+      "added_at": "2026-01-23T10:29:21.025702",
+      "published_date": "2026-01-22T15:11:07"
+    },
+    "gmail-19be878376663183": {
+      "added_at": "2026-01-23T10:29:21.131729",
+      "published_date": "2026-01-23T01:29:07+00:00"
+    },
+    "gmail-19be7f016c84997c": {
+      "added_at": "2026-01-23T10:29:21.142190",
+      "published_date": "2026-01-22T23:00:21+00:00"
+    },
+    "gmail-19be74a7e4e45a1b": {
+      "added_at": "2026-01-23T10:29:21.151414",
+      "published_date": "2026-01-22T19:59:31+00:00"
+    },
+    "gmail-19be6e25270f212a": {
+      "added_at": "2026-01-23T10:29:21.159606",
+      "published_date": "2026-01-22T18:05:44+00:00"
+    },
+    "gmail-19be6bf7f665c3e4": {
+      "added_at": "2026-01-23T10:29:21.168612",
+      "published_date": "2026-01-22T17:27:38+00:00"
+    },
+    "gmail-19be682b15266cee": {
+      "added_at": "2026-01-23T10:29:21.175569",
+      "published_date": "2026-01-22T16:21:15+00:00"
+    },
+    "gmail-19be672297b4d030": {
+      "added_at": "2026-01-23T10:29:21.183374",
+      "published_date": "2026-01-22T16:02:12+00:00"
+    },
+    "gmail-19be61c2da15420b": {
+      "added_at": "2026-01-23T10:29:21.190348",
+      "published_date": "2026-01-22T14:29:24+00:00"
     }
   }
 }

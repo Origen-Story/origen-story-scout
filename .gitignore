@@ -53,6 +53,9 @@ config/gmail_token.pickle
 # Keep example configs
 !config/*.example.yaml
 
+# Node
+node_modules/
+
 # OS
 .DS_Store
 Thumbs.db
