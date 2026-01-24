@@ -1,7 +1,7 @@
 from enum import Enum
 from typing import Optional, Dict
 from .base import LLMProvider
-from ..config import settings
+from shared.config import settings
 
 class TaskType(Enum):
     GENERAL = "general"
