@@ -47,18 +47,32 @@ def fetch_gmail_newsletters() -> list:
         console.print(f"[red]Error fetching Gmail newsletters: {e}[/red]")
         return []
 
-def load_mock_data() -> list:
-    """Load mock data for development mode"""
-    mock_path = Path("data/mock_data.json")
-    if not mock_path.exists():
-        console.print("[red]Mock data file not found at data/mock_data.json[/red]")
-        return []
+CONTENT_CACHE_PATH = Path("data/content_cache.json")
 
-    with open(mock_path, 'r', encoding='utf-8') as f:
-        data = json.load(f)
 
+def _items_to_json(items: list) -> list:
+    """Serialize ContentItems to JSON-safe dicts."""
+    stories = []
+    for item in items:
+        stories.append({
+            'id': item.id,
+            'title': item.title,
+            'content': item.content or '',
+            'url': item.url,
+            'source_name': item.source_name,
+            'source_category': item.source_category,
+            'published_date': item.published_date.isoformat() if item.published_date else datetime.now().isoformat(),
+            'author': item.author,
+            'media_link': item.metadata.get('media_link') if item.metadata else None,
+            'provenance_rating': getattr(item, 'provenance_rating', 'Unknown'),
+        })
+    return stories
+
+
+def _items_from_json(stories: list) -> list:
+    """Deserialize JSON dicts back to ContentItems."""
     items = []
-    for story in data.get('stories', []):
+    for story in stories:
         item = ContentItem(
             id=story['id'],
             title=story['title'],
@@ -72,8 +86,45 @@ def load_mock_data() -> list:
         )
         item.provenance_rating = story.get('provenance_rating', 'Unknown')
         items.append(item)
-
     return items
+
+
+def save_content_cache(items: list):
+    """Save ingested content to cache for later re-analysis."""
+    CONTENT_CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
+    data = {
+        'cached_at': datetime.now().isoformat(),
+        'item_count': len(items),
+        'stories': _items_to_json(items),
+    }
+    with open(CONTENT_CACHE_PATH, 'w', encoding='utf-8') as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+    console.print(f"[green]Saved {len(items)} items to content cache.[/green]")
+
+
+def load_content_cache() -> list:
+    """Load previously ingested content from cache."""
+    if not CONTENT_CACHE_PATH.exists():
+        console.print("[red]No content cache found. Run without --skip-ingest first.[/red]")
+        return []
+    with open(CONTENT_CACHE_PATH, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+    items = _items_from_json(data.get('stories', []))
+    console.print(f"[green]Loaded {len(items)} items from cache ({data.get('cached_at', 'unknown')}).[/green]")
+    return items
+
+
+def load_mock_data() -> list:
+    """Load mock data for development mode"""
+    mock_path = Path("data/mock_data.json")
+    if not mock_path.exists():
+        console.print("[red]Mock data file not found at data/mock_data.json[/red]")
+        return []
+
+    with open(mock_path, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+
+    return _items_from_json(data.get('stories', []))
 
 @click.group()
 def cli():
@@ -86,7 +137,8 @@ def cli():
 @click.option('--force', is_flag=True, help='Re-process already archived items')
 @click.option('--dev', is_flag=True, help='Use mock data instead of fetching RSS feeds')
 @click.option('--report-only', is_flag=True, help='Skip fetching, regenerate report from last run data')
-def run(limit, summarize, force, dev, report_only):
+@click.option('--skip-ingest', is_flag=True, help='Skip fetching, reload from content cache (use with --force to re-analyze)')
+def run(limit, summarize, force, dev, report_only, skip_ingest):
     """Run the full curation pipeline"""
     console.print("[bold blue]Starting Origen Story Scout...[/bold blue]")
 
@@ -115,7 +167,12 @@ def run(limit, summarize, force, dev, report_only):
         return
 
     # 1. Ingestion
-    if dev:
+    if skip_ingest:
+        console.print("[yellow]Phase 1: Loading from content cache (--skip-ingest)...[/yellow]")
+        all_items = load_content_cache()
+        if not all_items:
+            return
+    elif dev:
         console.print("[yellow]Phase 1: Loading Mock Data (dev mode)...[/yellow]")
         all_items = load_mock_data()
         console.print(f"[green]Loaded {len(all_items)} mock items.[/green]")
@@ -135,6 +192,10 @@ def run(limit, summarize, force, dev, report_only):
             newsletter_items = fetch_gmail_newsletters()
             all_items.extend(newsletter_items)
             console.print(f"[green]Fetched {len(newsletter_items)} newsletters from Gmail.[/green]")
+
+        # Save content cache for later --skip-ingest runs
+        if all_items:
+            save_content_cache(all_items)
 
     # Check archive
     archive = Archive()
@@ -295,7 +356,7 @@ def refresh_dev(limit):
         json.dump(mock_data, f, indent=2, ensure_ascii=False)
 
     console.print(f"\n[bold green]Saved {len(stories)} items to {mock_path}[/bold green]")
-    console.print("[dim]Run 'python -m src.main run --dev' to use this data[/dim]")
+    console.print("[dim]Run 'python -m backend.main run --dev' to use this data[/dim]")
 
 
 if __name__ == '__main__':

@@ -16,8 +16,8 @@ downloads/
 eggs/
 .eggs/
 lib/
-!dashboard/src/lib/
-!dashboard/src/lib/**
+!frontend/src/lib/
+!frontend/src/lib/**
 lib64/
 parts/
 sdist/
@@ -44,9 +44,11 @@ env/
 /output/
 /data/newsletters/
 /data/summaries_cache.json
+/data/content_cache.json
 config/feeds.opml
 config/sources.yaml
 config/interests.yaml
+config/*.archive
 
 # Gmail API credentials (sensitive)
 config/credentials.json

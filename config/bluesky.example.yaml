@@ -1,0 +1,60 @@
+# Bluesky Integration Configuration
+# Copy this to bluesky.yaml and fill in your details
+#
+# Generate app passwords at: https://bsky.app/settings/app-passwords
+
+# Your posting accounts
+# App passwords are stored in .env for security
+accounts:
+  - handle: yourname.bsky.social
+    env_key: BLUESKY_APP_PASSWORD_PERSONAL
+    label: Personal
+  - handle: yourcompany.com
+    env_key: BLUESKY_APP_PASSWORD_WORK
+    label: Work
+
+# Accounts to follow/monitor in the dashboard
+# Organize by category for easier management
+follow_list:
+  # AI researchers and thought leaders
+  ai_researchers:
+    - handle: karpathy.bsky.social
+      note: "Andrej Karpathy - AI/ML, former Tesla/OpenAI"
+    # - handle: ylecun.bsky.social
+    #   note: "Yann LeCun - Meta AI Chief Scientist"
+
+  # AI companies and labs
+  ai_companies:
+    - handle: anthropic.bsky.social
+      note: "Anthropic - Claude"
+    # - handle: openai.bsky.social
+
+  # Content authenticity / C2PA
+  content_authenticity:
+    # - handle: c2pa.bsky.social
+    # - handle: truepic.bsky.social
+
+  # Climate and clean energy
+  climate:
+    # - handle: example.bsky.social
+
+  # AI filmmaking and creative tools
+  media_creators:
+    # - handle: example.bsky.social
+
+# Feed settings
+settings:
+  # Maximum posts to fetch per account
+  max_posts_per_account: 10
+
+  # Include reply posts in the feed
+  include_replies: false
+
+  # Include reposts in the feed
+  include_reposts: true
+
+  # Cache duration in minutes (reduces API calls)
+  cache_duration_minutes: 15
+
+  # Default account for posting (by handle)
+  default_post_account: yourname.bsky.social

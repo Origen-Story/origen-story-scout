@@ -42,7 +42,7 @@ The dashboard displays:
 
 ### Prerequisites
 - Python 3.11+
-- Node.js 18+ (for dashboard)
+- Node.js 18+ (for frontend)
 - One LLM API key: Gemini, OpenAI, or Claude
 
 ### Installation
@@ -57,10 +57,10 @@ python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 # Install Python dependencies
-pip install -r requirements.txt
+pip install -e .
 
-# Install dashboard dependencies
-cd dashboard
+# Install frontend dependencies
+cd frontend
 npm install
 cd ..
 
@@ -78,28 +78,28 @@ cp .env.example .env
 ### Running
 
 ```bash
-# Start the dashboard (view existing data)
-cd dashboard && npm run dev
+# Start the frontend (view existing data)
+cd frontend && npm run dev
 # Then open http://localhost:5173
 
 # Run the content pipeline (fetches, scores, generates report)
-python -m src.main run
+python -m backend.main run
 
 # Regenerate report without re-fetching (useful after code changes)
-python -m src.main run --report-only
+python -m backend.main run --report-only
 ```
 
 ### CLI Commands
 
-#### `python -m src.main run`
+#### `python -m backend.main run`
 
-Main command to fetch content and generate the dashboard report.
+Main command to fetch content and generate the report.
 
 | Flag | Description |
 |------|-------------|
 | `--force` | Re-process already archived items (bypass the "already seen" check) |
-| `--summarize` | Generate AI summaries for top stories (uses Gemini API tokens) |
-| `--use-llm` | Use LLM for semantic scoring instead of keyword matching (uses API tokens) |
+| `--summarize` | Generate AI summaries for top stories (uses API tokens) |
+| `--skip-ingest` | Skip fetching, reload from content cache (use with `--force` to re-analyze) |
 | `--report-only` | Skip fetching, just refresh the report timestamp |
 | `--dev` | Use mock data instead of fetching live RSS feeds |
 | `--limit N` | Limit display output (default: 10) |
@@ -107,23 +107,23 @@ Main command to fetch content and generate the dashboard report.
 **Common usage patterns:**
 
 ```bash
-# Daily run - fetch new content
-python -m src.main run
+# Daily run - fetch new content and cache it
+python -m backend.main run --force
 
 # Full run with AI summaries
-python -m src.main run --summarize
+python -m backend.main run --force --summarize
 
-# Re-process everything (ignore archive)
-python -m src.main run --force
+# Re-analyze cached content without re-fetching (iterate on scoring/summaries)
+python -m backend.main run --skip-ingest --force --summarize
 
-# Quick report refresh (no network calls)
-python -m src.main run --report-only
+# Quick report refresh (no network calls, no re-analysis)
+python -m backend.main run --report-only
 
 # Development with mock data
-python -m src.main run --dev --force
+python -m backend.main run --dev --force
 ```
 
-#### `python -m src.main refresh-dev`
+#### `python -m backend.main refresh-dev`
 
 Fetch live data and save to `data/mock_data.json` for development mode.
 
@@ -131,10 +131,10 @@ Fetch live data and save to `data/mock_data.json` for development mode.
 |------|-------------|
 | `--limit N` | Max items to save (default: 50) |
 
-### Dashboard
+### Frontend
 
 ```bash
-cd dashboard
+cd frontend
 npm run dev      # Development server at http://localhost:5173
 npm run build    # Production build
 npm run preview  # Preview production build
@@ -144,15 +144,15 @@ npm run preview  # Preview production build
 
 ```
 origen-story-scout/
-├── src/
+├── backend/
 │   ├── main.py              # CLI entry point
-│   ├── sources/             # RSS and Gmail ingestion
-│   ├── processing/          # Filtering, trending detection
-│   ├── llm/                 # Gemini integration
-│   └── output/              # Report generation
-├── dashboard/
+│   ├── ingestion/           # RSS and Gmail ingestion
+│   ├── scoring/             # Scoring, trending, provenance
+│   └── summarizer/          # LLM provider routing
+├── frontend/
 │   ├── src/App.svelte       # Main dashboard component
 │   └── public/data/         # Generated report JSON
+├── shared/                  # Common types, config, utilities
 ├── config/                  # YAML configuration files
 └── data/                    # Archive and mock data
 ```
