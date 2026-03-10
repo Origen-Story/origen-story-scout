@@ -1,6 +1,6 @@
 import pytest
-from src.sources.base import ContentItem
-from src.processing.provenance import ProvenanceVerifier
+from shared.base import ContentItem
+from backend.scoring.provenance import ProvenanceVerifier
 from datetime import datetime
 
 def test_provenance_unknown_without_media():

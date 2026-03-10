@@ -43,7 +43,7 @@ The dashboard displays:
 ### Prerequisites
 - Python 3.11+
 - Node.js 18+ (for dashboard)
-- Google Gemini API key
+- One LLM API key: Gemini, OpenAI, or Claude
 
 ### Installation
 
@@ -66,7 +66,7 @@ cd ..
 
 # Configure environment
 cp .env.example .env
-# Edit .env with your GEMINI_API_KEY
+# Edit .env with your LLM API key (GEMINI_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY)
 ```
 
 ### Configuration

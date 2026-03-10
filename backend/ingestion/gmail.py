@@ -106,10 +106,10 @@ class GmailSource(ContentSource):
             print(f"Error fetching labels: {e}")
             return None
 
-    def _parse_email_content(self, msg_data: dict) -> tuple[str, str, Optional[str]]:
+    def _parse_email_content(self, msg_data: dict) -> tuple[str, str, Optional[str], Optional[str]]:
         """
         Extract subject, body text, and sender from email message.
-        Returns (subject, body_text, sender)
+        Returns (subject, body_text, sender, date_str)
         """
         headers = msg_data.get('payload', {}).get('headers', [])
 
